@@ -50,7 +50,7 @@ class Walker {
 }
 ```
 
--apartir de la explicasion del profe se que el Walker solo se mueve 1 pixel por frame, Como draw() se ejecuta muchas veces por segundo, el movimiento es lento y detallado entonces lo que hago cuando cambio `this.x++; por esto` `this.x += 3` pasa que en lugar de que el programa se mueva 1 píxel, se mueve 3 píxeles en un solo paso y hace que los pixeles se vean un poco mas dispersos
+-apartir de la explicasion del profe se que el `Walker` solo se mueve 1 pixel por frame, Como `draw()` se ejecuta muchas veces por segundo, el movimiento es lento y detallado entonces lo que hago cuando cambio `this.x++; por esto` `this.x += 3` pasa que en lugar de que el programa se mueva 1 píxel, se mueve 3 píxeles en un solo paso y hace que los pixeles se vean un poco mas dispersos
 
 ##### Paso 3 ejecutar
 
@@ -66,6 +66,7 @@ Uniforme en terminos numericos pienso que signfica que cuando se hace un proceso
 
 
 ## Bitácora de reflexión
+
 
 
 
