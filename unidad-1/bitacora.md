@@ -126,11 +126,39 @@ Pero los valores grandes aparezcan más
 
 Evita que los puntos se salgan del canvas.
 
+### Actividad 4
+
+function setup() {
+  createCanvas(640, 240);
+  background(255);
+}
+
+function draw() {
+  // Distribución normal: media 320, desviación estándar 60
+  let x = randomGaussian(320, 60);
+
+  noStroke();
+  fill(0, 10);
+
+  // Dibujar un triángulo centrado en x
+  triangle(
+    x, 110,      // vértice superior
+    x - 8, 130,  // vértice inferior izquierdo
+    x + 8, 130   // vértice inferior derecho
+  );
+}
+
+enlace de mi tu sketch en p5.js : https://editor.p5js.org/TheWarrior710/sketches/uZT7MIjxr
+
+<img width="626" height="219" alt="image" src="https://github.com/user-attachments/assets/8498660e-3d5f-4276-8127-880fa7ec113b" />
+
+
 ## Bitácora de aplicación 
 
 
 
 ## Bitácora de reflexión
+
 
 
 
