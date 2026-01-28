@@ -128,6 +128,7 @@ Evita que los puntos se salgan del canvas.
 
 ### Actividad 4
 
+```
 function setup() {
   createCanvas(640, 240);
   background(255);
@@ -147,6 +148,7 @@ function draw() {
     x + 8, 130   // vértice inferior derecho
   );
 }
+```
 
 enlace de mi tu sketch en p5.js : https://editor.p5js.org/TheWarrior710/sketches/uZT7MIjxr
 
@@ -158,6 +160,7 @@ enlace de mi tu sketch en p5.js : https://editor.p5js.org/TheWarrior710/sketches
 
 
 ## Bitácora de reflexión
+
 
 
 
