@@ -52,10 +52,13 @@ class Walker {
 
 -apartir de la explicasion del profe se que el `Walker` solo se mueve 1 pixel por frame, Como `draw()` se ejecuta muchas veces por segundo, el movimiento es lento y detallado entonces lo que hago cuando cambio `this.x++;` por esto `this.x += 3` pasa que en lugar de que el programa se mueva 1 píxel, se mueve 3 píxeles en un solo paso y hace que los pixeles se vean un poco mas dispersos
 
-##### Paso 3 ejecutar
+#### Paso 3 ejecutar
 
 -Al ejecutar sucedio lo esperado el problema es que tambien se ve que los pixeles de ven mas espaciados entonces fue lo que mas curiosidad me dio porque no pense que eso fuera a pasar
 
+#### Paso 3 ejecutar
+
+-Un poo pero como te digo hubieron cambios que no esperaba por eso me toco estudiar mas el codigo y ahi si entendi porque
 
 
 ### Actividad 03
@@ -66,6 +69,7 @@ Uniforme en terminos numericos pienso que signfica que cuando se hace un proceso
 
 
 ## Bitácora de reflexión
+
 
 
 
