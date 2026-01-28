@@ -96,11 +96,42 @@ circle(x, y, 5);
   circle(x, y, 5);
 }
 ```
+
+¿Por qué esto favorece la derecha?
+1️random(100)
+
+Genera valores entre 0 y 100
+
+Todos tienen la misma probabilidad (uniforme)
+
+2️ + random(30)
+
+Suma un valor extra entre 0 y 30
+
+Eso hace que:
+
+Los valores pequeños sigan siendo posibles
+
+Pero los valores grandes aparezcan más
+
+ Ejemplo mental:
+
+20 + 15 = 35
+
+70 + 20 = 90
+
+85 + 25 = 110 → luego se limita
+
+3️ constrain(x, 0, 100)
+
+Evita que los puntos se salgan del canvas.
+
 ## Bitácora de aplicación 
 
 
 
 ## Bitácora de reflexión
+
 
 
 
