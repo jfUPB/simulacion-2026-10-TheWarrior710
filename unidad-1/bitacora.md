@@ -56,19 +56,51 @@ class Walker {
 
 -Al ejecutar sucedio lo esperado el problema es que tambien se ve que los pixeles de ven mas espaciados entonces fue lo que mas curiosidad me dio porque no pense que eso fuera a pasar
 
-#### Paso 3 ejecutar
+#### Paso 4 ejecutar
 
 -Un poo pero como te digo hubieron cambios que no esperaba por eso me toco estudiar mas el codigo y ahi si entendi porque
 
 
 ### Actividad 03
 Uniforme en terminos numericos pienso que signfica que cuando se hace un proceso lleva una secuencia especifica y no uniforme signica un grado de dispercion el cual no sigue un orden lo cual lo hace mas aleatorio
+```
+unction setup() {
+  createCanvas(100, 100);
 
+  background(200);
+
+  describe('Three horizontal black lines are filled in randomly. The top line spans entire canvas. The middle line is very short. The bottom line spans two-thirds of the canvas.');
+}
+
+function draw() {
+  // Style the circles.
+  noStroke();
+  fill(0, 10);
+
+  // Distribución NO uniforme, favorece la derecha
+let x = random(100) + random(30);
+x = constrain(x, 0, 100);
+let y = 25;
+circle(x, y, 5);
+
+
+  // Gaussian distribution with a mean of 50 and sd of 1.
+  x = randomGaussian(50);
+  y = 50;
+  circle(x, y, 5);
+
+  // Gaussian distribution with a mean of 50 and sd of 10.
+  x = randomGaussian(50, 10);
+  y = 75;
+  circle(x, y, 5);
+}
+```
 ## Bitácora de aplicación 
 
 
 
 ## Bitácora de reflexión
+
 
 
 
