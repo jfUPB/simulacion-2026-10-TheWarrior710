@@ -63,7 +63,8 @@ class Walker {
 
 ### Actividad 03
 Uniforme en terminos numericos pienso que signfica que cuando se hace un proceso lleva una secuencia especifica y no uniforme signica un grado de dispercion el cual no sigue un orden lo cual lo hace mas aleatorio
-```
+
+```java
 unction setup() {
   createCanvas(100, 100);
 
@@ -100,6 +101,7 @@ circle(x, y, 5);
 
 
 ## Bitácora de reflexión
+
 
 
 
