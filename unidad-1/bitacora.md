@@ -261,6 +261,109 @@ https://editor.p5js.org/TheWarrior710/sketches/jDM1vz_gM
 <img width="660" height="405" alt="image" src="https://github.com/user-attachments/assets/167d50cd-081c-4026-bf78-c135fac9492e" />
 
 
+### Actividad 7
+
+Una obra generativa son pixeles que crean formas aleatorias los cuales dependiendo del programador puede implementar cosas que ni el artista se imagina ya sea asignandole un patron, color, escala a un pixel determinado y eso hace que tengan resultado unicos y naturlas hechos principalmente por una maquina guiada por el hombre y eso fue lo que quise implementar
+
+```
+// Obra generativa interactiva - Actividad 07
+// The Nature of Code
+// Nicolas Sedano
+
+let x, y;
+let t = 0;
+
+let shapeType = 0;
+let currentColor;
+let baseSize = 20;
+
+function setup() {
+  createCanvas(640, 400);
+  background(255);
+  x = width / 2;
+  y = height / 2;
+
+  // Color inicial
+  currentColor = color(0, 0, 0, 20);
+}
+
+function draw() {
+  noStroke();
+
+  // --- Ruido Perlin para dirección ---
+  let angle = noise(t) * TWO_PI * 2;
+
+  // --- Lévy flight ---
+  let stepSize;
+  if (random(1) < 0.02) {
+    stepSize = random(30, map(mouseX, 0, width, 40, 120));
+  } else {
+    stepSize = random(1, 4);
+  }
+
+  // Movimiento
+  x += cos(angle) * stepSize;
+  y += sin(angle) * stepSize;
+
+  // --- Tamaño basado en distribución normal ---
+  let size = randomGaussian(baseSize, baseSize * 0.3);
+
+  fill(currentColor);
+
+  // --- Dibujar forma ---
+  if (shapeType === 0) {
+    ellipse(x, y, size, size);
+  } 
+  else if (shapeType === 1) {
+    rectMode(CENTER);
+    rect(x, y, size, size);
+  } 
+  else if (shapeType === 2) {
+    triangle(
+      x, y - size / 2,
+      x - size / 2, y + size / 2,
+      x + size / 2, y + size / 2
+    );
+  }
+
+  // Limitar canvas
+  x = constrain(x, 0, width);
+  y = constrain(y, 0, height);
+
+  t += 0.01;
+}
+
+// --- Interacción con teclado ---
+function keyPressed() {
+  // Cambiar forma
+  shapeType = (shapeType + 1) % 3;
+
+  // Cambiar color (drástico)
+  currentColor = color(
+    random(255),
+    random(255),
+    random(255),
+    25
+  );
+
+  // Cambiar tamaño base ALEATORIAMENTE
+  let choice = int(random(3));
+  if (choice === 0) {
+    baseSize = random(8, 15);   // pequeño
+  } else if (choice === 1) {
+    baseSize = random(18, 30);  // normal
+  } else {
+    baseSize = random(40, 70);  // grande
+  }
+}
+```
+
+https://editor.p5js.org/TheWarrior710/sketches/xsHHBFytx
+
+
+<img width="695" height="438" alt="Captura de pantalla 2026-01-30 000306" src="https://github.com/user-attachments/assets/32b68b7f-c89b-4433-ab0d-cc8a32b7cd9f" />
+
+La obra generativa combina ruido Perlin, Lévy flight y distribución normal para producir una composición visual en tiempo real. La interacción con el teclado activa cambios aleatorios en la forma, el color y el tamaño de los elementos, introduciendo variabilidad controlada. El tamaño base se modifica de manera aleatoria en cada interacción, lo que genera contrastes visuales impredecibles. El usuario no define el resultado final, sino que influye en el sistema que lo genera.
 
 
 ## Bitácora de aplicación 
@@ -268,6 +371,7 @@ https://editor.p5js.org/TheWarrior710/sketches/jDM1vz_gM
 
 
 ## Bitácora de reflexión
+
 
 
 
