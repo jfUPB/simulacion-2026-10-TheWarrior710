@@ -218,6 +218,47 @@ Enlace: https://editor.p5js.org/TheWarrior710/sketches/srfFC_LSL
 <img width="707" height="283" alt="Captura de pantalla 2026-01-29 231201" src="https://github.com/user-attachments/assets/81ec47e4-5957-44bc-83c1-14e93549d7c3" />
 
 
+### Actividad 6
+
+concepto : a diferecia de random() una caracterisitca que tiene este es que se evidencia cambios drasticos en cambio el ruido perlin() Los valores cambian suavemente
+
+Hay continuidad en el tiempo, El movimiento parece natural ideal para movimiento orgánico
+
+
+Qué resultados se esperan?
+
+al ejecutar s el sketch: Se supone que el círculo se mueve de izquierda a derecha, No hay saltos bruscos, El movimiento es continuo y fluido, Parece mas “natural”, no robótico, Si cambio noise(t) por random(width): El círculo saltaría de un lado a otro y Se perdería la continuidad.
+
+```java
+// The Nature of Code
+// Daniel Shiffman
+// http://natureofcode.com
+
+let t = 0;
+
+function setup() {
+  createCanvas(640, 240);
+  background(255);
+}
+
+function draw() {
+  background(255);
+
+  // Ruido Perlin devuelve valores suaves entre 0 y 1
+  let x = noise(t) * width;
+
+  noStroke();
+  fill(0);
+  circle(x, height / 2, 20);
+
+  // Avanza suavemente en el tiempo
+  t += 0.01;
+}
+```
+
+https://editor.p5js.org/TheWarrior710/sketches/jDM1vz_gM
+
+<img width="660" height="405" alt="image" src="https://github.com/user-attachments/assets/167d50cd-081c-4026-bf78-c135fac9492e" />
 
 
 
@@ -227,6 +268,7 @@ Enlace: https://editor.p5js.org/TheWarrior710/sketches/srfFC_LSL
 
 
 ## Bitácora de reflexión
+
 
 
 
