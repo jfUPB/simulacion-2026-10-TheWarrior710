@@ -376,7 +376,11 @@ La obra generativa combina ruido Perlin, Lévy flight y distribución normal par
 
 
 
-La aleatoridad generada por random() hace cambios mas drasticos los cuales ayudan a crear saltos aleatorios que nos sirven para cierto tipo de obras generativas y Ruido Perlin (noise()) nos yauda 
+La aleatoridad generada por random() hace cambios mas drasticos los cuales ayudan a crear saltos aleatorios que nos sirven para cierto tipo de obras generativas y Ruido Perlin (noise()) genera una apariencia de aleatoriedad, pero en realidad los valores están relacionados entre sí de manera continua Hay continuidad en el tiempo, El movimiento parece natural ideal para movimiento orgánico
+
+
+Usaría random() cuando quiero resultados caóticos o impredecibles, como destellos, explosiones o cambios abruptos. y Usaría ruido Perlin cuando busco movimiento orgánico, fluido o natural, como trayectorias suaves, paisajes o animaciones continuas.
+
 
 
 
