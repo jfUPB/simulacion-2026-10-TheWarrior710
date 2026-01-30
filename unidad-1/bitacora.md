@@ -372,7 +372,11 @@ La obra generativa combina ruido Perlin, Lévy flight y distribución normal par
 
 ## Bitácora de reflexión
 
+### Actividad 8
 
+
+
+La aleatoridad generada por random() hace cambios mas drasticos los cuales ayudan a crear saltos aleatorios que nos sirven para cierto tipo de obras generativas y Ruido Perlin (noise()) nos yauda 
 
 
 
