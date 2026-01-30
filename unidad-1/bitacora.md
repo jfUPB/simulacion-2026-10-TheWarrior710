@@ -155,11 +155,70 @@ enlace de mi tu sketch en p5.js : https://editor.p5js.org/TheWarrior710/sketches
 <img width="626" height="219" alt="image" src="https://github.com/user-attachments/assets/8498660e-3d5f-4276-8127-880fa7ec113b" />
 
 
+### Actividad 5
+
+Al aplicar el el comportamiento Lévy en mi  codigo anterior lo que espero es que los puntos se vean mas agrupados en el canvaa, caminos densos en zonas pequeñas, de repente pixeles a lo lejos en posiciones aleatorias y con un recorrido no uniforme
+
+```java
+// The Nature of Code
+// Daniel Shiffman
+// http://natureofcode.com
+
+let x, y;
+
+function setup() {
+  createCanvas(640, 240);
+  background(255);
+  x = width / 2;
+  y = height / 2;
+}
+
+function draw() {
+  stroke(0, 50);
+
+  // Ángulo aleatorio
+  let angle = random(TWO_PI);
+
+  // Paso con distribución tipo Lévy
+  let stepSize = levy();
+
+  // Movimiento
+  x += cos(angle) * stepSize;
+  y += sin(angle) * stepSize;
+
+  point(x, y);
+
+  // Evitar que se salga del canvas
+  x = constrain(x, 0, width);
+  y = constrain(y, 0, height);
+}
+
+// Distribución Lévy simple
+function levy() {
+  let r = random(1);
+
+  // Muchos pasos pequeños, pocos grandes
+  if (r < 0.01) {
+    return random(50, 100); // salto largo
+  } else {
+    return random(1, 3); // pasos cortos
+  }
+}
+```
+
+
+
+En este sketch se implementa una distribución tipo Lévy flight modificando el movimiento de un walker aleatorio. La técnica consiste en generar principalmente pasos cortos y, con baja probabilidad, saltos largos. Este comportamiento permite simular patrones de exploración más realistas e impredecibles. Se espera observar trayectorias densas en ciertas zonas del canvas y desplazamientos repentinos hacia regiones lejanas, lo cual es característico del movimiento Lévy.
+
+
+
+
 ## Bitácora de aplicación 
 
 
 
 ## Bitácora de reflexión
+
 
 
 
