@@ -261,6 +261,10 @@ https://editor.p5js.org/TheWarrior710/sketches/jDM1vz_gM
 <img width="660" height="405" alt="image" src="https://github.com/user-attachments/assets/167d50cd-081c-4026-bf78-c135fac9492e" />
 
 
+
+
+## Bitácora de aplicación 
+
 ### Actividad 7
 
 Una obra generativa son pixeles que crean formas aleatorias los cuales dependiendo del programador puede implementar cosas que ni el artista se imagina ya sea asignandole un patron, color, escala a un pixel determinado y eso hace que tengan resultado unicos y naturlas hechos principalmente por una maquina guiada por el hombre y eso fue lo que quise implementar
@@ -366,11 +370,8 @@ https://editor.p5js.org/TheWarrior710/sketches/xsHHBFytx
 La obra generativa combina ruido Perlin, Lévy flight y distribución normal para producir una composición visual en tiempo real. La interacción con el teclado activa cambios aleatorios en la forma, el color y el tamaño de los elementos, introduciendo variabilidad controlada. El tamaño base se modifica de manera aleatoria en cada interacción, lo que genera contrastes visuales impredecibles. El usuario no define el resultado final, sino que influye en el sistema que lo genera.
 
 
-## Bitácora de aplicación 
-
-
-
 ## Bitácora de reflexión
+
 
 
 
