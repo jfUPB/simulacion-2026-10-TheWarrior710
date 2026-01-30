@@ -376,10 +376,33 @@ La obra generativa combina ruido Perlin, Lévy flight y distribución normal par
 
 
 
-La aleatoridad generada por random() hace cambios mas drasticos los cuales ayudan a crear saltos aleatorios que nos sirven para cierto tipo de obras generativas y Ruido Perlin (noise()) genera una apariencia de aleatoriedad, pero en realidad los valores están relacionados entre sí de manera continua Hay continuidad en el tiempo, El movimiento parece natural ideal para movimiento orgánico
+-La aleatoridad generada por random() hace cambios mas drasticos los cuales ayudan a crear saltos aleatorios que nos sirven para cierto tipo de obras generativas y Ruido Perlin (noise()) genera una apariencia de aleatoriedad, pero en realidad los valores están relacionados entre sí de manera continua Hay continuidad en el tiempo, El movimiento parece natural ideal para movimiento orgánico
 
 
 Usaría random() cuando quiero resultados caóticos o impredecibles, como destellos, explosiones o cambios abruptos. y Usaría ruido Perlin cuando busco movimiento orgánico, fluido o natural, como trayectorias suaves, paisajes o animaciones continuas.
+
+
+-Una distribución de probabilidad describe qué tan probable es que ocurra un determinado valor dentro de un conjunto de posibles resultados.
+
+En una caminata aleatoria con distribución uniforme, todos los valores tienen la misma probabilidad de ocurrir. Visualmente esto genera movimientos más dispersos y desordenados, donde los pasos pueden variar mucho sin un centro claro.
+
+En una caminata con distribución normal, la mayoría de los valores se concentran alrededor de un valor promedio, y los valores extremos ocurren con menor frecuencia. Visualmente esto produce trayectorias más agrupadas, con variaciones suaves y ocasionales desviaciones más grandes.
+
+-La aleatoriedad cumple un papel fundamental en el arte generativo porque permite que el sistema produzca resultados únicos y no completamente predecibles.
+
+Una de sus funciones es introducir variación, evitando que la obra sea repetitiva o mecánica. Otra función importante es generar emergencia, donde comportamientos complejos surgen a partir de reglas simples, creando resultados que ni el artista puede anticipar completamente.
+
+
+-Concepto de aleatoriedad usado en mi obra final (Actividad 07)
+
+En mi obra final utilicé una caminata aleatoria con características de Lévy flight, donde la mayoría de los movimientos son pequeños, pero ocasionalmente ocurren saltos largos. Esta elección fue adecuada porque permitió que la figura explorara el espacio de forma impredecible, creando zonas densas y otras más dispersas.
+
+Este comportamiento generó una composición visual más dinámica y orgánica, reforzando la idea de exploración y crecimiento no lineal dentro del espacio del canvas.
+
+-Una caminata, en el contexto de la simulación, es un proceso donde un objeto se mueve paso a paso siguiendo reglas que incluyen elementos de aleatoriedad. Cada nueva posición depende de la anterior y de una decisión aleatoria.
+
+Una caminata de tipo Lévy flight se caracteriza porque combina muchos pasos pequeños con saltos largos ocasionales. Esta característica permite una exploración más eficiente del espacio y produce patrones visuales menos uniformes y más expresivos que una caminata aleatoria tradicional.
+
 
 
 
