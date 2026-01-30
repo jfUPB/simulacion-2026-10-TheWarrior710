@@ -265,7 +265,7 @@ https://editor.p5js.org/TheWarrior710/sketches/jDM1vz_gM
 
 Una obra generativa son pixeles que crean formas aleatorias los cuales dependiendo del programador puede implementar cosas que ni el artista se imagina ya sea asignandole un patron, color, escala a un pixel determinado y eso hace que tengan resultado unicos y naturlas hechos principalmente por una maquina guiada por el hombre y eso fue lo que quise implementar
 
-```
+```java
 // Obra generativa interactiva - Actividad 07
 // The Nature of Code
 // Nicolas Sedano
@@ -371,6 +371,7 @@ La obra generativa combina ruido Perlin, Lévy flight y distribución normal par
 
 
 ## Bitácora de reflexión
+
 
 
 
