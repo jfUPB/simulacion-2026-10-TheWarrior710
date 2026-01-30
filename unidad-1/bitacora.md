@@ -211,6 +211,15 @@ function levy() {
 En este sketch se implementa una distribución tipo Lévy flight modificando el movimiento de un walker aleatorio. La técnica consiste en generar principalmente pasos cortos y, con baja probabilidad, saltos largos. Este comportamiento permite simular patrones de exploración más realistas e impredecibles. Se espera observar trayectorias densas en ciertas zonas del canvas y desplazamientos repentinos hacia regiones lejanas, lo cual es característico del movimiento Lévy.
 
 
+Enlace: https://editor.p5js.org/TheWarrior710/sketches/srfFC_LSL 
+
+
+
+<img width="707" height="283" alt="Captura de pantalla 2026-01-29 231201" src="https://github.com/user-attachments/assets/81ec47e4-5957-44bc-83c1-14e93549d7c3" />
+
+
+
+
 
 
 ## Bitácora de aplicación 
@@ -218,6 +227,7 @@ En este sketch se implementa una distribución tipo Lévy flight modificando el 
 
 
 ## Bitácora de reflexión
+
 
 
 
