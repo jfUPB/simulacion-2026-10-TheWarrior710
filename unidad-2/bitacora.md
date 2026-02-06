@@ -9,6 +9,9 @@
 Lo que entendi de las explicaciones del profe en clase en p5.js los vectores permiten representar posición, velocidad y aceleración de forma unificada. En lugar de manejar valores separados, el vector encapsula dirección y magnitud, lo que facilita simular movimiento natural y comportamientos físicos, como los que propone Nature of Code
 
 
+La expresión position = position + velocity no funciona porque position y velocity son objetos p5.Vector. En JavaScript no se pueden sumar objetos directamente, por lo que p5.js provee métodos como add() para realizar operaciones vectoriales correctamente
+
+
 ## Bitácora de aplicación 
 
 
@@ -19,5 +22,6 @@ El concepto del marco motion 101 se usa mucho ya que ha medida en que se le suma
 
 
 ## Bitácora de reflexión
+
 
 
