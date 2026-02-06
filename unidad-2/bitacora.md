@@ -8,4 +8,10 @@ Los vectores normalmente se escriben en negrita o con una flecha en la parte sup
 
 
 
+#### Actividad 7 
+
+El concepto del marco motion 101 se usa mucho ya que ha medida en que se le suma la posicion actual de un objeto ya sea un circulo + la velocidad del vector da como resultado  la segunda pocision del objeto, esto se usa demasiado para hacer arte generativo
+
+
 ## Bitácora de reflexión
+
