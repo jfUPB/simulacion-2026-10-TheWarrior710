@@ -11,6 +11,9 @@ Lo que entendi de las explicaciones del profe en clase en p5.js los vectores per
 
 La expresión position = position + velocity no funciona porque position y velocity son objetos p5.Vector. En JavaScript no se pueden sumar objetos directamente, por lo que p5.js provee métodos como add() para realizar operaciones vectoriales correctamente
 
+#### Actividad 3
+
+
 
 ## Bitácora de aplicación 
 
@@ -22,6 +25,7 @@ El concepto del marco motion 101 se usa mucho ya que ha medida en que se le suma
 
 
 ## Bitácora de reflexión
+
 
 
 
