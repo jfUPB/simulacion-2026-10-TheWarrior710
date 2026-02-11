@@ -18,7 +18,7 @@ lo que tuve que hacer para la conversacion propuesta fue tomar uno de los ejempl
 
 
  este fue el codigo que edite para aplicar la tematica de vectores
- ```
+ ```java
 // The Nature of Code
 // Walker usando VECTORES
 
@@ -80,6 +80,7 @@ El concepto del marco motion 101 se usa mucho ya que ha medida en que se le suma
 
 
 ## Bitácora de reflexión
+
 
 
 
