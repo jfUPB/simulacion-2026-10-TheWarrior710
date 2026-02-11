@@ -68,6 +68,11 @@ class Walker {
 }
  ```
 
+<img width="639" height="256" alt="image" src="https://github.com/user-attachments/assets/dbf6df4f-b7c1-451d-b6bd-390b99354dd4" />
+
+
+
+
 
 
 ## Bitácora de aplicación 
@@ -80,6 +85,7 @@ El concepto del marco motion 101 se usa mucho ya que ha medida en que se le suma
 
 
 ## Bitácora de reflexión
+
 
 
 
