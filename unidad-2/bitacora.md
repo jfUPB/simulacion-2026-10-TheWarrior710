@@ -13,6 +13,61 @@ La expresión position = position + velocity no funciona porque position y veloc
 
 #### Actividad 3
 
+lo que tuve que hacer para la conversacion propuesta fue tomar uno de los ejemplos de caminantes de Capítulo 0 y convertilro para usar vectores.
+
+
+
+ este fue el codigo que edite para aplicar la tematica de vectores
+ ```
+// The Nature of Code
+// Walker usando VECTORES
+
+let walker;
+
+function setup() {
+  createCanvas(640, 240);
+  walker = new Walker();
+  background(255);
+}
+
+function draw() {
+  walker.step();
+  walker.show();
+}
+
+class Walker {
+  constructor() {
+    // Ahora usamos un vector
+    this.position = createVector(width / 2, height / 2);
+  }
+
+  show() {
+    stroke(0);
+    point(this.position.x, this.position.y);
+  }
+
+  step() {
+    const choice = floor(random(4));
+
+    // Creamos un vector de movimiento
+    let step;
+
+    if (choice == 0) {
+      step = createVector(3, 0);
+    } else if (choice == 1) {
+      step = createVector(-3, 0);
+    } else if (choice == 2) {
+      step = createVector(0, 3);
+    } else {
+      step = createVector(0, -3);
+    }
+
+    // Sumamos el vector paso a la posición
+    this.position.add(step);
+  }
+}
+ ```
+
 
 
 ## Bitácora de aplicación 
@@ -25,6 +80,7 @@ El concepto del marco motion 101 se usa mucho ya que ha medida en que se le suma
 
 
 ## Bitácora de reflexión
+
 
 
 
