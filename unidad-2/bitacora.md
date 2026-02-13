@@ -100,6 +100,21 @@ p5.Vector Object : [20, 30, 0]
 lo que vi al ejecutar el codigo en pantalla fue Un canvas gris de 400 × 400 color gris porque ``background(220);``
 
 
+3. El paso por valor significa que se envía una copia del dato a la función. Esto quiere decir que cualquier cambio dentro de la función no afecta la variable original.
+
+El paso por referencia significa que se envía la referencia al objeto original, no una copia. Por lo tanto, cualquier cambio dentro de la función modifica directamente el objeto original.
+
+
+
+4.En este código se está realizando un paso por referencia.
+
+Esto ocurre porque los vectores en p5.js son objetos. Cuando el vector se pasa a la función playingVector(v), no se envía una copia, sino la referencia al vector original. Por eso, cuando se cambian los valores v.x y v.y, también cambia el vector original.
+
+Aprendí que los vectores en p5.js se pasan por referencia, lo que significa que cualquier función puede modificar directamente el vector original.
+
+Esto es importante porque permite que los objetos como posición, velocidad y aceleración se actualicen correctamente dentro de funciones o clases.
+
+También aprendí que debo tener cuidado, porque modificar un vector dentro de una función afectará el objeto original.
 
 
 
@@ -115,6 +130,7 @@ El concepto del marco motion 101 se usa mucho ya que ha medida en que se le suma
 
 
 ## Bitácora de reflexión
+
 
 
 
