@@ -269,49 +269,47 @@ luego muy rápido
 Visualmente parecía que el objeto estaba siendo empujado continuamente en una dirección.
 
 
-Lo que observé
+Lo que observé:
 
-El objeto se movía de forma impredecible, cambiando constantemente de dirección y velocidad.
+El objeto se movía de forma impredecible, cambiando constantemente de dirección y velocidad.A veces se movía lento, a veces rápido, a veces cambiaba de dirección bruscamente. Visualmente parecía:
 
-A veces se movía lento, a veces rápido, a veces cambiaba de dirección bruscamente.
 
-Visualmente parecía:
+-errático
 
-errático
+-caótico
 
-caótico
+-como una partícula viva o borracha
 
-como una partícula viva o borracha
-
-No seguía una trayectoria recta.
+-No seguía una trayectoria recta.
 
 
 
 Aceleración hacia el mouse
 Lo que observé
 
-El objeto siempre se movía hacia el mouse, sin importar dónde estuviera.
-
-Si movía el mouse, el objeto lo perseguía.
+El objeto siempre se movía hacia el mouse, sin importar dónde estuviera. Si movía el mouse, el objeto lo perseguía.
 
 Visualmente parecía:
 
-un objeto inteligente
+-un objeto inteligente
 
-o un objeto con gravedad hacia el mouse
+-o un objeto con gravedad hacia el mouse
 
-o un seguidor
+-o un seguidor
 
-El movimiento era suave y natural.
+-El movimiento era suave y natural.
 
 
 Dependiendo del tipo de aceleración:
+
 
 aceleración constante → movimiento recto y cada vez más rápido
 
 aceleración aleatoria → movimiento caótico y natural
 
 aceleración hacia el mouse → movimiento dirigido e interactivo
+
+
 
 Esto confirma la idea del libro de que el movimiento depende principalmente de cómo se calcula la aceleración.
 
@@ -321,6 +319,7 @@ Esto confirma la idea del libro de que el movimiento depende principalmente de c
 
 
 ## Bitácora de reflexión
+
 
 
 
