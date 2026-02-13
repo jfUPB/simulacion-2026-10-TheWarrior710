@@ -158,7 +158,7 @@ El método normalize() sirve para convertir un vector en un vector de magnitud 1
 #### Actividad 6 
 
 
-```
+```js
 let t = 0;
 let speed = 0.01;
 
@@ -223,6 +223,9 @@ function drawArrow(base, vec, myColor) {
 }
 
 ```
+
+<img width="416" height="412" alt="image" src="https://github.com/user-attachments/assets/67cb7662-0ab9-45bd-a477-b4bc1a5e637d" />
+
 
 El método lerp() significa linear interpolation (interpolación lineal). Sirve para encontrar un punto intermedio entre dos vectores. Esto hace que el vector morado se mueva desde el vector rojo hasta el vector azul de forma progresiva.
 
@@ -318,6 +321,7 @@ Esto confirma la idea del libro de que el movimiento depende principalmente de c
 
 
 ## Bitácora de reflexión
+
 
 
 
