@@ -320,6 +320,8 @@ Esto confirma la idea del libro de que el movimiento depende principalmente de c
 
 En esta actividad lo que hice fue que hubiera unas particulas que al unirse creen unos vectores que se asemejen a las de una telaraña, esta telaraña es dinamica lo cual hace que de la impresion de que se ve de tal forma como en la vida real, el cual al oprimir la tecla "j" hace que se dispersen y cuando le doy click se juntan. La aceleración hacia el centro hace que las partículas se atraigan entre sí indirectamente, creando la estructura de telaraña. Esto que hice aqui fue un diseño intencional, ya que quería simular un sistema que se autoorganiza, como ocurre en muchos fenómenos naturales. Por otro lado, la aceleración aleatoria permite simular una explosión, generando movimiento caótico e impredecible, lo que añade contraste visual y dinamismo a la obra.
 
+Utilicé el modelo Motion 101, donde la aceleración afecta la velocidad y la velocidad afecta la posición. Este modelo permite que el movimiento sea fluido y realista, en lugar de artificial. Esto fue importante para lograr un comportamiento natural en las partículas.
+
 ```js
 let movers = [];
 
@@ -481,6 +483,7 @@ https://editor.p5js.org/TheWarrior710/sketches/yCPcx_lUg
 
 
 ## Bitácora de reflexión
+
 
 
 
