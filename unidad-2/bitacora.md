@@ -13,8 +13,19 @@ La expresión position = position + velocity no funciona porque position y veloc
 
 #### Actividad 3
 
-lo que tuve que hacer para la conversacion propuesta fue tomar uno de los ejemplos de caminantes de Capítulo 0 y convertilro para usar vectores.
+lo que tuve que hacer para la conversión  propuesta fue tomar uno de los ejemplos de caminantes de Capítulo 0 y convertilro para usar vectores. 
 
+Antes:
+
+this.x += 3;
+this.y -= 3;
+
+
+Ahora:
+
+this.position.add(step);
+
+Convertí las variables X y Y en un objeto p5.Vector llamado position para representar la ubicación como una entidad matemática completa. En lugar de modificar coordenadas individuales, ahora sumo un vector de desplazamiento usando el método add(), lo que permite escalar fácilmente el sistema hacia modelos físicos más complejos.
 
 
  este fue el codigo que edite para aplicar la tematica de vectores
@@ -75,6 +86,7 @@ class Walker {
 
 
 
+
 ## Bitácora de aplicación 
 
 
@@ -85,6 +97,7 @@ El concepto del marco motion 101 se usa mucho ya que ha medida en que se le suma
 
 
 ## Bitácora de reflexión
+
 
 
 
