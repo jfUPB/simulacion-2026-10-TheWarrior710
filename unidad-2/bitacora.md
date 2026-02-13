@@ -108,6 +108,53 @@ Esto ocurre porque los vectores en p5.js son objetos. Cuando el vector se pasa a
 Aprendí que los vectores en p5.js se pasan por referencia, lo que significa que cualquier función puede modificar directamente el vector original. Esto es importante porque permite que los objetos como posición, velocidad y aceleración se actualicen correctamente dentro de funciones o clases. También aprendí que debo tener cuidado, porque modificar un vector dentro de una función afectará el objeto original.
 
 
+#### Actividad 5
+
+1. ¿Para qué sirve el método mag()? ¿Cuál es la diferencia con magSq()? ¿Cuál es más eficiente?
+
+El método mag() sirve para calcular la magnitud o longitud de un vector. Es decir, qué tan largo es el vector desde el origen hasta su posición. Esto permite saber la velocidad o la distancia que representa el vector. El método magSq() hace lo mismo, pero devuelve la magnitud al cuadrado, sin calcular la raíz cuadrada.
+
+La diferencia es que:
+
+mag() usa raíz cuadrada
+
+magSq() no usa raíz cuadrada
+
+magSq() es más eficiente porque calcular la raíz cuadrada consume más recursos del computador. Por eso, si solo necesito comparar magnitudes, es mejor usar magSq().
+
+
+2. ¿Para qué sirve el método normalize()?
+
+El método normalize() sirve para convertir un vector en un vector unitario, es decir, que tenga magnitud 1 pero conserve su dirección.Esto es útil cuando quiero mantener la dirección del movimiento pero controlar la velocidad por separado. Por ejemplo, en movimiento, normalize() me permite que un objeto se mueva siempre en la misma dirección sin que la velocidad dependa de la longitud original del vector.
+
+
+3. ¿Para qué sirve el método dot()? (explicado en una frase)
+
+El método dot() sirve para medir qué tan alineados están dos vectores, es decir, si apuntan en la misma dirección, en dirección opuesta o son perpendiculares.
+
+
+4. ¿Cuál es la diferencia entre la versión estática y la versión de instancia de dot()?
+
+La versión de instancia se usa desde un vector existente, por ejemplo:
+
+v1.dot(v2);
+
+Esto calcula el producto punto entre v1 y v2 usando v1 como referencia. La versión estática se usa desde la clase p5.Vector: p5.Vector.dot(v1, v2); La diferencia es que la versión de instancia pertenece a un objeto vector, mientras que la versión estática pertenece a la clase y recibe ambos vectores como parámetros. Ambas hacen lo mismo, pero se usan de forma diferente.
+
+
+5. Interpretación geométrica del producto cruz
+
+El producto cruz genera un nuevo vector que es perpendicular a los dos vectores originales. La orientación del vector resultante depende de la regla de la mano derecha, es decir, apunta en una dirección específica dependiendo del orden de los vectores. La magnitud del vector resultante representa el área del paralelogramo formado por los dos vectores originales. En resumen, el producto cruz crea un vector perpendicular que representa el área y la orientación entre dos vectores.
+
+6. ¿Para qué sirve el método dist()?
+
+El método dist() sirve para calcular la distancia entre dos vectores, es decir, la distancia entre dos puntos en el espacio.Esto es útil para detectar colisiones, medir qué tan lejos está un objeto de otro o calcular distancias en simulaciones. Por ejemplo, puedo usarlo para saber si un objeto está cerca del mouse o de otro objeto.
+
+7. ¿Para qué sirven los métodos normalize() y limit()?
+
+El método normalize() sirve para convertir un vector en un vector de magnitud 1 sin cambiar su dirección. El método limit() sirve para limitar la magnitud de un vector, es decir, evitar que su velocidad supere un valor máximo. Esto es importante en simulaciones de movimiento, porque permite controlar la velocidad de los objetos y evitar que se muevan demasiado rápido.
+
+
 
 
 
@@ -121,6 +168,7 @@ El concepto del marco motion 101 se usa mucho ya que ha medida en que se le suma
 
 
 ## Bitácora de reflexión
+
 
 
 
