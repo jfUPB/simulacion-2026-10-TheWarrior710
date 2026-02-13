@@ -101,7 +101,7 @@ lo que vi al ejecutar el codigo en pantalla fue Un canvas gris de 400 × 400 col
 
 
 
-4.En este código se está realizando un paso por referencia.
+4. En este código se está realizando un paso por referencia.
 
 Esto ocurre porque los vectores en p5.js son objetos. Cuando el vector se pasa a la función playingVector(v), no se envía una copia, sino la referencia al vector original. Por eso, cuando se cambian los valores v.x y v.y, también cambia el vector original.
 
@@ -121,6 +121,7 @@ El concepto del marco motion 101 se usa mucho ya que ha medida en que se le suma
 
 
 ## Bitácora de reflexión
+
 
 
 
