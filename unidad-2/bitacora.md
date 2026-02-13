@@ -318,7 +318,7 @@ Esto confirma la idea del libro de que el movimiento depende principalmente de c
 
 #### Actividad 9
 
-En esta actividad lo que hice fue que hubiera unas particulas que al unirse creen unos vectores que se asemejen a las de una telaraña, esta telaraña es dinamica lo cual hace que de la impresion de que se ve de tal forma como en la vida real
+En esta actividad lo que hice fue que hubiera unas particulas que al unirse creen unos vectores que se asemejen a las de una telaraña, esta telaraña es dinamica lo cual hace que de la impresion de que se ve de tal forma como en la vida real, el cual al oprimir la tecla "j" hace que se dispersen y cuando le doy click se juntan 
 
 ```js
 let movers = [];
@@ -481,6 +481,7 @@ https://editor.p5js.org/TheWarrior710/sketches/yCPcx_lUg
 
 
 ## Bitácora de reflexión
+
 
 
 
