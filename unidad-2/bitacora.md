@@ -81,6 +81,24 @@ class Walker {
 
 <img width="639" height="256" alt="image" src="https://github.com/user-attachments/assets/dbf6df4f-b7c1-451d-b6bd-390b99354dd4" />
 
+##### Actividad 4
+
+1. Espero que al inicio el vector tenga el valor (6, 9) porque así se creó con createVector(6,9).
+Después, cuando la función playingVector(position) cambie los valores a (20, 30), espero que el vector original también cambie a esos nuevos valores.
+
+Por lo tanto, espero ver en la consola primero el vector (6, 9) y luego el vector (20, 30).
+
+2. 
+
+El resultado que obtuve fue exactamente ese:
+
+```less
+p5.Vector Object : [6, 9, 0]
+p5.Vector Object : [20, 30, 0]
+```
+
+lo que vi al ejecutar el codigo en pantalla fue Un canvas gris de 400 × 400 color gris porque ``background(220);``
+
 
 
 
@@ -97,6 +115,7 @@ El concepto del marco motion 101 se usa mucho ya que ha medida en que se le suma
 
 
 ## Bitácora de reflexión
+
 
 
 
