@@ -486,6 +486,7 @@ https://editor.p5js.org/TheWarrior710/sketches/yCPcx_lUg
 
 
 
+Quise que esto fuera una actividad de telarñas dinamicas 
 
 
 
