@@ -155,6 +155,88 @@ El método dist() sirve para calcular la distancia entre dos vectores, es decir,
 El método normalize() sirve para convertir un vector en un vector de magnitud 1 sin cambiar su dirección. El método limit() sirve para limitar la magnitud de un vector, es decir, evitar que su velocidad supere un valor máximo. Esto es importante en simulaciones de movimiento, porque permite controlar la velocidad de los objetos y evitar que se muevan demasiado rápido.
 
 
+#### Actividad 6 
+
+
+```
+let t = 0;
+let speed = 0.01;
+
+function setup() {
+  createCanvas(300, 300);
+}
+
+function draw() {
+  background(220);
+
+  let base = createVector(150, 150);
+
+  // Vector rojo fijo
+  let v1 = createVector(60, 0);
+
+  // Vector azul fijo
+  let v2 = createVector(0,50);
+
+  // Vector verde que conecta rojo con azul
+  let greenVec = p5.Vector.sub(v2, v1);
+
+  // Vector morado que se mueve entre rojo y azul
+  let movingVec = p5.Vector.lerp(v1, v2, t);
+
+  // Movimiento ida y vuelta
+  t += speed;
+  if (t > 1 || t < 0) {
+    speed *= -1;
+  }
+
+  // Interpolación de color
+  let redColor = color(255, 0, 0);
+  let blueColor = color(0, 0, 255);
+
+  let movingColor = lerpColor(redColor, blueColor, t);
+
+  // Dibujar vectores
+  drawArrow(base, v1, "red");
+  drawArrow(base, v2, "blue");
+  drawArrow(p5.Vector.add(base, v1), greenVec, "green");
+  drawArrow(base, movingVec, movingColor);
+}
+
+function drawArrow(base, vec, myColor) {
+  push();
+  stroke(myColor);
+  strokeWeight(3);
+  fill(myColor);
+
+  translate(base.x, base.y);
+
+  line(0, 0, vec.x, vec.y);
+
+  rotate(vec.heading());
+
+  let arrowSize = 7;
+  translate(vec.mag() - arrowSize, 0);
+
+  triangle(0, arrowSize / 2, 0, -arrowSize / 2, arrowSize, 0);
+
+  pop();
+}
+
+```
+
+El método lerp() significa linear interpolation (interpolación lineal). Sirve para encontrar un punto intermedio entre dos vectores. Esto hace que el vector morado se mueva desde el vector rojo hasta el vector azul de forma progresiva.
+
+
+lerpColor() funciona igual que lerp(), pero con colores. Esto hace que el vector cambie progresivamente de rojo → morado → azul mientras se mueve. Esto crea una transición visual suave.
+
+El método drawArrow usa varias operaciones vectoriales y transformaciones.
+
+El método lerp() permite interpolar posiciones entre dos vectores de forma suave, mientras que lerpColor() permite interpolar colores progresivamente. Esto permite crear animaciones fluidas tanto en movimiento como en apariencia visual.
+
+El método drawArrow() utiliza transformaciones como translate(), rotate() y funciones vectoriales como mag() y heading() para dibujar una flecha correctamente orientada y posicionada.
+
+Esto demuestra cómo los vectores pueden usarse para representar dirección, magnitud, movimiento e interpolación en arte generativo.
+
 
 
 
@@ -168,6 +250,7 @@ El concepto del marco motion 101 se usa mucho ya que ha medida en que se le suma
 
 
 ## Bitácora de reflexión
+
 
 
 
