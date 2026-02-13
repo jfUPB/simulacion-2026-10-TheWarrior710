@@ -248,12 +248,77 @@ El concepto del marco motion 101 se usa mucho ya que ha medida en que se le suma
 El marco Motion 101 establece que el movimiento se produce sumando un vector velocidad a un vector posición en cada frame. Geométricamente, esto representa la suma de vectores en el espacio, donde la velocidad actúa como un desplazamiento que mueve el objeto continuamente. Este modelo es la base fundamental para crear simulaciones físicas, animaciones y sistemas de movimiento en arte generativo y programación creativa.
 
 
+#### Actividad 8 
+
+
+Lo que observé
+
+Cuando usé una aceleración constante, el objeto empezó moviéndose lento, pero cada vez se movía más rápido en la misma dirección. No se movía con velocidad constante, sino que su velocidad aumentaba progresivamente.
+
+El movimiento se veía así:
+
+primero lento
+
+luego más rápido
+
+luego muy rápido
+
+Visualmente parecía que el objeto estaba siendo empujado continuamente en una dirección.
+
+
+Lo que observé
+
+El objeto se movía de forma impredecible, cambiando constantemente de dirección y velocidad.
+
+A veces se movía lento, a veces rápido, a veces cambiaba de dirección bruscamente.
+
+Visualmente parecía:
+
+errático
+
+caótico
+
+como una partícula viva o borracha
+
+No seguía una trayectoria recta.
+
+
+
+Aceleración hacia el mouse
+Lo que observé
+
+El objeto siempre se movía hacia el mouse, sin importar dónde estuviera.
+
+Si movía el mouse, el objeto lo perseguía.
+
+Visualmente parecía:
+
+un objeto inteligente
+
+o un objeto con gravedad hacia el mouse
+
+o un seguidor
+
+El movimiento era suave y natural.
+
+
+Dependiendo del tipo de aceleración:
+
+aceleración constante → movimiento recto y cada vez más rápido
+
+aceleración aleatoria → movimiento caótico y natural
+
+aceleración hacia el mouse → movimiento dirigido e interactivo
+
+Esto confirma la idea del libro de que el movimiento depende principalmente de cómo se calcula la aceleración.
+
 
 ## Bitácora de aplicación 
 
 
 
 ## Bitácora de reflexión
+
 
 
 
