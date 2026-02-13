@@ -239,17 +239,22 @@ Esto demuestra cómo los vectores pueden usarse para representar dirección, mag
 
 
 
-
-## Bitácora de aplicación 
-
-
-
 #### Actividad 7 
 
 El concepto del marco motion 101 se usa mucho ya que ha medida en que se le suma la posicion actual de un objeto ya sea un circulo + la velocidad del vector da como resultado  la segunda pocision del objeto, esto se usa demasiado para hacer arte generativo
 
 
+
+El marco Motion 101 establece que el movimiento se produce sumando un vector velocidad a un vector posición en cada frame. Geométricamente, esto representa la suma de vectores en el espacio, donde la velocidad actúa como un desplazamiento que mueve el objeto continuamente. Este modelo es la base fundamental para crear simulaciones físicas, animaciones y sistemas de movimiento en arte generativo y programación creativa.
+
+
+
+## Bitácora de aplicación 
+
+
+
 ## Bitácora de reflexión
+
 
 
 
