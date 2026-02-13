@@ -316,9 +316,167 @@ Esto confirma la idea del libro de que el movimiento depende principalmente de c
 
 ## Bitácora de aplicación 
 
+####Actividad 9
 
+
+```js
+let movers = [];
+
+let mode = "web"; // "web" o "explode"
+
+let webColor;
+let explodeColor;
+
+function setup() {
+
+  createCanvas(800, 600);
+
+  webColor = color(200, 200, 255);
+  explodeColor = color(255, 100, 100);
+
+  for (let i = 0; i < 70; i++) {
+
+    movers.push(new Mover());
+  }
+}
+
+function draw() {
+
+  background(10, 10, 20);
+
+  for (let mover of movers) {
+
+    mover.update();
+
+    mover.show();
+  }
+
+  drawWeb();
+}
+
+function keyPressed() {
+
+  if (key === 'j' || key === 'J') {
+
+    mode = "explode";
+
+    for (let mover of movers) {
+
+      mover.explode();
+    }
+  }
+}
+
+function mousePressed() {
+
+  if (mouseButton === LEFT) {
+
+    mode = "web";
+  }
+}
+
+class Mover {
+
+  constructor() {
+
+    this.position = createVector(random(width), random(height));
+
+    this.velocity = createVector(0, 0);
+
+    this.acceleration = createVector(0, 0);
+
+    this.maxSpeed = 6;
+
+    this.color = webColor;
+  }
+
+  explode() {
+
+    this.velocity = p5.Vector.random2D();
+
+    this.velocity.mult(random(5, 10));
+
+    this.color = explodeColor;
+  }
+
+  update() {
+
+    if (mode === "web") {
+
+      let center = createVector(width/2, height/2);
+
+      this.acceleration = p5.Vector.sub(center, this.position);
+
+      this.acceleration.normalize();
+
+      this.acceleration.mult(0.2);
+
+      this.color = lerpColor(this.color, webColor, 0.05);
+
+    }
+
+    if (mode === "explode") {
+
+      this.acceleration = p5.Vector.random2D();
+
+      this.acceleration.mult(0.2);
+
+      this.color = lerpColor(this.color, explodeColor, 0.05);
+    }
+
+    this.velocity.add(this.acceleration);
+
+    this.velocity.limit(this.maxSpeed);
+
+    this.position.add(this.velocity);
+  }
+
+  show() {
+
+    noStroke();
+
+    fill(this.color);
+
+    circle(this.position.x, this.position.y, 6);
+  }
+}
+
+function drawWeb() {
+
+  for (let i = 0; i < movers.length; i++) {
+
+    for (let j = i + 1; j < movers.length; j++) {
+
+      let d = dist(
+        movers[i].position.x,
+        movers[i].position.y,
+        movers[j].position.x,
+        movers[j].position.y
+      );
+
+      if (d < 120) {
+
+        let c = lerpColor(movers[i].color, movers[j].color, 0.5);
+
+        stroke(c);
+
+        strokeWeight(map(d, 0, 120, 2, 0.1));
+
+        line(
+          movers[i].position.x,
+          movers[i].position.y,
+          movers[j].position.x,
+          movers[j].position.y
+        );
+      }
+    }
+  }
+}
+```
+https://editor.p5js.org/TheWarrior710/sketches/yCPcx_lUg
 
 ## Bitácora de reflexión
+
 
 
 
