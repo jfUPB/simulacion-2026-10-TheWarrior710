@@ -106,7 +106,7 @@ function mousePressed() {
     mover.velocity.x = -6;
   }
 }
-``` js
+``` 
 
 
 
@@ -378,6 +378,7 @@ function draw(){
 
 
 ## Bitácora de reflexión
+
 
 
 
