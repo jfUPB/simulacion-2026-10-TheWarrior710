@@ -367,7 +367,7 @@ function draw(){
 
 <img width="591" height="247" alt="image" src="https://github.com/user-attachments/assets/2eb5e166-2bca-40a3-a700-3a9a2e24a2e2" />
 
-
+https://editor.p5js.org/TheWarrior710/sketches/cmTwGOzci
 
 
 
@@ -378,6 +378,7 @@ function draw(){
 
 
 ## Bitácora de reflexión
+
 
 
 
