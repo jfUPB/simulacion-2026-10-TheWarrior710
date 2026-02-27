@@ -33,8 +33,126 @@ También comprendí la importancia del paso por referencia en JavaScript. Al mod
 2. Resistencia al aire y fluidos
 
 
+Liquid.js
 
-<img width="767" height="313" alt="image" src="https://github.com/user-attachments/assets/195119e4-d56a-4efb-9e61-891bfb509db7" />
+```js
+class Liquid {
+  constructor(x, y, w, h, c) {
+    this.x = x;
+    this.y = y;
+    this.w = w;
+    this.h = h;
+    this.c = c;
+  }
+
+  contains(mover) {
+    return (
+      mover.position.y > this.y
+    );
+  }
+
+  calculateDrag(mover) {
+    let speed = mover.velocity.mag();
+    let dragMagnitude = this.c * speed * speed;
+
+    let drag = mover.velocity.copy();
+    drag.normalize();
+    drag.mult(-dragMagnitude);
+
+    return drag;
+  }
+
+  show() {
+    fill(0,100,200);
+    rect(this.x, this.y, this.w, this.h);
+  }
+}
+```
+
+mover.js
+
+```js
+class Mover {
+  constructor(x, y, m) {
+    this.mass = m;
+    this.startY = y;
+    this.position = createVector(x, y);
+    this.velocity = createVector(0, 0);
+    this.acceleration = createVector(0, 0);
+  }
+
+  resetX() {
+    this.position.x = random(width);
+    this.position.y = this.startY;
+    this.velocity.mult(0);
+  }
+
+  applyForce(force) {
+    let f = p5.Vector.div(force, this.mass);
+    this.acceleration.add(f);
+  }
+
+  update() {
+    this.velocity.add(this.acceleration);
+    this.position.add(this.velocity);
+    this.acceleration.mult(0);
+  }
+
+  show() {
+    fill(100,150,255);
+    noStroke();
+    circle(this.position.x, this.position.y, this.mass * 16);
+  }
+}
+```
+
+sketch.js
+
+```js
+let mover;
+let liquid;
+let splashes = [];
+
+function setup() {
+  createCanvas(640, 400);
+  mover = new Mover(width/2, 40, 3);
+  liquid = new Liquid(0, height/2, width, height/2, 0.1);
+}
+
+function draw() {
+  background(230);
+
+  liquid.show();
+
+  let gravity = createVector(0, 0.2 * mover.mass);
+  mover.applyForce(gravity);
+
+  if (liquid.contains(mover)) {
+    let drag = liquid.calculateDrag(mover);
+    mover.applyForce(drag);
+
+    // generar salpicadura
+    splashes.push(createVector(mover.position.x, liquid.y));
+  }
+
+  mover.update();
+  mover.show();
+
+  // dibujar salpicaduras
+  for (let s of splashes) {
+    fill(255);
+    circle(s.x + random(-5,5), s.y + random(-5,5), 5);
+  }
+}
+
+function mousePressed() {
+  mover.resetX();
+}
+```
+
+
+<img width="741" height="444" alt="image" src="https://github.com/user-attachments/assets/bbabd7ff-f3b6-454e-9c0d-03b82dd550b7" />
+
 
 
 
@@ -89,6 +207,7 @@ function draw() {
 
 
 ## Bitácora de reflexión
+
 
 
 
