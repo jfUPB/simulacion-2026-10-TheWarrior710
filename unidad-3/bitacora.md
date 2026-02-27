@@ -397,7 +397,7 @@ Resistencia del agua (drag) ( Resistencia al aire y fluidos) - encarna la oposic
 
 Rebotes amortiguados( friccion) -muestran la pérdida progresiva de control.
 
-Flotación → sugiere un estado de transición entre dos realidades.
+Flotación - sugiere un estado de transición entre dos realidades.
 
 Fuerzas de atracción entre partículas (Atracción gravitacional). - representan el espíritu intentando recomponerse.
 
@@ -418,6 +418,7 @@ Así, la narrativa y el sistema físico están completamente vinculados: cada fu
 
 
 ## Bitácora de reflexión
+
 
 
 
