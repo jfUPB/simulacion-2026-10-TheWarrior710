@@ -13,10 +13,6 @@ pero que estas se deben reiniciar despues de cambiar su velocidad y pocision ya 
 También comprendí la importancia del paso por referencia en JavaScript. Al modificar directamente el vector fuerza, se altera el objeto original, lo cual puede generar errores. Por eso es necesario crear una copia del vector antes de dividirlo por la masa. En conclusión, ahora el movimiento no es simplemente una suma de vectores, sino un sistema basado en principios físicos donde la aceleración surge de fuerzas aplicadas en cada frame.
 
 
-
-## Bitácora de aplicación 
-
-
 #### Actividad 3
 
 
@@ -371,6 +367,12 @@ https://editor.p5js.org/TheWarrior710/sketches/cmTwGOzci
 
 
 
+## Bitácora de aplicación 
+
+
+
+
+
 
 
 
@@ -379,6 +381,8 @@ https://editor.p5js.org/TheWarrior710/sketches/cmTwGOzci
 
 ## Bitácora de reflexión
 
+
+<img width="755" height="504" alt="image" src="https://github.com/user-attachments/assets/3837b4fd-f5f4-4709-bee5-470cfe2c9eb1" />
 
 
 
