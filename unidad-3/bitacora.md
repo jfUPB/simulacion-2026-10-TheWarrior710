@@ -371,8 +371,46 @@ https://editor.p5js.org/TheWarrior710/sketches/cmTwGOzci
 
 
 
+#### Actividad  4
+
+### Mi historia 
+
+Mi obra generativa cuenta la historia de un cazador de tesoros que descubre una esfera de un material morado desconocido, llamado Aetherion, una sustancia legendaria que, según antiguos relatos, contiene un espíritu Celta atrapado entre dimensiones. La leyenda decía que si la esfera era impulsada por una rampa y dejada caer al mar, el impacto liberaría una energía ancestral.
+
+El cazador, movido por la curiosidad, decide probar el ritual. La esfera desciende por la rampa, acelerando progresivamente, como si la gravedad no solo actuara físicamente sino también narrativamente: representa el destino inevitable que arrastra al personaje hacia lo desconocido. Esa aceleración no es solo una fuerza matemática, sino el símbolo de una decisión que ya no puede detenerse.
+
+Al tocar el agua, ocurre la salpicadura. En el sistema visual, este momento activa la resistencia del fluido (drag), reduciendo la velocidad y generando rebotes cada vez más suaves. Físicamente, la esfera pierde energía; simbólicamente, el mundo comienza a absorber el impacto del poder liberado. La flotación posterior representa un equilibrio inestable entre el mundo humano y el espiritual.
+
+De la salpicadura emerge el espíritu: partículas que giran, se atraen y responden a la dirección de la mirada del liberador. Este comportamiento se traduce en fuerzas de atracción y vectores dirigidos que alteran su aceleración. Las partículas no se mueven al azar; su dinámica responde a reglas físicas inspiradas en fuerzas gravitacionales simplificadas. Narrativamente, esto simboliza que el espíritu aún está atado a la voluntad de quien lo liberó.
+
+Sin embargo, la leyenda advertía que el espíritu estaba maldito. Si no se pronunciaban las palabras correctas — “Aether Lux, vinculum solve, ad silentium redi” — la energía comenzaría a expandirse sin control. Ese grito ritual representa una intervención externa en el sistema: un cambio abrupto en las condiciones que modifica el comportamiento colectivo de las partículas. Antes de que todo saliera de control y la energía se dispersara por el mundo, el cazador debía romper el vínculo.
 
 
+### Sistema de reglas que le di 
+
+
+Gravedad -representa el destino y la inevitabilidad de las decisiones.
+
+Fuerza paralela a la rampa - simboliza el impulso inicial del acto ritual.
+
+Resistencia del agua (drag) ( Resistencia al aire y fluidos) - encarna la oposición del mundo natural ante lo sobrenatural.
+
+Rebotes amortiguados( friccion) -muestran la pérdida progresiva de control.
+
+Flotación → sugiere un estado de transición entre dos realidades.
+
+Fuerzas de atracción entre partículas (Atracción gravitacional). - representan el espíritu intentando recomponerse.
+
+Cambio global de comportamiento mediante intervención externa - simboliza el poder de la palabra para alterar la energía liberada.
+
+Así, la narrativa y el sistema físico están completamente vinculados: cada fuerza aplicada a los elementos visuales responde tanto a una ley matemática como a una metáfora dentro de la historia. La composición no es solo una simulación de fuerzas; es una dramatización del equilibrio entre control y caos, donde la aceleración de cada elemento visual refleja el conflicto entre la ambición humana y las consecuencias de liberar lo desconocido.
+
+
+
+
+
+
+<img width="755" height="504" alt="image" src="https://github.com/user-attachments/assets/3837b4fd-f5f4-4709-bee5-470cfe2c9eb1" />
 
 
 
@@ -381,8 +419,6 @@ https://editor.p5js.org/TheWarrior710/sketches/cmTwGOzci
 
 ## Bitácora de reflexión
 
-
-<img width="755" height="504" alt="image" src="https://github.com/user-attachments/assets/3837b4fd-f5f4-4709-bee5-470cfe2c9eb1" />
 
 
 
