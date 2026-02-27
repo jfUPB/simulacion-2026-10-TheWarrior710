@@ -19,7 +19,32 @@ También comprendí la importancia del paso por referencia en JavaScript. Al mod
 
 #### Actividad 3
 
-fuerza de atraccion
+
+1. Fricción
+
+
+
+
+
+
+<img width="333" height="252" alt="image" src="https://github.com/user-attachments/assets/36219fb5-3cc6-4918-9dd3-a599a3aa9039" />
+
+
+2. Resistencia al aire y fluidos
+
+
+
+<img width="767" height="313" alt="image" src="https://github.com/user-attachments/assets/195119e4-d56a-4efb-9e61-891bfb509db7" />
+
+
+
+
+
+
+
+
+
+3.ATRACCIÓN GRAVITACIONAL
 
 ```js
 let attractor;
@@ -55,7 +80,15 @@ function draw() {
 <img width="703" height="380" alt="Captura de pantalla 2026-02-26 221709" src="https://github.com/user-attachments/assets/128598e3-0c71-4438-86b3-3b6c2ae38176" />
 
 
+
+
+
+
+
+
+
 ## Bitácora de reflexión
+
 
 
 
