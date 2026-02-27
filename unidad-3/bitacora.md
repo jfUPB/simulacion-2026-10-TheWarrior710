@@ -17,7 +17,45 @@ También comprendí la importancia del paso por referencia en JavaScript. Al mod
 ## Bitácora de aplicación 
 
 
+#### Actividad 3
+
+fuerza de atraccion
+
+```
+let attractor;
+
+function setup() {
+  createCanvas(640, 240);
+  mover = new Mover();
+  attractor = createVector(width/2, height/2);
+}
+
+function draw() {
+  background(255);
+
+  let G = 1;
+  let force = p5.Vector.sub(attractor, mover.position);
+
+  let distance = constrain(force.mag(), 5, 25);
+  force.normalize();
+
+  let strength = (G * mover.mass * 20) / (distance * distance);
+  force.mult(strength);
+
+  mover.applyForce(force);
+
+  mover.update();
+  mover.show();
+
+  fill(0);
+  ellipse(attractor.x, attractor.y, 16);
+}
+```
+
+<img width="703" height="380" alt="Captura de pantalla 2026-02-26 221709" src="https://github.com/user-attachments/assets/128598e3-0c71-4438-86b3-3b6c2ae38176" />
+
 
 ## Bitácora de reflexión
+
 
 
