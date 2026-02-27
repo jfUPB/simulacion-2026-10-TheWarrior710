@@ -409,7 +409,7 @@ Así, la narrativa y el sistema físico están completamente vinculados: cada fu
 
 
 
-<img width="755" height="504" alt="image" src="https://github.com/user-attachments/assets/3837b4fd-f5f4-4709-bee5-470cfe2c9eb1" />
+
 
 
 liquid.js
@@ -635,8 +635,19 @@ function keyPressed() {
 }
 ```
 
+https://editor.p5js.org/TheWarrior710/sketches/lHqgYPVuG
+
+<img width="755" height="504" alt="image" src="https://github.com/user-attachments/assets/3837b4fd-f5f4-4709-bee5-470cfe2c9eb1" />
+
+<img width="886" height="433" alt="image" src="https://github.com/user-attachments/assets/765af8e2-de10-4608-94a0-feec2f54ee5f" />
+
+<img width="818" height="525" alt="image" src="https://github.com/user-attachments/assets/fce3607a-cb60-45a6-92a2-c46b4442051f" />
+
+
+
 
 ## Bitácora de reflexión
+
 
 
 
