@@ -21,7 +21,7 @@ También comprendí la importancia del paso por referencia en JavaScript. Al mod
 
 fuerza de atraccion
 
-```
+```js
 let attractor;
 
 function setup() {
@@ -56,6 +56,7 @@ function draw() {
 
 
 ## Bitácora de reflexión
+
 
 
 
