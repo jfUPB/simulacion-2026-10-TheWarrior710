@@ -409,15 +409,235 @@ Así, la narrativa y el sistema físico están completamente vinculados: cada fu
 
 
 
-
 <img width="755" height="504" alt="image" src="https://github.com/user-attachments/assets/3837b4fd-f5f4-4709-bee5-470cfe2c9eb1" />
 
 
+liquid.js
+```js
+class Liquid {
+  constructor(y, c) {
+    this.y = y;
+    this.c = c;
+  }
+
+  contains(mover) {
+    return mover.position.y > this.y;
+  }
+
+  calculateDrag(mover) {
+    let speed = mover.velocity.mag();
+    let dragMagnitude = this.c * speed * speed;
+
+    let drag = mover.velocity.copy();
+    drag.normalize();
+    drag.mult(-dragMagnitude);
+
+    return drag;
+  }
+
+  show() {
+    fill(0, 80, 150);
+    rect(0, this.y, width, height - this.y);
+  }
+}
+
+```
+
+mover.js
+
+```js
+class Mover {
+  constructor(x, y, m) {
+    this.mass = m;
+    this.position = createVector(x, y);
+    this.velocity = createVector(2, 0);
+    this.acceleration = createVector(0, 0);
+  }
+
+  applyForce(force) {
+    let f = p5.Vector.div(force, this.mass);
+    this.acceleration.add(f);
+  }
+
+  update() {
+    this.velocity.add(this.acceleration);
+    this.position.add(this.velocity);
+    this.acceleration.mult(0);
+  }
+
+  show() {
+    fill(255);
+    circle(this.position.x, this.position.y, this.mass * 16);
+  }
+}
+```
+
+sketch.js
+```js
+class Particle {
+  constructor(x, y) {
+    this.mass = 1;
+    this.position = createVector(x, y);
+    this.velocity = p5.Vector.random2D();
+    this.acceleration = createVector(0, 0);
+    this.prev = this.position.copy();
+    this.color = color(255,150);
+  }
+
+  applyForce(force) {
+    let f = p5.Vector.div(force, this.mass);
+    this.acceleration.add(f);
+  }
+
+  attract(other) {
+    let force = p5.Vector.sub(this.position, other.position);
+    let distance = constrain(force.mag(), 5, 50);
+    let strength = (0.5 * this.mass * other.mass) / (distance * distance);
+    force.setMag(strength);
+    return force;
+  }
+
+  changeColor() {
+    this.color = color(random(255), random(255), random(255));
+  }
+
+  resetColor() {
+    this.color = color(255,150);
+  }
+
+  disperse() {
+    this.velocity = p5.Vector.random2D().mult(4);
+  }
+
+  update() {
+    this.velocity.add(this.acceleration);
+    this.position.add(this.velocity);
+    this.acceleration.mult(0);
+  }
+
+  show() {
+    stroke(this.color);
+    line(this.prev.x, this.prev.y, this.position.x, this.position.y);
+    this.prev = this.position.copy();
+  }
+}
 
 
+
+
+let mover;
+let liquid;
+let particles = [];
+
+function setup() {
+  createCanvas(800, 500);
+  mover = new Mover(120, 120, 3);
+  liquid = new Liquid(height/2, 0.1);
+}
+
+function draw() {
+  background(15);
+
+  // -------- RAMPA --------
+  noStroke();
+  fill(80, 40, 120);
+  triangle(0, 200, 400, 350, 0, 350);
+
+  // -------- AGUA --------
+  liquid.show();
+
+  // -------- FUERZAS --------
+
+  // GRAVEDAD
+  let gravity = createVector(0, 0.4 * mover.mass);
+  mover.applyForce(gravity);
+
+  // FUERZA DE RAMPA (mientras esté arriba del agua)
+  if (mover.position.y < liquid.y) {
+    let rampForce = createVector(0.15, 0.08);
+    mover.applyForce(rampForce);
+  }
+
+  // SI ENTRA AL AGUA
+  if (liquid.contains(mover)) {
+
+  // DRAG
+  let drag = liquid.calculateDrag(mover);
+  mover.applyForce(drag);
+
+  // REBOTE EN SUPERFICIE DEL AGUA
+  if (mover.position.y > liquid.y && mover.velocity.y > 0) {
+    mover.velocity.y *= -0.5; // rebote amortiguado
+  }
+
+  // REBOTE EN EL FONDO
+  if (mover.position.y > height - 10) {
+    mover.position.y = height - 10;
+    mover.velocity.y *= -0.3;
+  }
+
+  // FLOTACIÓN CONSTANTE
+  let buoyancy = createVector(0, -0.25);
+  mover.applyForce(buoyancy);
+
+  // GENERAR PARTÍCULAS
+  particles.push(new Particle(mover.position.x, liquid.y));
+}
+
+  // -------- ACTUALIZAR --------
+  mover.update();
+
+  // Límites laterales
+  mover.position.x = constrain(mover.position.x, 0, width);
+
+  // -------- DIBUJAR PELOTA (ENCIMA DEL AGUA) --------
+  mover.show();
+
+  // -------- PARTÍCULAS --------
+  for (let p of particles) {
+
+    let mouse = createVector(mouseX, mouseY);
+    let dir = p5.Vector.sub(mouse, p.position);
+    dir.setMag(0.05);
+    p.applyForce(dir);
+
+    if (mouseIsPressed) {
+      for (let other of particles) {
+        if (p !== other) {
+          let f = p.attract(other);
+          p.applyForce(f);
+        }
+      }
+    }
+
+    p.update();
+    p.show();
+  }
+}
+
+
+function keyPressed() {
+
+  // G cambia color
+  if (key === 'g' || key === 'G') {
+    for (let p of particles) {
+      p.changeColor();
+    }
+  }
+
+  // W restaura color y dispersa
+  if (key === 'w' || key === 'W') {
+    for (let p of particles) {
+      p.resetColor();
+      p.disperse();
+    }
+  }
+}
+```
 
 
 ## Bitácora de reflexión
+
 
 
 
