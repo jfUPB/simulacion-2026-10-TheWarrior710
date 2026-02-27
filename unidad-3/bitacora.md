@@ -26,8 +26,8 @@ También comprendí la importancia del paso por referencia en JavaScript. Al mod
 
 
 
+<img width="694" height="364" alt="image" src="https://github.com/user-attachments/assets/c8d9d4c8-8575-4d1b-8fa8-37e6be78e52b" />
 
-<img width="333" height="252" alt="image" src="https://github.com/user-attachments/assets/36219fb5-3cc6-4918-9dd3-a599a3aa9039" />
 
 
 2. Resistencia al aire y fluidos
@@ -77,7 +77,8 @@ function draw() {
 }
 ```
 
-<img width="703" height="380" alt="Captura de pantalla 2026-02-26 221709" src="https://github.com/user-attachments/assets/128598e3-0c71-4438-86b3-3b6c2ae38176" />
+<img width="333" height="252" alt="image" src="https://github.com/user-attachments/assets/36219fb5-3cc6-4918-9dd3-a599a3aa9039" />
+
 
 
 
@@ -88,6 +89,7 @@ function draw() {
 
 
 ## Bitácora de reflexión
+
 
 
 
