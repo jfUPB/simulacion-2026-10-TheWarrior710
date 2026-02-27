@@ -23,11 +23,96 @@ También comprendí la importancia del paso por referencia en JavaScript. Al mod
 1. Fricción
 
 
+mover.js
+
+```js
+class Mover {
+  constructor(x, y, m) {
+    this.mass = m;
+    this.position = createVector(x, y);
+    this.velocity = createVector(0, 0);
+    this.acceleration = createVector(0, 0);
+  }
+
+  applyForce(force) {
+    let f = p5.Vector.div(force, this.mass);
+    this.acceleration.add(f);
+  }
+
+  update() {
+    this.velocity.add(this.acceleration);
+    this.position.add(this.velocity);
+    this.acceleration.mult(0);
+  }
+
+  show() {
+    fill(150);
+    stroke(0);
+    circle(this.position.x, this.position.y, this.mass * 16);
+  }
+
+  checkEdges() {
+    if (this.position.y > height) {
+      this.position.y = height;
+      this.velocity.y *= -0.8; // pierde energía en cada rebote
+    }
+
+    if (this.position.x > width) {
+      this.position.x = width;
+      this.velocity.x *= -1;
+    } else if (this.position.x < 0) {
+      this.position.x = 0;
+      this.velocity.x *= -1;
+    }
+  }
+}
+```
+
+sketch.js
+
+```js
+let mover;
+
+function setup() {
+  createCanvas(640, 400);
+  mover = new Mover(width/2, 50, 2);
+}
+
+function draw() {
+  background(255);
+
+  // GRAVEDAD
+  let gravity = createVector(0, 0.4 * mover.mass);
+  mover.applyForce(gravity);
+
+  // FRICCIÓN
+  let friction = mover.velocity.copy();
+  if (friction.mag() > 0) {
+    friction.normalize();
+    friction.mult(-0.05);
+    mover.applyForce(friction);
+  }
+
+  mover.update();
+  mover.checkEdges();
+  mover.show();
+}
+
+function mousePressed() {
+  // Dirección según lado del click
+  if (mouseX > mover.position.x) {
+    mover.velocity.x = 6;
+  } else {
+    mover.velocity.x = -6;
+  }
+}
+``` js
 
 
 
-<img width="694" height="364" alt="image" src="https://github.com/user-attachments/assets/c8d9d4c8-8575-4d1b-8fa8-37e6be78e52b" />
+<img width="609" height="276" alt="image" src="https://github.com/user-attachments/assets/aa340e5e-2a3c-45ad-ba74-ba476b440ee2" />
 
+https://editor.p5js.org/TheWarrior710/sketches/BmjSh-dfF
 
 
 2. Resistencia al aire y fluidos
@@ -153,8 +238,7 @@ function mousePressed() {
 
 <img width="741" height="444" alt="image" src="https://github.com/user-attachments/assets/bbabd7ff-f3b6-454e-9c0d-03b82dd550b7" />
 
-
-
+https://editor.p5js.org/TheWarrior710/sketches/r6439mZdy
 
 
 
@@ -164,38 +248,125 @@ function mousePressed() {
 
 3.ATRACCIÓN GRAVITACIONAL
 
+attractor.js
+
 ```js
-let attractor;
+class Attractor {
+  constructor(x,y){
+    this.position = createVector(x,y);
+    this.velocity = createVector(0,0);
+    this.acceleration = createVector(0,0);
+    this.mass = 8;
+    this.G = 1;
+  }
 
-function setup() {
-  createCanvas(640, 240);
-  mover = new Mover();
-  attractor = createVector(width/2, height/2);
-}
+  applyForce(force){
+    let f = p5.Vector.div(force,this.mass);
+    this.acceleration.add(f);
+  }
 
-function draw() {
-  background(255);
+  attract(mover){
+    let force = p5.Vector.sub(mover.position,this.position);
+    let distance = constrain(force.mag(),5,100);
+    let strength = (this.G*this.mass*mover.mass)/(distance*distance);
+    force.setMag(strength);
+    return force;
+  }
 
-  let G = 1;
-  let force = p5.Vector.sub(attractor, mover.position);
+  update(){
+    this.velocity.add(this.acceleration);
+    this.position.add(this.velocity);
+    this.acceleration.mult(0);
 
-  let distance = constrain(force.mag(), 5, 25);
-  force.normalize();
+    // pequeña fricción para que no se descontrolen
+    this.velocity.mult(0.98);
+  }
 
-  let strength = (G * mover.mass * 20) / (distance * distance);
-  force.mult(strength);
-
-  mover.applyForce(force);
-
-  mover.update();
-  mover.show();
-
-  fill(0);
-  ellipse(attractor.x, attractor.y, 16);
+  show(){
+    fill(100);
+    circle(this.position.x,this.position.y,16);
+  }
 }
 ```
 
-<img width="333" height="252" alt="image" src="https://github.com/user-attachments/assets/36219fb5-3cc6-4918-9dd3-a599a3aa9039" />
+mover.js
+
+```js
+class Mover {
+  constructor(x,y,m) {
+    this.mass = m;
+    this.position = createVector(x,y);
+    this.velocity = createVector(0,0);
+    this.acceleration = createVector(0,0);
+  }
+
+  applyForce(force){
+    let f = p5.Vector.div(force,this.mass);
+    this.acceleration.add(f);
+  }
+
+  update(){
+    this.velocity.add(this.acceleration);
+    this.position.add(this.velocity);
+    this.acceleration.mult(0);
+  }
+
+  show(){
+    fill(200,0,200);
+    noStroke();
+    circle(this.position.x,this.position.y,this.mass*16);
+  }
+}
+```
+
+sketch.js
+
+
+```js
+let mainBall;
+let floorBalls = [];
+
+function setup(){
+  createCanvas(640,400);
+  mainBall = new Mover(width/2,100,4);
+
+  for(let i=0;i<6;i++){
+    floorBalls.push(new Attractor(80+i*90,height-50));
+  }
+}
+
+function draw(){
+  background(240);
+
+  // fuerza hacia mouse
+  let mouse = createVector(mouseX,mouseY);
+  let dir = p5.Vector.sub(mouse, mainBall.position);
+  dir.setMag(0.5);
+  mainBall.applyForce(dir);
+
+  mainBall.update();
+  mainBall.show();
+
+  // interacción con bolas del piso
+  for(let b of floorBalls){
+
+    let distance = dist(mainBall.position.x, mainBall.position.y,
+                        b.position.x, b.position.y);
+
+    if(distance < 120){
+      let f = b.attract(mainBall);
+      b.applyForce(f);
+    }
+
+    b.update();
+    b.show();
+  }
+}
+```
+
+
+<img width="591" height="247" alt="image" src="https://github.com/user-attachments/assets/2eb5e166-2bca-40a3-a700-3a9a2e24a2e2" />
+
 
 
 
@@ -207,6 +378,7 @@ function draw() {
 
 
 ## Bitácora de reflexión
+
 
 
 
