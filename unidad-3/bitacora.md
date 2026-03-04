@@ -649,6 +649,9 @@ https://editor.p5js.org/TheWarrior710/sketches/lHqgYPVuG
 ## Bitácora de reflexión
 
 
+El marco motion de movimiento 101 Es una estructura conceptual basada en principios básicos de la física newtoniana, especialmente en la Segunda Ley de Newton, que establece que F= M.A Este marco nos permite construir movimiento no como animación decorativa, sino como resultado de reglas físicas. En lugar de “mover” objetos manualmente, definimos fuerzas y dejamos que el sistema calcule cómo se comportan.
+
+
 
 
 
