@@ -17,11 +17,17 @@ Lo que mas me  llamo la atencion de la obra de memo anque me vi tambien primer v
 
 -La relacion entre el sitema de coordenadas y la funsion ``rotate()`` ambos comparten que lo que en realidad se modificas la orientacionn del sistema de coordenadas y luego todos los objetos que se dibujen se veran afectados por esa rotacion, en conclusionel sistema de coordenadas es como un marco de referencia y que cuando se dibuja se rota ese marco todos los elementos dibujados sobre el aparecen rotados
 
--A pesar de que los elementos se dibujen en las coordenadas  (0,0) aparecen rotados ya que como dije anteriormente al estar vinculados dentro de una referencia especifica y esa referencia ya tenga unas modificaciones en un giro establecido  pues todos los elementos nuevos que se dibujen aparecerean instanciados por sus modifiaciones de sus elementos padres
+-A pesar de que los elementos se dibujen en las coordenadas  (0,0) aparecen rotados ya que como dije anteriormente al estar vinculados dentro de una referencia especifica y esa referencia ya tenga unas modificaciones en un giro establecido  pues todos los elementos nuevos que se dibujen aparecerean instanciados por sus modifiaciones de sus elementos padres asi como el ejemplo que puse del marco
+
+-Basado en los conceptos que ya conocemos del marco 101 acerca del la relacion entre velocidad, aceleracion, posicion y basicamente en esta simulacion se aplican dichos pasos primero se calcula la acelaracion que apunta hacia el mouse, despues la aceleracion modifica la velocidad, la velocidad modifica la posicion y la posicion determina donde se dibuja el objeto, esto se puede obsevar en el metodo ``update ()`` donde se confirma lo que acabe de decir se calcula la direccion hacia el mouse, esa direccion se convierte en aceleracion, la aceleracion se suma a la velocidad, y la velocidad se suma a la posicion, este proceso ocurre en cada frame generando un movimiento suave y continuo 
 
 
 
-Basicamente push y pop guardanla pocision
+
+
+
+
+Basicamente push y pop guardan y restauran el estado del sistema de transformaciones
 
 ¿Cuál es la relación entre el ángulo de rotación y el vector de velocidad? 
 
@@ -32,6 +38,7 @@ el movimiento ambos necesitan fuerzas para generar el movimiento
 
 
 ## Bitácora de reflexión
+
 
 
 
