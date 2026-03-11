@@ -61,7 +61,7 @@ Si se dibujara el vector de velocidad en un papel, este apuntaría exactamente h
 Usé el marco Motion 101 donde el movimiento se calcula a partir de fuerzas que generan aceleración. La aceleración modifica la velocidad y la velocidad modifica la posición. Las teclas de flecha aplican fuerzas horizontales que aceleran el vehículo. Para que el vehículo apunte hacia la dirección del movimiento, se obtiene el ángulo del vector de velocidad usando heading() y se rota el sistema de coordenadas antes de dibujar el triángulo.
 
 
-```
+```js
 /// vehiculo basado en Motion 101
 
 class Mover {
@@ -133,7 +133,7 @@ class Mover {
 ```
 
 
-```
+```js
 let mover;
 
 function setup() {
@@ -176,6 +176,7 @@ function keyPressed() {
 
 
 ## Bitácora de reflexión
+
 
 
 
