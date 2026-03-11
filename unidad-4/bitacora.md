@@ -55,11 +55,128 @@ Luego el sistema hace: Traslada el sistema de coordenadas a la posición del obj
 
 Si se dibujara el vector de velocidad en un papel, este apuntaría exactamente hacia la misma dirección en la que apunta el rectángulo en la simulación.
 
+
+#### Actividad 3
+
+Usé el marco Motion 101 donde el movimiento se calcula a partir de fuerzas que generan aceleración. La aceleración modifica la velocidad y la velocidad modifica la posición. Las teclas de flecha aplican fuerzas horizontales que aceleran el vehículo. Para que el vehículo apunte hacia la dirección del movimiento, se obtiene el ángulo del vector de velocidad usando heading() y se rota el sistema de coordenadas antes de dibujar el triángulo.
+
+
+```
+/// vehiculo basado en Motion 101
+
+class Mover {
+  constructor() {
+    this.mass = 1;
+    this.position = createVector(width / 2, height / 2);
+    this.velocity = createVector(0, 0);
+    this.acceleration = createVector(0, 0);
+    this.topspeed = 5;
+  }
+
+  applyForce(force) {
+    let f = p5.Vector.div(force, this.mass);
+    this.acceleration.add(f);
+  }
+
+  update() {
+    // motion 101
+    this.velocity.add(this.acceleration);
+    this.velocity.limit(this.topspeed);
+    this.position.add(this.velocity);
+
+    this.acceleration.mult(0);
+  }
+
+  show() {
+
+    // ángulo según dirección de movimiento
+    let angle = this.velocity.heading();
+
+    push();
+    translate(this.position.x, this.position.y);
+    rotate(angle);
+
+    stroke(0);
+    strokeWeight(2);
+    fill(150);
+
+    // vehículo triangular
+    triangle(-15, -10, -15, 10, 20, 0);
+
+    pop();
+  }
+
+  checkEdges() {
+
+    if (this.position.x > width) {
+      this.position.x = width;
+      this.velocity.x *= -0.5;
+    }
+
+    if (this.position.x < 0) {
+      this.position.x = 0;
+      this.velocity.x *= -0.5;
+    }
+
+    if (this.position.y > height) {
+      this.position.y = height;
+      this.velocity.y *= -0.5;
+    }
+
+    if (this.position.y < 0) {
+      this.position.y = 0;
+      this.velocity.y *= -0.5;
+    }
+
+  }
+}
+```
+
+
+```
+let mover;
+
+function setup() {
+  createCanvas(640, 240);
+  mover = new Mover();
+}
+
+function draw() {
+  background(255);
+
+  // gravedad suave
+  let gravity = createVector(0, 0.05);
+  mover.applyForce(gravity);
+
+  mover.update();
+  mover.show();
+  mover.checkEdges();
+}
+
+
+function keyPressed() {
+
+  // flecha derecha acelera hacia la derecha
+  if (keyCode === RIGHT_ARROW) {
+    let force = createVector(0.5, 0);
+    mover.applyForce(force);
+  }
+
+  // flecha izquierda acelera hacia la izquierda
+  if (keyCode === LEFT_ARROW) {
+    let force = createVector(-0.5, 0);
+    mover.applyForce(force);
+  }
+
+}
+```
+
 ## Bitácora de aplicación 
 
 
 
 ## Bitácora de reflexión
+
 
 
 
