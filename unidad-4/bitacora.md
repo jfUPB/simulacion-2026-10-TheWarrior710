@@ -21,23 +21,46 @@ Lo que mas me  llamo la atencion de la obra de memo anque me vi tambien primer v
 
 -Basado en los conceptos que ya conocemos del marco 101 acerca del la relacion entre velocidad, aceleracion, posicion y basicamente en esta simulacion se aplican dichos pasos primero se calcula la acelaracion que apunta hacia el mouse, despues la aceleracion modifica la velocidad, la velocidad modifica la posicion y la posicion determina donde se dibuja el objeto, esto se puede obsevar en el metodo ``update ()`` donde se confirma lo que acabe de decir se calcula la direccion hacia el mouse, esa direccion se convierte en aceleracion, la aceleracion se suma a la velocidad, y la velocidad se suma a la posicion, este proceso ocurre en cada frame generando un movimiento suave y continuo 
 
+- La función ``heading()`` devuelve el ángulo de un vector en radianes con respecto al eje horizontal.
+
+En este caso se utiliza:
+
+```js
+let angle = this.velocity.heading();
+```
+
+Esto sognifica que primero se obtine su angulo de direccion en su vector velocidad, lo cual nos ayuda a que ese angulo rote el objeto grafico, haciendo que el rectangulo siempre apunte hacia la direccion donde se esta moviendo
+
+de esta forma esto no hace que el rectagulo unicamente se mueva si no que tambien oriente su direccion visual segun su direccion
 
 
 
+-Basicamente push y pop guardan y restauran el estado del sistema de transformaciones
 
+Esto es útil porque las transformaciones como translate() y rotate() afectan todo lo que se dibuja después. Al usar push() y pop(), se puede aplicar una transformación solo a un objeto específico sin afectar el resto de la escena.
 
-
-Basicamente push y pop guardan y restauran el estado del sistema de transformaciones
+-La función rectMode(CENTER) cambia la forma en que se dibujan los rectángulos. Por defecto, los rectángulos se dibujan usando la esquina superior izquierda como referencia. Con rectMode(CENTER), el rectángulo se dibuja desde su centro. Esto es importante cuando se aplica una rotación, porque si el rectángulo rota alrededor de su centro el movimiento se ve natural. Si rotara desde una esquina, el objeto parecería girar de forma incorrecta. 
 
 ¿Cuál es la relación entre el ángulo de rotación y el vector de velocidad? 
 
-el movimiento ambos necesitan fuerzas para generar el movimiento
+-El vector de velocidad indica la dirección en la que el objeto se está moviendo.
+
+Cuando se calcula:
+
+angle = velocity.heading()
+
+se obtiene el ángulo de ese vector.
+
+Luego el sistema hace: Traslada el sistema de coordenadas a la posición del objeto. Rota el sistema de coordenadas según el ángulo de la velocidad. Dibuja el rectángulo. Como resultado, el rectángulo queda alineado con la dirección del movimiento.
+
+Si se dibujara el vector de velocidad en un papel, este apuntaría exactamente hacia la misma dirección en la que apunta el rectángulo en la simulación.
 
 ## Bitácora de aplicación 
 
 
 
 ## Bitácora de reflexión
+
 
 
 
