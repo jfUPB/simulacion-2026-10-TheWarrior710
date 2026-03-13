@@ -1097,9 +1097,15 @@ class Particle{
 }
 ```
 
+https://editor.p5js.org/TheWarrior710/sketches/5ral5hF6p
+
+<img width="581" height="442" alt="image" src="https://github.com/user-attachments/assets/acbb7be3-ff5d-498c-9c14-50f4172cddca" />
+
+
 
 
 ## Bitácora de reflexión
+
 
 
 
