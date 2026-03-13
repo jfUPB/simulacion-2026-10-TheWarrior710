@@ -171,6 +171,11 @@ function keyPressed() {
 }
 ```
 
+https://editor.p5js.org/TheWarrior710/sketches/phGIEcfar
+
+<img width="547" height="216" alt="image" src="https://github.com/user-attachments/assets/117eba87-8588-4df6-a8b8-dd4379d3654c" />
+
+
 #### Actividad 4
 
 
@@ -335,6 +340,7 @@ dist()
 
 
 ## Bitácora de reflexión
+
 
 
 
