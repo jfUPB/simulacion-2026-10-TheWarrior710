@@ -204,6 +204,43 @@ Esto permite que cada frame se calcule un nuevo movimiento del objeto.
 
 
 
+2. ¿Qué modificación hay que hacer al Motion 101 cuando se agregan fuerzas acumulativas?
+
+Cuando se agregan fuerzas, no se modifica directamente la velocidad. Primero las fuerzas se convierten en aceleración usando la segunda ley de Newton.
+
+𝐹 = 𝑚 ∗ 𝑎
+
+Entonces:
+
+𝑎 = 𝐹 / 𝑚
+
+Por eso aparece el método:
+
+```js
+applyForce(force)
+applyForce(force) {
+  let f = p5.Vector.div(force, this.mass);
+  this.acceleration.add(f);
+}
+```
+Aquí sucede algo importante: Cada fuerza se suma a la aceleración Varias fuerzas pueden actuar al mismo tiempo
+
+
+Todas se acumulan antes de actualizar el movimiento
+
+Luego en update() se aplica Motion 101.
+
+
+Esto permite simular fenómenos físicos como:
+
+-gravedad
+
+-fricción
+
+-resistencia del aire
+
+-atracción gravitacional
+
 
 
 
@@ -225,6 +262,7 @@ Esto permite que cada frame se calcule un nuevo movimiento del objeto.
 
 
 ## Bitácora de reflexión
+
 
 
 
