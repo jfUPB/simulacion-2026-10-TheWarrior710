@@ -953,8 +953,142 @@ https://editor.p5js.org/TheWarrior710/sketches/3Tqtjp1wJ
 ## Bitácora de aplicación 
 
 
+```js
+let video;
+let handpose;
+let predictions = [];
+
+let particles = [];
+
+function setup() {
+
+  createCanvas(640,480);
+
+  video = createCapture(VIDEO);
+  video.size(640,480);
+  video.hide();
+
+  handpose = ml5.handpose(video, modelReady);
+
+  handpose.on("predict", results => {
+    predictions = results;
+  });
+}
+
+function modelReady(){
+  console.log("modelo listo");
+}
+
+function draw(){
+
+  image(video,0,0,width,height);
+
+  // detectar dedo
+  if(predictions.length > 0){
+
+    let hand = predictions[0];
+    let index = hand.annotations.indexFinger[3];
+
+    let fingerX = index[0];
+    let fingerY = index[1];
+
+    fill(255,0,0);
+    circle(fingerX,fingerY,20);
+
+    // crear partículas
+    if(frameCount % 2 == 0){
+      particles.push(new Particle(fingerX,fingerY));
+    }
+  }
+
+  // actualizar partículas
+  for(let i = particles.length-1; i >=0; i--){
+
+    let p = particles[i];
+
+    // fuerza hacia el dedo
+    if(predictions.length > 0){
+
+      let hand = predictions[0];
+      let index = hand.annotations.indexFinger[3];
+
+      let fingerX = index[0];
+      let fingerY = index[1];
+
+      let force = createVector(fingerX - p.position.x,
+                               fingerY - p.position.y);
+
+      force.normalize();
+      force.mult(0.2);
+
+      p.applyForce(force);
+    }
+
+    p.update();
+    p.show();
+
+    if(p.lifespan < 0){
+      particles.splice(i,1);
+    }
+  }
+}
+
+
+class Particle{
+
+  constructor(x,y){
+
+    // VECTORES
+    this.position = createVector(x,y);
+
+    // RANDOMNESS
+    this.velocity = p5.Vector.random2D();
+
+    this.acceleration = createVector(0,0);
+
+    this.lifespan = 255;
+
+    // OSCILACIN
+    this.phase = random(TWO_PI);
+  }
+
+  applyForce(force){
+
+    // FUERZAS
+    this.acceleration.add(force);
+  }
+
+  update(){
+
+    // VECTORES
+    this.velocity.add(this.acceleration);
+    this.position.add(this.velocity);
+
+    this.acceleration.mult(0);
+
+    // OSCILACIÓN
+    this.phase += 0.1;
+    this.position.y += sin(this.phase)*0.5;
+
+    this.lifespan -= 2;
+  }
+
+  show(){
+
+    noStroke();
+
+    // RANDOMNESS en color
+    fill(random(100,255),250,255,this.lifespan);
+
+    circle(this.position.x,this.position.y,8);
+  }
+}
+```
+
+
 
 ## Bitácora de reflexión
+
 
 
 
