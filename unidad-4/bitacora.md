@@ -952,6 +952,18 @@ https://editor.p5js.org/TheWarrior710/sketches/3Tqtjp1wJ
 
 ## Bitácora de aplicación 
 
+#### Actividad 11
+
+
+La obra generativa que desarrollé consiste en un sistema de partículas interactivo controlado mediante la cámara del computador. El sistema detecta la posición del dedo índice del usuario y utiliza esa posición como punto de interacción para generar partículas en tiempo real.
+
+Cada partícula responde basicamente al movimiento del dedo, comportándose como si existiera un campo de fuerzas alrededor del usuario. A medida que el dedo se mueve frente a la cámara, las partículas se generan y se desplazan siguiendo reglas físicas simples inspiradas en los conceptos del libro The Nature of Code
+
+
+
+Narativa o historia que invente
+
+En lo que me inspire para esta obra es darle un rol al usuario de como si fuera un mago que tiene la capacidad de lanzar magia por medio del dedo indice, el cual esa magia tiene una fuerza gravitacional que hace que genere un aura que sigue al dedo y va dejando una especie de particulas a su al rededor basicamente esto es lo que quiero generar con esta experiencia que nuestro usuario sienta asombro transportandolo a un mundo lleno de fantasia
 
 ```js
 let video;
@@ -1088,6 +1100,7 @@ class Particle{
 
 
 ## Bitácora de reflexión
+
 
 
 
