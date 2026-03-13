@@ -171,11 +171,61 @@ function keyPressed() {
 }
 ```
 
+#### Actividad 4
+
+
+1. ¿Dónde está el marco Motion 101 en la simulación?
+
+El marco Motion 101 aparece dentro de la función update() de la clase Mover.
+
+```js
+this.velocity.add(this.acceleration);
+this.position.add(this.velocity);
+this.acceleration.mult(0);
+```
+
+Este fragmento representa el modelo básico del movimiento usado en The Nature of Code.
+
+El orden es el siguiente:
+
+La aceleración modifica la velocidad
+```js
+this.velocity.add(this.acceleration);
+```
+La velocidad modifica la posición
+```js
+this.position.add(this.velocity);
+```
+La aceleración se reinicia
+```js
+this.acceleration.mult(0);
+```
+Esto permite que cada frame se calcule un nuevo movimiento del objeto.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## Bitácora de aplicación 
 
 
 
 ## Bitácora de reflexión
+
 
 
 
