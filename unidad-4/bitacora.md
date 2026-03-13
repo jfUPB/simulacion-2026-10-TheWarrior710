@@ -720,13 +720,13 @@ Creé un vector de fuerza que modifica la velocidad angular del oscilador.
 Conceptualmente funciona así:
 
 
-```
+```js
 applyForce(force){
   this.angleVelocity.add(force);
 }
 ```
 Luego, en el draw() del sketch, agregué una pequeña fuerza basada en el movimiento del mouse:
-```
+```js
 let wind = createVector(0.001, 0);
 oscillators[i].applyForce(wind);
 ```
@@ -763,6 +763,7 @@ Esta actividad me permitió integrar conceptos de diferentes unidades en una sol
 
 
 ## Bitácora de reflexión
+
 
 
 
