@@ -274,16 +274,21 @@ Su función es generar una fuerza que atrae a los objetos usando la fórmula de 
 El color se define en display() dentro de Attractor.js.
 
 Código original:
+```js
 
 fill(175, 200);
+```
 
 Por ejemplo puedes cambiarlo a rojo:
+```js
 
 fill(255, 80, 80);
+```
 
 O azul:
-
+```js
 fill(80,150,255);
+```
 
 
 
@@ -305,6 +310,7 @@ fill(80,150,255);
 
 
 ## Bitácora de reflexión
+
 
 
 
