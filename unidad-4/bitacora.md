@@ -687,6 +687,69 @@ Unidad 1: aleatoriedad utilizando Perlin Noise
 
 Unidad 3: aplicación de fuerzas
 
+Modificación 1 — Aleatoriedad con Perlin Noise
+
+En lugar de usar únicamente random(), utilicé la función noise() para modificar suavemente la amplitud del movimiento.
+
+La diferencia entre random() y noise() es que:
+
+random() genera valores completamente impredecibles
+
+noise() produce valores suaves y continuos, lo que genera movimientos más naturales
+
+Implementé un valor llamado noiseOffset que cambia lentamente en cada actualización.
+
+Ejemplo conceptual:
+```js
+this.noiseOffset = random(1000);
+```
+Luego en update():
+```js
+let n = noise(this.noiseOffset);
+this.amplitude.x = map(n, 0, 1, 50, width/2);
+this.noiseOffset += 0.01;
+```
+Esto hace que la amplitud del oscilador cambie gradualmente en el tiempo, produciendo un movimiento más orgánico.
+
+Modificación 2 — Aplicación de fuerzas
+
+También agregué el concepto de fuerza, inspirado en el sistema de física visto en la unidad 3.
+
+Creé un vector de fuerza que modifica la velocidad angular del oscilador.
+
+Conceptualmente funciona así:
+
+
+```
+applyForce(force){
+  this.angleVelocity.add(force);
+}
+```
+Luego, en el draw() del sketch, agregué una pequeña fuerza basada en el movimiento del mouse:
+```
+let wind = createVector(0.001, 0);
+oscillators[i].applyForce(wind);
+```
+Esto hace que los osciladores cambien ligeramente su velocidad angular, lo que altera el patrón de movimiento.
+
+De esta forma el sistema ya no tiene un movimiento completamente constante, sino que responde a una fuerza externa.
+
+Resultado de la simulación
+
+Después de las modificaciones, la simulación presenta los siguientes comportamientos:
+
+Los osciladores siguen moviéndose con trayectorias sinusoidales.
+
+La amplitud cambia gradualmente debido al uso de Perlin Noise.
+
+Las fuerzas externas modifican la velocidad angular, produciendo variaciones en el movimiento.
+
+El resultado es una animación más dinámica y menos predecible que la versión original.
+
+Conclusión
+
+Esta actividad me permitió integrar conceptos de diferentes unidades en una sola simulación. El uso de Perlin Noise genera variaciones suaves en el movimiento, mientras que la incorporación de fuerzas permite modificar el comportamiento dinámico del sistema. Esto demuestra cómo pequeñas modificaciones en los parámetros físicos y matemáticos pueden producir animaciones más complejas y realistas.
+
 
 
 
@@ -700,6 +763,7 @@ Unidad 3: aplicación de fuerzas
 
 
 ## Bitácora de reflexión
+
 
 
 
