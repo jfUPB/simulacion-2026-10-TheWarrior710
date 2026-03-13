@@ -454,6 +454,86 @@ Esto permite controlar el sistema de fuerzas en tiempo real.
 
 En esta actividad entendí cómo el marco Motion 101 se combina con las fuerzas físicas para crear simulaciones más realistas. En lugar de modificar directamente la velocidad, primero se aplican fuerzas que se transforman en aceleración y luego se integran al sistema de movimiento. Además, al agregar interacción con el mouse, el usuario puede modificar la posición del attractor y observar cómo cambia el comportamiento de los objetos que son atraídos por él.
 
+https://editor.p5js.org/TheWarrior710/sketches/CvODviHeJ
+
+
+<img width="501" height="248" alt="image" src="https://github.com/user-attachments/assets/c2714612-57e3-4920-9072-c3f86eb52fdf" />
+
+#### Actividad 5
+
+1. ¿Cuál es la relación entre r y θ con x y y?
+
+En esta simulación se utilizan coordenadas polares, que representan una posición usando:
+
+r → distancia desde el origen
+
+θ (theta) → ángulo respecto al eje horizontal
+
+Para dibujar en la pantalla, estas coordenadas deben convertirse a coordenadas cartesianas (x, y).
+
+La conversión matemática es:
+
+𝑥 = 𝑟 ⋅ 𝑐 𝑜 𝑠 ( 𝜃 )
+
+𝑦 = 𝑟 ⋅ 𝑠 𝑖 𝑛 ( 𝜃 )
+
+
+En el código esto se ve así:
+
+let x = r * cos(theta);
+let y = r * sin(theta);
+
+Esto significa que:
+
+r controla qué tan lejos está el punto del centro
+
+θ controla la dirección o ángulo del punto
+
+Por eso el círculo se mueve alrededor del centro de la pantalla formando un movimiento circular.
+
+Además, en el código se usa:
+
+translate(width / 2, height / 2);
+
+Esto mueve el origen del sistema de coordenadas al centro de la pantalla para que el movimiento circular ocurra alrededor del centro.
+
+
+2. Primera modificación del código
+3. 
+let v = p5.Vector.fromAngle(theta);
+line(0, 0, x, y);
+circle(v.x, v.y, 48);
+
+
+¿Qué ocurre?
+
+El círculo ya no gira alrededor del centro como antes, sino que se mueve cerca del origen.
+
+¿Por qué ocurre esto?
+
+La función:
+
+p5.Vector.fromAngle(theta)
+
+crea un vector con:
+
+dirección θ
+
+magnitud = 1
+
+Es decir, el vector tiene longitud 1 unidad.
+
+Por eso el punto aparece muy cerca del centro, ya que no se está usando el valor de r para definir la distancia.
+
+En otras palabras:
+
+el ángulo se mantiene
+
+pero la distancia al centro se pierde
+
+
+
+
 
 
 
@@ -472,6 +552,7 @@ En esta actividad entendí cómo el marco Motion 101 se combina con las fuerzas 
 
 
 ## Bitácora de reflexión
+
 
 
 
