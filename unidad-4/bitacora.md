@@ -479,9 +479,10 @@ La conversión matemática es:
 
 
 En el código esto se ve así:
-
+```js
 let x = r * cos(theta);
 let y = r * sin(theta);
+```
 
 Esto significa que:
 
@@ -499,11 +500,11 @@ Esto mueve el origen del sistema de coordenadas al centro de la pantalla para qu
 
 
 2. Primera modificación del código
-3. 
+```js   
 let v = p5.Vector.fromAngle(theta);
 line(0, 0, x, y);
 circle(v.x, v.y, 48);
-
+```
 
 ¿Qué ocurre?
 
@@ -552,6 +553,7 @@ pero la distancia al centro se pierde
 
 
 ## Bitácora de reflexión
+
 
 
 
