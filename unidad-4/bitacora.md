@@ -868,11 +868,17 @@ function mouseReleased(){
 El resultado es un sistema de oscilación más complejo donde las dos masas interactúan entre sí. Cuando se mueve el primer bob, el segundo responde con un movimiento que depende de la elasticidad del resorte y de la gravedad.
 
 
+https://editor.p5js.org/TheWarrior710/sketches/H8rcNjt6M
+
+<img width="481" height="213" alt="image" src="https://github.com/user-attachments/assets/04d26523-9a75-41a4-bb63-ea41571b91b8" />
+
+
 ## Bitácora de aplicación 
 
 
 
 ## Bitácora de reflexión
+
 
 
 
