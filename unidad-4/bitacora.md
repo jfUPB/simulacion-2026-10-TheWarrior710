@@ -535,6 +535,64 @@ pero la distancia al centro se pierde
 
 
 
+Segunda modificación del código
+
+let v = p5.Vector.fromAngle(theta, r);
+¿Qué ocurre ahora?
+
+Ahora el círculo vuelve a moverse en una trayectoria circular alrededor del centro, similar al primer ejemplo.
+
+¿Por qué ocurre?
+
+Porque esta versión de la función:
+
+p5.Vector.fromAngle(theta, r)
+
+crea un vector que tiene:
+
+dirección = θ
+
+magnitud = r
+
+Es decir, el vector ya contiene tanto el ángulo como la distancia al centro.
+
+Internamente hace exactamente lo mismo que la fórmula polar:
+
+𝑥 = 𝑟 ⋅ 𝑐 𝑜 𝑠 ( 𝜃 ) 𝑦 = 𝑟 ⋅ 𝑠 𝑖 𝑛 ( 𝜃 )
+
+
+Por lo tanto:
+
+v.x = r cos(θ)
+
+v.y = r sin(θ)
+
+4. ¿Qué ocurre en la simulación final?
+
+En el código final aparece esta línea:
+
+r = height * 0.5 * sin(theta);
+
+Esto hace que r cambie constantemente usando una función seno.
+
+El resultado es que:
+
+la distancia al centro aumenta y disminuye
+
+el objeto no solo gira
+
+también se acerca y se aleja del centro
+
+Esto produce un movimiento de oscilación radial, donde el punto parece expandirse y contraerse mientras gira.
+
+Este comportamiento conecta directamente con el capítulo de Oscillation, donde las funciones seno y coseno se usan para generar movimientos periódicos.
+
+Conclusión
+
+En esta actividad aprendí cómo funcionan las coordenadas polares y cómo se pueden convertir a coordenadas cartesianas para dibujar en pantalla. También entendí que el ángulo θ define la dirección del movimiento, mientras que r define la distancia al origen. Además, al utilizar funciones como sin(), es posible modificar dinámicamente el radio y generar movimientos oscilatorios más complejos dentro de la simulación.
+
+
+
 
 
 
@@ -553,6 +611,7 @@ pero la distancia al centro se pierde
 
 
 ## Bitácora de reflexión
+
 
 
 
