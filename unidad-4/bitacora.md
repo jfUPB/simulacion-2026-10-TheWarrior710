@@ -664,7 +664,7 @@ Conclusión
 Esta actividad me permitió comprender cómo las funciones sinusoides se utilizan para simular movimientos oscilatorios en programación creativa. Los parámetros como amplitud, periodo, frecuencia, velocidad angular y fase controlan diferentes aspectos de la onda y permiten generar animaciones dinámicas y naturales. Este tipo de funciones es muy utilizado en gráficos computacionales, simulaciones físicas y animación procedural.
 
 
-
+#### Actividad 7
 
 En esta actividad trabajé a partir de la simulación de osciladores propuesta en The Nature of Code. En el ejemplo original, cada oscilador genera un movimiento usando funciones seno en los ejes x y y, lo que produce trayectorias oscilatorias alrededor del centro de la pantalla.
 
@@ -751,10 +751,50 @@ Conclusión
 Esta actividad me permitió integrar conceptos de diferentes unidades en una sola simulación. El uso de Perlin Noise genera variaciones suaves en el movimiento, mientras que la incorporación de fuerzas permite modificar el comportamiento dinámico del sistema. Esto demuestra cómo pequeñas modificaciones en los parámetros físicos y matemáticos pueden producir animaciones más complejas y realistas.
 
 
+#### Actividad 8
+
+Para lograr que la onda se comporte como una ola en movimiento, fue necesario mover la lógica de dibujo a la función draw(), que se ejecuta continuamente en cada frame de la animación.
+
+Además, se agregó una variable llamada phase que se incrementa con el tiempo. Esta variable desplaza la onda horizontalmente, creando la sensación de movimiento.
+
+```js
+let angle = 0;
+let angleVelocity = 0.2;
+let amplitude = 100;
+
+let phase = 0;
+
+function setup() {
+  createCanvas(640, 240);
+}
+
+function draw() {
+  background(255);
+
+  stroke(0);
+  strokeWeight(2);
+  fill(127,127);
+
+  let angle = phase;
+  
+for (let x = 0; x <= width; x += 24) {
+    // 1) Calculate the y position according to amplitude and sine of the angle.
+    let y = amplitude * sin(angle);
+    // 2) Draw a circle at the (x,y) position.
+    circle(x, y + height / 2, 48);
+    // 3) Increment the angle according to angular velocity.
+    angle += angleVelocity;
+  }
+
+  phase += 0.05; // mueve la ola
+}
+```
 
 
 
+Después de realizar la modificación, la onda ya no permanece estática. Ahora los puntos que forman la onda se desplazan continuamente, generando un movimiento similar al de una ola que se propaga horizontalmente.
 
+Este efecto ocurre porque el valor inicial del ángulo cambia en cada frame, lo que desplaza la función seno a lo largo del eje horizontal.
 
 
 
@@ -763,6 +803,7 @@ Esta actividad me permitió integrar conceptos de diferentes unidades en una sol
 
 
 ## Bitácora de reflexión
+
 
 
 
