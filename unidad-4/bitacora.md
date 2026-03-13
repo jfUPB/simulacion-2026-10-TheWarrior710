@@ -291,6 +291,31 @@ fill(80,150,255);
 ```
 
 
+5. ¿Para qué sirven dragging y rollover?
+
+Estas variables permiten interacción con el mouse.
+
+Variable	Función
+dragging	indica si el attractor se está arrastrando
+rollover	indica si el mouse está encima
+
+Pero en el código original no están implementadas todavía.
+
+
+6. ¿Cómo hacer que funcione el arrastre con el mouse?
+
+Para esto se usan funciones de interacción de p5.js como:
+
+mousePressed()
+
+mouseReleased()
+
+mouseX
+
+mouseY
+
+dist()
+
 
 
 
@@ -310,6 +335,7 @@ fill(80,150,255);
 
 
 ## Bitácora de reflexión
+
 
 
 
