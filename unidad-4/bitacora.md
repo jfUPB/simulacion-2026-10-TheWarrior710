@@ -666,6 +666,26 @@ Esta actividad me permitió comprender cómo las funciones sinusoides se utiliza
 
 
 
+En esta actividad trabajé a partir de la simulación de osciladores propuesta en The Nature of Code. En el ejemplo original, cada oscilador genera un movimiento usando funciones seno en los ejes x y y, lo que produce trayectorias oscilatorias alrededor del centro de la pantalla.
+
+El movimiento se calcula con las siguientes ecuaciones:
+
+𝑥 = 𝑠 𝑖 𝑛 ( 𝜃 𝑥 ) ⋅ 𝑎 𝑚 𝑝 𝑙 𝑖 𝑡 𝑢 𝑑 𝑥
+
+	​
+
+𝑦 = 𝑠 𝑖 𝑛 ( 𝜃 𝑦 ) ⋅ 𝑎 𝑚 𝑝 𝑙 𝑖 𝑡 𝑢 𝑑 𝑦
+
+	​
+
+
+donde el ángulo cambia continuamente mediante una velocidad angular, lo que genera el movimiento oscilatorio.
+
+Para esta actividad modifiqué la simulación incorporando conceptos de dos unidades anteriores:
+
+Unidad 1: aleatoriedad utilizando Perlin Noise
+
+Unidad 3: aplicación de fuerzas
 
 
 
@@ -680,6 +700,7 @@ Esta actividad me permitió comprender cómo las funciones sinusoides se utiliza
 
 
 ## Bitácora de reflexión
+
 
 
 
