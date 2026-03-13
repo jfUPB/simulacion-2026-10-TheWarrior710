@@ -323,6 +323,138 @@ dist()
 
 
 
+ 
+attractor.js
+
+```js
+// The Nature of Code
+// Daniel Shiffman
+// http://natureofcode.com
+
+class Attractor {
+  constructor() {
+    this.position = createVector(width / 2, height / 2);
+    this.mass = 20;
+    this.G = 1;
+    this.dragging = false;
+    this.rollover = false; 
+  }
+
+  attract(mover) {
+    // Calculate direction of force
+    let force = p5.Vector.sub(this.position, mover.position);
+    // Distance between objects
+    let distance = force.mag();
+    // Limiting the distance to eliminate "extreme" results for very close or very far objects
+    distance = constrain(distance, 5, 25);
+
+    // Calculate gravitional force magnitude
+    let strength = (this.G * this.mass * mover.mass) / (distance * distance);
+    // Get force vector --> magnitude * direction
+    force.setMag(strength);
+    return force;
+  }
+
+  // Method to display
+  display() {
+    ellipseMode(CENTER);
+    stroke(0);
+    if (this.dragging) {
+      fill(50);
+    } else if (this.rollover) {
+      fill(100);
+    } else {
+      fill(175, 200);
+    }
+    ellipse(this.position.x, this.position.y, this.mass * 2);
+  }
+  
+  pressed() {
+  let d = dist(mouseX, mouseY, this.position.x, this.position.y);
+  if (d < this.mass) {
+    this.dragging = true;
+  }
+}
+
+released() {
+  this.dragging = false;
+}
+
+hover() {
+  let d = dist(mouseX, mouseY, this.position.x, this.position.y);
+  this.rollover = d < this.mass;
+}
+
+drag() {
+  if (this.dragging) {
+    this.position.x = mouseX;
+    this.position.y = mouseY;
+  }
+}
+  
+}
+```
+
+sketch.js
+
+```js
+// The Nature of Code
+// Daniel Shiffman
+// http://natureofcode.com
+
+let movers = [];
+let attractor;
+
+function setup() {
+  createCanvas(640, 240);
+
+  for (let i = 0; i < 20; i++) {
+    movers.push(new Mover(random(width), random(height), random(0.1, 2)));
+  }
+  attractor = new Attractor();
+}
+
+function draw() {
+  background(255);
+
+  attractor.display();
+
+  for (let i = 0; i < movers.length; i++) {
+    let force = attractor.attract(movers[i]);
+    movers[i].applyForce(force);
+
+    movers[i].update();
+    movers[i].show();
+    
+    attractor.hover();
+    attractor.drag();
+  }
+  
+  function mousePressed() {
+  attractor.pressed();
+}
+
+function mouseReleased() {
+  attractor.released();
+}
+  
+  
+}
+```
+Ahora el Attractor es interactivo:
+
+Cuando el mouse está encima - cambia de color
+
+Cuando haces click - lo puedes arrastrar
+
+Los movers siguen la atracción gravitacional
+
+Esto permite controlar el sistema de fuerzas en tiempo real.
+
+
+En esta actividad entendí cómo el marco Motion 101 se combina con las fuerzas físicas para crear simulaciones más realistas. En lugar de modificar directamente la velocidad, primero se aplican fuerzas que se transforman en aceleración y luego se integran al sistema de movimiento. Además, al agregar interacción con el mouse, el usuario puede modificar la posición del attractor y observar cómo cambia el comportamiento de los objetos que son atraídos por él.
+
+
 
 
 
@@ -340,6 +472,7 @@ dist()
 
 
 ## Bitácora de reflexión
+
 
 
 
