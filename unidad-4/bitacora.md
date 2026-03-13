@@ -873,11 +873,89 @@ https://editor.p5js.org/TheWarrior710/sketches/H8rcNjt6M
 <img width="481" height="213" alt="image" src="https://github.com/user-attachments/assets/04d26523-9a75-41a4-bb63-ea41571b91b8" />
 
 
+
+##### Actividad 10
+
+
+En esta actividad modifiqué la simulación original de un péndulo simple para crear un sistema de dos péndulos conectados en serie, también conocido como péndulo doble. En el código original solo existía un péndulo con un punto de pivote fijo en la parte superior de la pantalla.
+
+```js
+// The Nature of Code
+// Daniel Shiffman
+// http://natureofcode.com
+
+// Pendulum
+
+// A simple pendulum simulation
+// Given a pendulum with an angle theta (0 being the pendulum at rest) and a radius r
+// we can use sine to calculate the angular component of the gravitational force.
+
+// Gravity Force = Mass * Gravitational Constant;
+// Pendulum Force = Gravity Force * sine(theta)
+// Angular Acceleration = Pendulum Force / Mass = gravitational acceleration * sine(theta);
+
+// Note this is an ideal world scenario with no tension in the
+// pendulum arm, a more realistic formula might be:
+// Angular Acceleration = (g / R) * sine(theta)
+
+// For a more substantial explanation, visit:
+// http://www.myphysicslab.com/pendulum1.html
+let pendulum1;
+let pendulum2;
+
+function setup() {
+  createCanvas(640,240);
+
+  // primer pendulo desde el techo
+  pendulum1 = new Pendulum(width/2,0,150);
+
+  // segundo pendulo (su pivote se actualizará luego)
+  pendulum2 = new Pendulum(width/2,150,150);
+}
+
+function draw(){
+  background(255);
+
+  // actualizar primer pendulo
+  pendulum1.update();
+  pendulum1.show();
+  pendulum1.drag();
+
+  // el pivote del segundo es el bob del primero
+  pendulum2.pivot = pendulum1.bob.copy();
+
+  // actualizar segundo pendulo
+  pendulum2.update();
+  pendulum2.show();
+  pendulum2.drag();
+}
+
+function mousePressed(){
+  pendulum1.clicked(mouseX,mouseY);
+  pendulum2.clicked(mouseX,mouseY);
+}
+
+function mouseReleased(){
+  pendulum1.stopDragging();
+  pendulum2.stopDragging();
+}
+```
+
+De esta forma, el segundo péndulo cuelga directamente del primero. Cuando el primer péndulo oscila debido a la fuerza de gravedad, el segundo péndulo también se mueve porque su punto de origen cambia constantemente.
+
+
+https://editor.p5js.org/TheWarrior710/sketches/3Tqtjp1wJ
+
+<img width="564" height="211" alt="image" src="https://github.com/user-attachments/assets/8f736e08-5c31-4d32-ac57-c9ace9ce3869" />
+
+
+
 ## Bitácora de aplicación 
 
 
 
 ## Bitácora de reflexión
+
 
 
 
