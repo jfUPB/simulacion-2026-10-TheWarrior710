@@ -798,11 +798,82 @@ Este efecto ocurre porque el valor inicial del ángulo cambia en cada frame, lo 
 
 
 
+#### Actividad 9
+
+La verdad en esta actividad solo hice cambios en el script sketch.js Para construir el sistema en serie fue necesario agregar un segundo objeto Bob y un segundo Spring. La estructura final del sistema quedó organizada de la siguiente forma: un punto fijo en la parte superior conectado al primer resorte, este resorte conectado al primer bob, y finalmente un segundo resorte conectado al segundo bob.
+
+
+sketch.js
+ 
+```js
+let bob1;
+let bob2;
+
+let spring1;
+let spring2;
+
+function setup() {
+  createCanvas(640,240);
+
+  spring1 = new Spring(width/2,10,100);
+  bob1 = new Bob(width/2,120);
+
+  spring2 = new Spring(width/2,120,100);
+  bob2 = new Bob(width/2,200);
+}
+
+function draw(){
+  background(255);
+
+  let gravity = createVector(0,2);
+
+  bob1.applyForce(gravity);
+  bob2.applyForce(gravity);
+
+  bob1.update();
+  bob2.update();
+
+  bob1.handleDrag(mouseX,mouseY);
+  bob2.handleDrag(mouseX,mouseY);
+
+  // primer resorte
+  spring1.connect(bob1);
+  spring1.constrainLength(bob1,30,200);
+
+  // segundo resorte conectado al primer bob
+  spring2.anchor = bob1.position.copy();
+  spring2.connect(bob2);
+  spring2.constrainLength(bob2,30,200);
+
+  spring1.showLine(bob1);
+  spring2.showLine(bob2);
+
+  spring1.show();
+
+  bob1.show();
+  bob2.show();
+}
+
+function mousePressed(){
+  bob1.handleClick(mouseX,mouseY);
+  bob2.handleClick(mouseX,mouseY);
+}
+
+function mouseReleased(){
+  bob1.stopDragging();
+  bob2.stopDragging();
+}
+```
+
+El resultado es un sistema de oscilación más complejo donde las dos masas interactúan entre sí. Cuando se mueve el primer bob, el segundo responde con un movimiento que depende de la elasticidad del resorte y de la gravedad.
+
+
 ## Bitácora de aplicación 
 
 
 
 ## Bitácora de reflexión
+
 
 
 
