@@ -593,6 +593,75 @@ En esta actividad aprendí cómo funcionan las coordenadas polares y cómo se pu
 
 
 
+#### Actividad 6
+
+Funciones sinusoides
+
+En esta actividad exploré el comportamiento de la función sinusoide mediante una simulación en p5.js. La función seno es muy importante en simulaciones porque permite generar movimientos periódicos y oscilatorios, como los que se encuentran en fenómenos naturales como ondas, vibraciones, sonido o movimiento pendular.
+
+En el código se utilizan dos funciones seno para controlar la posición horizontal de dos círculos que se mueven a lo largo de una línea. La posición se calcula usando la expresión:
+
+𝑥 = 𝐴 ⋅ 𝑠 𝑖 𝑛 ( 𝜔 𝑡 + 𝜙 )
+
+
+donde cada parámetro representa una característica del movimiento.
+
+Amplitud
+
+La amplitud representa la distancia máxima que alcanza la oscilación desde el punto central. En el código aparece en la variable:
+
+let amplitude = 200;
+
+Esto significa que los círculos pueden moverse hasta 200 píxeles a la izquierda o a la derecha del centro. Si la amplitud aumenta, el movimiento se vuelve más amplio; si disminuye, la oscilación se vuelve más pequeña.
+
+Periodo
+
+El periodo representa el tiempo que tarda la onda en completar un ciclo completo. En el código se controla con las variables:
+
+let period1 = 120;
+let period2 = 120;
+
+Estas variables determinan cuántos frames tarda el movimiento en completar una oscilación completa. Un periodo mayor produce una oscilación más lenta, mientras que uno menor genera un movimiento más rápido.
+
+Velocidad angular
+
+La velocidad angular describe qué tan rápido cambia el ángulo de la función seno. En el código aparece implícitamente en esta expresión:
+
+(TWO_PI * frameCount) / period
+
+Aquí TWO_PI representa una vuelta completa (360°), y frameCount aumenta en cada frame, lo que hace que el valor dentro del seno cambie continuamente y produzca el movimiento oscilatorio.
+
+Frecuencia
+
+La frecuencia está relacionada con cuántas oscilaciones ocurren en un periodo de tiempo. Matemáticamente es el inverso del periodo:
+
+𝑓 = 1 / 𝑇 
+
+Por lo tanto, cuando el periodo disminuye, la frecuencia aumenta y la oscilación ocurre más rápido.
+
+Fase
+
+La fase representa un desplazamiento horizontal de la onda. En la simulación se controla con la variable:
+
+let phase = 0;
+
+y se modifica con el teclado:
+
+phase += TWO_PI/360;
+
+Cada vez que se presiona una tecla, la fase cambia ligeramente. Esto provoca que la segunda onda seno se desplace horizontalmente respecto a la primera, generando una diferencia en el movimiento de los dos círculos.
+
+Este efecto permite observar cómo dos ondas pueden tener el mismo periodo y amplitud, pero estar desfasadas.
+
+Observaciones de la simulación
+
+Al ejecutar la simulación se pueden observar dos círculos que se mueven horizontalmente siguiendo una función seno. El primer círculo utiliza la función seno básica, mientras que el segundo incluye un desplazamiento de fase. Cuando se presionan las teclas, la fase cambia y el segundo círculo comienza a moverse adelantado o atrasado respecto al primero.
+
+Esto demuestra cómo pequeñas modificaciones en los parámetros de una función sinusoide pueden cambiar significativamente el comportamiento del movimiento.
+
+Conclusión
+
+Esta actividad me permitió comprender cómo las funciones sinusoides se utilizan para simular movimientos oscilatorios en programación creativa. Los parámetros como amplitud, periodo, frecuencia, velocidad angular y fase controlan diferentes aspectos de la onda y permiten generar animaciones dinámicas y naturales. Este tipo de funciones es muy utilizado en gráficos computacionales, simulaciones físicas y animación procedural.
 
 
 
@@ -611,6 +680,7 @@ En esta actividad aprendí cómo funcionan las coordenadas polares y cómo se pu
 
 
 ## Bitácora de reflexión
+
 
 
 
