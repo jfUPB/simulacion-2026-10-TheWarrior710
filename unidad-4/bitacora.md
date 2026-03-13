@@ -243,6 +243,31 @@ Esto permite simular fenómenos físicos como:
 
 
 
+3. ¿Dónde está el Attractor en la simulación?
+
+El Attractor es el objeto que ejerce la fuerza gravitacional sobre los movers.
+
+Se crea en sketch.js:
+```js
+let attractor;
+
+function setup() {
+  createCanvas(640, 240);
+  attractor = new Attractor();
+}
+```
+Y se dibuja en draw():
+```js
+attractor.display();
+```
+El attractor está ubicado en el centro de la pantalla:
+```js
+this.position = createVector(width / 2, height / 2);
+```
+Su función es generar una fuerza que atrae a los objetos usando la fórmula de gravedad.
+
+
+
 
 
 
@@ -262,6 +287,7 @@ Esto permite simular fenómenos físicos como:
 
 
 ## Bitácora de reflexión
+
 
 
 
