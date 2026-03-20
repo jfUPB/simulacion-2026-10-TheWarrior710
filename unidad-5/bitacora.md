@@ -188,6 +188,45 @@ estructura
 visualización
 
 
+#### Actividad 2
+
+1. ¿Qué responsabilidades pasaron de draw() a Emitter?
+Antes (Example 4.2), en draw() se hacía todo:
+
+•	Crear partículas
+•	Actualizarlas
+•	Dibujarlas
+•	Eliminarlas
+
+-Ahora, en Example 4.4, esas responsabilidades están dentro de:
+
+
+class Emitter
+
+-Específicamente en:
+
+```js
+run()
+addParticle()
+```
+-Entonces el draw() ahora solo:
+```js
+for (let emitter of emitters) {
+  emitter.run();
+  emitter.addParticle();
+}
+```
+ -Es decir:
+ 
+``draw()`` ya no gestiona partículas directamente
+Ahora delega esa responsabilidad al emisor
+
+
+
+
+
+
+
 
 
 
