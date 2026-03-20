@@ -171,10 +171,11 @@ line(this.position.x, this.position.y, this.position.x + 10, this.position.y + 1
 ```
 
 NO cambio:
-
+```js
 física (velocity, acceleration)
 
 ciclo de vida (lifespan)
+```
 
 lógica del sistema
 
