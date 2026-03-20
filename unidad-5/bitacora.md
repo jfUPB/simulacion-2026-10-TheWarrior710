@@ -47,7 +47,21 @@ La partícula muere cuando:
 No desaparece de inmediato, sino que se desvanece progresivamente.
 
 
+3. Actualización por frame (Motion 101)
 
+El patrón Motion 101 se ve aquí:
+
+```js
+this.velocity.add(this.acceleration);
+this.position.add(this.velocity);
+this.acceleration.mult(0);
+```
+
+Flujo:
+
+ fuerza - aceleración - velocidad - posición
+
+Esto simula física básica en cada frame.
 
 
 ## Bitácora de aplicación 
