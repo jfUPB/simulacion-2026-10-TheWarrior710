@@ -266,6 +266,9 @@ addParticle() {
 Usuario - crea emitters
 Emitter - crea partículas
 
+<img width="806" height="651" alt="image" src="https://github.com/user-attachments/assets/e7986a5a-76ca-4597-8fde-96787a6f6f9b" />
+
+
 
 
 
