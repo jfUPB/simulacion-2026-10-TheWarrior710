@@ -412,6 +412,48 @@ Esto demuestra que el sistema es extensible sin romper lo existente.
 
 
 
+4. Comparación con Example 4.2
+
+   
+¿Cambió la lógica del Emitter?
+
+-No cambió
+
+Sigue:
+
+-creando partículas
+-actualizando
+-eliminando
+
+¿Cambió la lógica de muerte?
+
+No cambió
+
+Sigue siendo:
+```js
+lifespan < 0
+```
+¿Qué capa cambió?
+
+Cambió:
+
+Capa de visualización
+
+ahora hay múltiples representaciones círculo vs cuadrado
+¿Qué capas NO cambiaron?
+
+Se mantuvieron:
+
+comportamiento (Motion 101, fuerzas)
+estructura (emitter, arrays, eliminación)
+
+-Se implementa herencia para reutilizar comportamiento base y polimorfismo para permitir múltiples representaciones visuales sin modificar la lógica del sistema. Esto mantiene desacopladas las capas de comportamiento y visualización.
+
+
+Herencia - reutilizo código
+Polimorfismo - diferentes comportamientos con misma interfaz
+Emitter - no sabe qué tipo de partícula hay
+Solo cambió la visualización
 
 
 
