@@ -382,6 +382,35 @@ El emisor no necesita conocer el tipo específico de partícula porque todas com
 
 
 
+3. Agregar un tercer tipo de partícula
+
+Si quiero agregar otro tipo (ej: FireParticle):
+
+Debo hacer:
+Crear una nueva clase:
+```js
+class FireParticle extends Particle {
+  show() {
+    // nueva representación visual
+  }
+}
+```
+
+-NO debo modificar:
+```js
+Emitter.run()
+Particle.update()
+isDead()
+```
+lógica de fuerzas
+
+Solo podría agregar en addParticle():
+
+this.particles.push(new FireParticle(...));
+
+Esto demuestra que el sistema es extensible sin romper lo existente.
+
+
 
 
 
