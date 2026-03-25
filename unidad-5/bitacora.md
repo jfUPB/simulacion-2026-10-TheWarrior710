@@ -377,7 +377,6 @@ Confetti
 
 -Esto es polimorfismo.
 
--Explicación en palabras tuyas (para el profe)
 
 El emisor no necesita conocer el tipo específico de partícula porque todas comparten la misma interfaz de comportamiento. Esto permite tratar diferentes objetos de manera uniforme, lo que es una aplicación directa del polimorfismo.
 
