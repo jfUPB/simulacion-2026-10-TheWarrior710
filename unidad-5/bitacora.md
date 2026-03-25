@@ -366,7 +366,7 @@ p.run();
 p.isDead();
 ```
 -El Emitter solo dice:
-```
+```js
 let p = this.particles[i];
 p.run();
 ```
