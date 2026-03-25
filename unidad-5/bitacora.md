@@ -490,7 +490,30 @@ Viene “desde afuera” del sistema
 La gravedad es una fuerza externa global aplicada uniformemente a todas las partículas del sistema.
 
 
+2. En Example 4.7
 
+Aquí aparece el repeller.
+
+La fuerza no está en draw(), sino en:
+```js
+repeller.repel(particle)
+```
+
+Y depende de:
+
+```js
+let distance = force.mag();
+```
+
+Conclusión:
+
+Es una fuerza local
+
+Porque:
+
+Depende de la distancia, Cada partícula recibe una fuerza distinta
+
+El repeller genera una fuerza local dependiente de la distancia, lo que introduce comportamiento emergente en el sistema.
 
 
 
