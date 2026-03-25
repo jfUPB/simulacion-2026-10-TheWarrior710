@@ -517,6 +517,22 @@ El repeller genera una fuerza local dependiente de la distancia, lo que introduc
 
 
 
+3. Principio físico modelado
+
+Esto:
+```js
+strength = (-1 * this.power) / (distance * distance);
+```
+Representa:
+
+Ley del inverso del cuadrado
+
+(igual que gravedad o electrostática)
+
+Frase técnica:
+
+Se modela una interacción basada en una ley de inverso del cuadrado, donde la intensidad de la fuerza disminuye con la distancia.
+
 
 
 
