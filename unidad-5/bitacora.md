@@ -246,14 +246,16 @@ Se aplica el principio de encapsulamiento, separando la lógica del sistema de p
 3. ¿Quién crea qué?
 
 -Los emitters se crean aquí:
-```
+
+```js
 function mousePressed() {
   emitters.push(new Emitter(mouseX, mouseY));
 }
 ```
 
 -Las partículas las crea cada emitter:
-```
+
+```js
 addParticle() {
   this.particles.push(new Particle(this.origin.x, this.origin.y));
 }
