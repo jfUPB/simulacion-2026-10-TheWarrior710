@@ -529,10 +529,26 @@ Ley del inverso del cuadrado
 
 (igual que gravedad o electrostática)
 
-Frase técnica:
 
 Se modela una interacción basada en una ley de inverso del cuadrado, donde la intensidad de la fuerza disminuye con la distancia.
 
+
+
+4. ¿Cambió la clase Particle?
+
+NO
+
+Esto es CLAVE:
+
+Particle sigue igual, No sabe que existe el repeller
+
+-Conclusión:
+
+Las fuerzas están desacopladas del comportamiento interno de la partícula.
+
+
+
+Existe una clara separación entre la lógica interna de la entidad y las fuerzas externas aplicadas.
 
 
 
