@@ -358,6 +358,31 @@ Confetti - cuadrado rotando
 
 
 
+2. ¿Por qué el Emitter no necesita saber el tipo?
+
+Porque ambos objetos (Particle y Confetti) comparten la misma interfaz:
+```js
+p.run();
+p.isDead();
+```
+-El Emitter solo dice:
+```
+let p = this.particles[i];
+p.run();
+```
+Y no le importa si es:
+
+Particle
+Confetti
+
+-Esto es polimorfismo.
+
+-Explicación en palabras tuyas (para el profe)
+
+El emisor no necesita conocer el tipo específico de partícula porque todas comparten la misma interfaz de comportamiento. Esto permite tratar diferentes objetos de manera uniforme, lo que es una aplicación directa del polimorfismo.
+
+
+
 
 
 
