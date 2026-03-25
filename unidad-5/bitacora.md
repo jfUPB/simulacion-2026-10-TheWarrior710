@@ -200,9 +200,9 @@ Antes (Example 4.2), en draw() se hacía todo:
 
 -Ahora, en Example 4.4, esas responsabilidades están dentro de:
 
-
+```js
 class Emitter
-
+```
 -Específicamente en:
 
 ```js
@@ -220,6 +220,49 @@ for (let emitter of emitters) {
  
 ``draw()`` ya no gestiona partículas directamente
 Ahora delega esa responsabilidad al emisor
+
+2. Ventaja de encapsular en Emitter
+
+La ventaja principal es organización y escalabilidad.
+
+-Antes:
+
+Todo estaba en un solo lugar (menos modular)
+
+-Ahora:
+
+Cada emisor controla sus propias partículas
+
+-Beneficios:
+
+-Código más limpio
+-Reutilización de lógica
+-Permite múltiples sistemas independientes
+-Fácil de escalar muchos emisores al mismo tiempo
+
+Se aplica el principio de encapsulamiento, separando la lógica del sistema de partículas en una clase independiente.
+
+
+3. ¿Quién crea qué?
+
+-Los emitters se crean aquí:
+```
+function mousePressed() {
+  emitters.push(new Emitter(mouseX, mouseY));
+}
+```
+
+-Las partículas las crea cada emitter:
+```
+addParticle() {
+  this.particles.push(new Particle(this.origin.x, this.origin.y));
+}
+```
+
+-Entonces:
+
+Usuario - crea emitters
+Emitter - crea partículas
 
 
 
