@@ -457,6 +457,38 @@ Solo cambió la visualización
 
 
 
+#### Actividad 4
+
+
+
+Fuerzas globales vs. locales
+
+1. En Example 4.6
+
+   
+La gravedad se define en draw():
+```js
+let gravity = createVector(0, 0.1);
+```
+
+Se aplica así:
+```js
+emitter.applyForce(gravity);
+```
+
+-Conclusión:
+
+La gravedad es una fuerza global
+
+-Porque:
+
+No depende de cada partícula
+Se aplica igual a todas
+Viene “desde afuera” del sistema
+
+
+La gravedad es una fuerza externa global aplicada uniformemente a todas las partículas del sistema.
+
 
 
 
