@@ -269,6 +269,42 @@ Emitter - crea partículas
 <img width="806" height="651" alt="image" src="https://github.com/user-attachments/assets/e7986a5a-76ca-4597-8fde-96787a6f6f9b" />
 
 
+Niveles de colección:
+
+Array de emitters
+Array de partículas dentro de cada emitter
+
+Total: 2 niveles de colección
+
+
+
+#### Descripción abstracta del sistema
+
+
+
+El sistema está compuesto por entidades organizadas jerárquicamente.
+
+Existe una colección principal de emisores, donde cada emisor actúa como una entidad que genera y gestiona una colección interna de partículas.
+
+Cada partícula es una entidad con:
+
+un estado físico (posición, velocidad, aceleración)
+un estado vital (tiempo de vida)
+
+Durante cada ciclo de actualización:
+
+el emisor genera nuevas partículas
+cada partícula actualiza su estado en función de fuerzas
+las partículas que han cumplido su ciclo de vida son eliminadas
+
+El sistema evoluciona en el tiempo mediante iteraciones continuas, donde:
+
+se aplican fuerzas
+se actualizan estados
+se gestionan dinámicamente las colecciones
+
+
+
 
 
 
