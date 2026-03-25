@@ -305,6 +305,59 @@ se gestionan dinámicamente las colecciones
 
 
 
+##### Actividad 3
+
+
+1. ¿Qué tienen en común y qué tienen diferente?
+
+
+En común (herencia)
+
+Tanto Particle como Confetti:
+
+Tienen:
+
+-position
+-velocity
+-acceleration
+-lifespan
+
+Usan:
+
+```-applyForce()```
+```-update()```
+```-run()```
+```-isDead()```
+
+Esto es porque:
+
+class Confetti extends Particle
+
+Confetti hereda todo el comportamiento base de Particle.
+
+Diferente
+
+La diferencia está en:
+```js
+show()
+```
+Confetti sobrescribe (override) este método:
+```js
+show() {
+  // dibuja un cuadrado rotando
+}
+```
+Mientras que Particle dibuja:
+```js
+circle(...)
+```
+Entonces:
+
+Particle - círculo
+Confetti - cuadrado rotando
+
+
+
 
 
 
