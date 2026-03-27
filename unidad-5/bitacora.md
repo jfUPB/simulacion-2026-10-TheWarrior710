@@ -536,9 +536,7 @@ Se modela una interacción basada en una ley de inverso del cuadrado, donde la i
 
 4. ¿Cambió la clase Particle?
 
-NO
-
-Esto es CLAVE:
+No porque:
 
 Particle sigue igual, No sabe que existe el repeller
 
