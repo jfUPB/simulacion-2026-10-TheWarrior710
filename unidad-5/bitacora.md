@@ -548,6 +548,40 @@ Las fuerzas están desacopladas del comportamiento interno de la partícula.
 
 Existe una clara separación entre la lógica interna de la entidad y las fuerzas externas aplicadas.
 
+<img width="661" height="653" alt="image" src="https://github.com/user-attachments/assets/8f304ea9-f010-417e-bc46-30f74058bb84" />
+
+
+yo elijo :
+
+ (b) Cambiar fuerzas SIN cambiar estructura ni visual
+
+ Cambie en draw():
+ ```js
+let wind = createVector(0.05, 0);
+emitter.applyForce(wind);
+```
+lo que hice fue agregar una nueva fuerza horizontal constante osea viento.
+
+2. ¿Qué clases modifiqué?
+
+Ninguna
+
+3. ¿Qué NO modifiqué?
+   
+-Particle 
+-Emitter 
+-Repeller 
+-Visualización 
+
+
+4. ¿Por qué fue posible?
+
+Porque el sistema está bien diseñado:
+
+
+Las fuerzas están separadas, Se aplican desde afuera, El sistema es modular.
+
+Gracias a la separación entre comportamiento, estructura y fuerzas externas, fue posible introducir una nueva dinámica sin alterar la arquitectura del sistema.
 
 
 
