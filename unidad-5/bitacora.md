@@ -585,7 +585,230 @@ Gracias a la separación entre comportamiento, estructura y fuerzas externas, fu
 
 
 
+
+
+
 ## Bitácora de aplicación 
+
+
+
+
+#### Actividad 5
+
+
+1. Mi obra representa el ciclo de vida humano como una serie de escalones. Cada escalón simboliza una etapa importante de crecimiento personal. La partícula representa a una persona que avanza con cada decisión "click del usuario", creciendo en tamaño y experiencia. Al llegar al último escalón, la partícula “rebota” como símbolo de logro y felicidad, pero finalmente desaparece, representando que la vida no termina al cumplir metas, sino que todo ciclo eventualmente llega a su fin.
+
+Partícula principal
+
+Representa: persona / vida
+Crece - experiencia
+Se mueve por escalones - progreso
+- Escalones
+Representan: etapas de la vida
+Son estáticos - el mundo / estructura de la vida
+- Click del usuario
+
+  
+No es random
+Es una decisión consciente
+
+La interacción del usuario representa decisiones que impulsan el progreso del ciclo de vida.
+
+Fuerzas
+Gravedad - realidad / peso de la vida
+Rebote - emoción / logro
+- Muerte
+No desaparece de golpe, Se desvanece
+
+
+“La muerte se representa como una disolución progresiva, no como un corte abrupto.”
+
+
+lifeParticle.js
+
+```js
+class LifeParticle extends Particle {
+  constructor(x, y) {
+    super(x, y);
+    this.size = 20;
+
+    this.target = createVector(x, y);
+    this.history = []; // rastro
+
+    this.stepCount = 0;
+    this.maxSteps = 5;
+
+    this.reachedTop = false;
+  }
+
+  moveTo(x, y) {
+    this.target = createVector(x, y);
+    this.stepCount++;
+
+    // crecer en cada escalón
+    this.size += 6;
+  }
+
+  update() {
+    // dirección hacia el escalón
+    let dir = p5.Vector.sub(this.target, this.position);
+    dir.mult(0.08); // suavidad (no perfecto)
+    this.applyForce(dir);
+
+    // pequeña variación natural (unidad 1: aleatoriedad)
+    let noiseForce = createVector(random(-0.1, 0.1), random(-0.05, 0.05));
+    this.applyForce(noiseForce);
+
+    super.update();
+
+    // guardar rastro
+    this.history.push(this.position.copy());
+    if (this.history.length > 30) {
+      this.history.shift();
+    }
+
+    // detectar llegada al escalón
+    if (dist(this.position.x, this.position.y, this.target.x, this.target.y) < 10) {
+      
+      // rebote pequeño en cada escalón
+      this.velocity.y = -3;
+
+      // último escalón
+      if (this.stepCount === this.maxSteps - 1 && !this.reachedTop) {
+        this.velocity.y = -8; // gran rebote final
+        this.reachedTop = true;
+      }
+    }
+
+    // SOLO muere en el último escalón
+   if (this.reachedTop) {
+  this.deathTimer = (this.deathTimer || 0) + 1;
+
+  if (this.deathTimer > 60) { // espera 1 segundo aprox
+    this.lifespan -= 1;
+  }
+}
+  }
+
+  show() {
+    //  RASTRO
+    noFill();
+    stroke(100, 100);
+    beginShape();
+    for (let v of this.history) {
+      vertex(v.x, v.y);
+    }
+    endShape();
+
+    //  PARTÍCULA
+    fill(100, this.lifespan);
+    stroke(0, this.lifespan);
+    circle(this.position.x, this.position.y, this.size);
+  }
+
+  isDead() {
+    return this.lifespan < 0;
+  }
+
+  //  REINICIO
+  reset(x, y) {
+    this.position = createVector(x, y);
+    this.velocity.mult(0);
+    this.acceleration.mult(0);
+
+    this.size = 20;
+    this.lifespan = 255;
+
+    this.history = [];
+    this.stepCount = 0;
+    this.reachedTop = false;
+
+    this.target = createVector(x, y);
+  }
+}
+```
+
+particle.js
+
+
+```js
+class Particle {
+  constructor(x, y) {
+    this.position = createVector(x, y);
+    this.velocity = createVector(0, 0);
+    this.acceleration = createVector(0, 0);
+    this.lifespan = 255;
+  }
+
+  applyForce(force) {
+    this.acceleration.add(force);
+  }
+
+  update() {
+    this.velocity.add(this.acceleration);
+    this.position.add(this.velocity);
+    this.acceleration.mult(0);
+    this.lifespan -= 1.5;
+  }
+
+  isDead() {
+    return this.lifespan < 0;
+  }
+}
+```
+
+sketch.js
+
+```js
+let particle;
+let steps = [];
+let currentStep = 0;
+
+function setup() {
+  createCanvas(600, 400);
+
+  // Crear escalones
+  let stepHeight = 60;
+  for (let i = 0; i < 5; i++) {
+    steps.push({
+      x: 100 + i * 80,
+      y: height - (i + 1) * stepHeight
+    });
+  }
+
+  particle = new LifeParticle(steps[0].x, steps[0].y);
+}
+
+function draw() {
+  background(255);
+
+  // Dibujar escalones
+  fill(200);
+  for (let s of steps) {
+    rect(s.x - 30, s.y, 60, 10);
+  }
+
+  particle.applyForce(createVector(0, 0.2)); // gravedad
+  particle.update();
+  particle.show();
+}
+
+function mousePressed() {
+  if (currentStep < steps.length - 1 && !particle.finished) {
+    currentStep++;
+    particle.moveTo(steps[currentStep].x, steps[currentStep].y);
+    
+    
+    
+  }
+  
+  if (particle.isDead()) {
+  currentStep = 0;
+  particle.reset(steps[0].x, steps[0].y);
+  }
+  
+}
+```
 
 
 ## Bitácora de reflexión
