@@ -829,10 +829,10 @@ https://editor.p5js.org/TheWarrior710/sketches/pU4ub1oDb
 
 
 <img width="538" height="340" alt="Captura de pantalla 2026-03-27 004008" src="https://github.com/user-attachments/assets/bac31b4d-0ae5-43e2-b23f-0a906083e117" />
-<img width="551" height="370" alt="Captura de pantalla 2026-03-27 004033" src="https://github.com/user-attachments/assets/491305be-676a-4ff3-8637-2c461255a901" />
+
 <img width="585" height="367" alt="Captura de pantalla 2026-03-27 004022" src="https://github.com/user-attachments/assets/95154d29-2030-47cc-a424-d254c644d2ea" />
 
-
+<img width="551" height="370" alt="Captura de pantalla 2026-03-27 004033" src="https://github.com/user-attachments/assets/491305be-676a-4ff3-8637-2c461255a901" />
 
 
 ## Bitácora de reflexión
