@@ -598,6 +598,18 @@ Gracias a la separación entre comportamiento, estructura y fuerzas externas, fu
 
 1. Mi obra representa el ciclo de vida humano como una serie de escalones. Cada escalón simboliza una etapa importante de crecimiento personal. La partícula representa a una persona que avanza con cada decisión "click del usuario", creciendo en tamaño y experiencia. Al llegar al último escalón, la partícula “rebota” como símbolo de logro y felicidad, pero finalmente desaparece, representando que la vida no termina al cumplir metas, sino que todo ciclo eventualmente llega a su fin.
 
+2. Bocetos
+
+<img width="1151" height="735" alt="image" src="https://github.com/user-attachments/assets/51419bd0-a03e-447d-a48f-e1e27b45fd66" />
+
+<img width="358" height="191" alt="image" src="https://github.com/user-attachments/assets/98be9910-9492-4c15-90c1-c7348c21b2c3" />
+
+
+
+
+
+3. Mapa de decisiones:
+
 Partícula principal
 
 Representa: persona / vida
@@ -621,8 +633,10 @@ Rebote - emoción / logro
 No desaparece de golpe, Se desvanece
 
 
-“La muerte se representa como una disolución progresiva, no como un corte abrupto.”
+La muerte se representa como una disolución progresiva, no como un corte abrupto.
 
+
+4.
 
 lifeParticle.js
 
@@ -809,6 +823,16 @@ function mousePressed() {
   
 }
 ```
+
+https://editor.p5js.org/TheWarrior710/sketches/pU4ub1oDb
+
+
+
+<img width="538" height="340" alt="Captura de pantalla 2026-03-27 004008" src="https://github.com/user-attachments/assets/bac31b4d-0ae5-43e2-b23f-0a906083e117" />
+<img width="551" height="370" alt="Captura de pantalla 2026-03-27 004033" src="https://github.com/user-attachments/assets/491305be-676a-4ff3-8637-2c461255a901" />
+<img width="585" height="367" alt="Captura de pantalla 2026-03-27 004022" src="https://github.com/user-attachments/assets/95154d29-2030-47cc-a424-d254c644d2ea" />
+
+
 
 
 ## Bitácora de reflexión
