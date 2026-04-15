@@ -203,6 +203,129 @@ El flow field no anima directamente a los agentes…
 Diseña un “campo de decisiones” que todos siguen.
 
 
+#### Actividad 4
+
+
+
+1. Reglas básicas del sistema
+
+El comportamiento del sistema se basa en tres reglas simples:
+
+-Separación (Separation):
+
+Cada agente evita acercarse demasiado a los demás.
+Hace que no se amontonen ni colisionen.
+
+-Alineación (Alignment):
+
+Cada agente intenta moverse en la misma dirección que sus vecinos cercanos.
+Genera movimiento grupal coherente.
+
+-Cohesión (Cohesion):
+
+Cada agente intenta acercarse al centro del grupo.
+Mantiene unido al conjunto.
+
+ 2. Parámetros que controlan estas reglas
+    
+-desiredSeparation:
+
+Distancia mínima entre agentes (afecta separación).
+
+-neighborDistance:
+
+Distancia para considerar vecinos (afecta alineación y cohesión).
+-maxspeed:
+
+Velocidad máxima de cada agente.
+-maxforce:
+
+Qué tan fuerte puede cambiar de dirección.
+pesos de las fuerzas (mult):
+
+En el código:
+```js
+sep.mult(1.5);
+ali.mult(1.0);
+coh.mult(1.0);
+````
+
+ Estos valores determinan qué regla domina el comportamiento.
+
+ 3. Modificación realizada
+
+Modificación: aumenté el peso de separación:
+
+```js
+sep.mult(2.5);
+
+Efecto visual:
+```
+
+Los agentes se alejan más entre sí. El grupo se vuelve más disperso. Se pierde un poco la sensación de “bandada unida”.
+
+Conclusión:
+
+La separación alta rompe la cohesión del grupo.
+
+
+Modificación 2: aumenté cohesión:
+
+coh.mult(2.0);
+
+Efecto:
+
+Los agentes se agrupan más.
+Se forman clusters o núcleos.
+Movimiento más compacto.
+
+4. Comportamiento emergente observado
+
+Dependiendo de los parámetros, el sistema puede verse:
+
+Fluido: cuando hay buen balance entre reglas
+Compacto: cuando domina cohesión
+Disperso: cuando domina separación
+Nervioso: cuando maxforce es alto
+Caótico: cuando todo está desbalanceado
+
+ En el caso base del ejemplo:
+El comportamiento es fluido y relativamente estable, simulando una bandada natural.
+
+ ¿Qué atmósfera visual produce?
+
+Produce una atmósfera:
+
+Orgánica
+Viva
+Natural
+Dinámica
+
+Se siente como observar:
+
+-aves volando
+-peces en cardumen
+-multitudes en movimiento
+
+Da la sensación de inteligencia colectiva.
+
+-¿Con qué tipo de música funcionaría?
+
+Este sistema funcionaría muy bien con:
+
+música electrónica rítmica
+house o techno suave
+música instrumental dinámica
+
+Porque:
+
+El ritmo puede sincronizarse con el movimiento del grupo Cambios en la música podrían afectar los parámetros (más caos o más orden)
+
+Idea clave final
+
+Cada agente sigue reglas simples…
+pero juntos crean comportamiento complejo e “inteligente”.
+
 
 
 ## Bitácora de aplicación 
