@@ -105,6 +105,103 @@ Estás diseñando comportamientos.
 
 
 
+#### Actividad 3
+
+-¿Cómo está construido el campo de flujo?
+
+El campo de flujo está construido como una grilla (matriz 2D) que cubre toda la pantalla. Cada celda de esa grilla contiene un vector que indica una dirección. Esa dirección no es aleatoria totalmente, sino que se genera usando Perlin Noise, lo que hace que el campo tenga continuidad y se vea fluido en lugar de caótico.
+
+-¿Qué representa cada celda o vector?
+
+Cada celda representa una dirección de movimiento en ese punto del espacio. Es como si el espacio estuviera lleno de pequeñas flechas invisibles que le dicen a los agentes hacia dónde moverse.
+
+-¿Cómo usa un agente su posición para consultar el campo?
+
+El agente toma su posición (x, y) y la convierte en una posición dentro de la grilla:
+
+Divide su posición por la resolución del campo
+Obtiene la celda correspondiente
+Consulta el vector guardado en esa celda
+
+Es como preguntar:
+“¿Qué dirección debo seguir aquí donde estoy?”
+
+-¿Cómo se convierte ese vector en una decisión de movimiento?
+
+-El proceso es:
+
+El agente obtiene el vector del campo (desired).
+Lo escala según su velocidad máxima (maxspeed).
+Calcula la diferencia entre ese vector y su velocidad actual → (steering).
+Limita esa fuerza con maxforce.
+Aplica esa fuerza a su aceleración.
+
+ -En pocas palabras:
+El agente ajusta su movimiento poco a poco para alinearse con la dirección del campo.
+
+-Parámetros importantes del sistema
+
+resolution:
+
+Define el tamaño de cada celda.
+Alta resolución → más detalle
+Baja resolución → movimiento más simple
+maxspeed:
+Velocidad máxima del agente.
+Controla qué tan rápido se mueve.
+maxforce:
+Qué tan fuerte puede girar o cambiar de dirección.
+Bajo - movimiento suave
+Alto - cambios bruscos
+cantidad de agentes:
+Más agentes → mayor densidad visual
+Menos agentes → más vacío y claridad
+Modificación realizada
+
+Modificación: aumenté el maxforce.
+
+Efecto visual:
+
+Los agentes giran más rápido.
+El movimiento se vuelve más caótico y menos fluido.
+Se pierde un poco la sensación de “corriente natural”.
+
+Conclusión:
+El maxforce afecta directamente qué tan orgánico o agresivo se ve el sistema.
+
+¿Qué tipo de movimiento produce este algoritmo?
+
+Produce un movimiento fluido, continuo y orgánico, parecido a:
+
+-corrientes de agua
+-viento
+-humo
+-fluidos invisibles
+
+¿Qué sensaciones visuales sugiere?
+
+Calma y fluidez (cuando los parámetros son suaves)
+Hipnosis o repetición relajante
+También puede volverse caótico si se aumentan velocidades o fuerzas
+
+Se siente como un sistema “vivo”, no mecánico.
+
+¿En qué tipo de pieza musical funcionaría?
+
+Este tipo de sistema funcionaría muy bien con:
+
+música ambiental
+electrónica suave
+lo-fi
+música experimental
+
+Porque el movimiento continuo y orgánico acompaña sonidos que no son bruscos, sino envolventes.
+
+Idea clave final
+
+El flow field no anima directamente a los agentes…
+Diseña un “campo de decisiones” que todos siguen.
+
 
 
 
