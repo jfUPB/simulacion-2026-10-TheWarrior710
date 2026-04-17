@@ -327,8 +327,124 @@ Cada agente sigue reglas simples…
 pero juntos crean comportamiento complejo e “inteligente”.
 
 
+#### Actividad 5
+
+-Tipo de movimiento
+
+Flow Fields: Produce un movimiento continuo, fluido y direccional, como corrientes invisibles que guían a todos los agentes.
+
+Flocking: Produce un movimiento colectivo y orgánico, donde los agentes se agrupan, se separan y cambian de dirección constantemente.
+
+-Nivel de control visual
+
+Flow Fields: Alto control Puedes diseñar el campo direcciones, ruido, patrones y prever bastante bien el resultado.
+
+
+Flocking:  Menor control directo. El resultado depende de la interacción entre agentes, por lo que es más impredecible.
+
+
+ -Nivel de emergencia
+ 
+ 
+Flow Fields: Medio. Hay comportamiento emergente, pero está más guiado por la estructura del campo.
+
+Flocking: Alto El comportamiento colectivo surge completamente de reglas simples, generando patrones inesperados.
+
+-Tipo de atmósfera o sensación
+
+Flow Fields:
+
+-Calma
+-Fluidez
+-Hipnosis
+-Naturalidad viento, agua
+
+-Flocking:
+
+-Vida colectiva
+-Energía
+-Tensión o equilibrio social
+-Movimiento animal o humano
+
+-Relación con una pieza musical
+Flow Fields:
+Funciona mejor con:
+ambient
+lo-fi
+música lenta o progresiva
+
+-Porque el movimiento es continuo y envolvente.
+
+Flocking:
+Funciona mejor con:
+electrónica rítmica
+techno
+música con cambios de energía
+
+Porque el grupo puede reaccionar dinámicamente.
+
+-Ventajas y limitaciones
+
+Flow Fields
+
+Ventajas:
+
+-Fácil de controlar visualmente
+-Movimiento suave y estético
+-Ideal para composiciones armónicas
+
+Limitaciones:
+
+-Puede volverse repetitivo
+-Menor sensación de “inteligencia” o interacción social
+
+Flocking
+
+Ventajas:
+
+Alto nivel de emergencia
+Sensación de vida e inteligencia colectiva
+Muy dinámico y expresivo
+
+Limitaciones:
+
+-Más difícil de controlar
+--Puede volverse caótico si no se ajusta bien
+Menos predecible visualmente
+
+-Aplicación según tipo de música
+-Contemplativa
+
+Usaría: Flow Fields
+
+Porque permite movimientos suaves, continuos y relajantes que acompañan la música sin distraer.
+
+-Agresiva
+
+Usaría: Flocking
+
+Aumentando velocidad y fuerzas para generar caos, choques visuales y energía intensa.
+
+-Melancólica
+
+Usaría: Flow Fields
+
+Con movimientos lentos, direcciones descendentes o suaves para transmitir introspección.
+
+-Eufórica
+
+Usaría: Flocking
+
+Porque el movimiento grupal dinámico transmite emoción, crecimiento y energía colectiva.
+
+- Idea clave final
+
+No eliges el algoritmo por lo que hace…
+-Lo elijo por lo que hace sentir.
+
 
 ## Bitácora de aplicación 
 
 
 ## Bitácora de reflexión
+
