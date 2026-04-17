@@ -443,8 +443,64 @@ No eliges el algoritmo por lo que hace…
 -Lo elijo por lo que hace sentir.
 
 
+
+#### ACTIVIDAD 6
+
 ## Bitácora de aplicación 
+
+-Concepto visual
+
+La pieza visual busca representar la sensación de nostalgia, memoria y cambio emocional asociada a la canción Faded. La idea central es un sistema de partículas que emergen desde un núcleo central, simbolizando recuerdos que se expanden y se transforman con el tiempo.
+
+El núcleo funciona como un punto de origen emocional, mientras que las partículas representan fragmentos de experiencias que se dispersan, pero siguen conectadas a un flujo invisible que las guía.
+
+-Relación con la canción
+
+La visual responde directamente a la energía de la canción:
+
+La amplitud volumen controla el tamaño del núcleo central, generando un efecto de pulso que se siente como una respiración emocional.
+Las frecuencias bajas como el bajo afectan el color y la intensidad de las partículas, haciendo que los momentos más fuertes se perciban más vibrantes.
+El movimiento general de las partículas está guiado por un sistema continuo que refleja la fluidez de la música electrónica.
+
+Esto permite que la visual no sea decorativa, sino una interpretación del sonido.
+
+-Moodboard / Referencias
+
+Referencias principales:
+
+Visuales de música electrónica tipo NCS (2015–2017)
+Estética futurista minimalista (fondos oscuros + luz)
+Sistemas de partículas orgánicas
+Flujo continuo tipo “corriente de energía”
+
+Elementos clave:
+
+-Colores neón (azules, morados, verdes)
+-Alto contraste (negro/blanco)
+-Movimiento fluido
+-Estelas de luz
+
+
+
+-Bocetos: 
+
+
+
+<img width="890" height="589" alt="image" src="https://github.com/user-attachments/assets/9f9392c7-86b4-41bb-9d54-8605ea9aa7e0" />
+
+<img width="790" height="532" alt="image" src="https://github.com/user-attachments/assets/005ea0ff-7e0e-44ee-85ae-fe3d123cce87" />
+
+
+Mapa de decisiones 
+
+
+<img width="1527" height="726" alt="image" src="https://github.com/user-attachments/assets/72821e6b-ddfa-46c3-94b9-37e11a458b4c" />
+
+
+
+
 
 
 ## Bitácora de reflexión
+
 
