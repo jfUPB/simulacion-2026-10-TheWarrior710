@@ -491,10 +491,33 @@ Elementos clave:
 <img width="790" height="532" alt="image" src="https://github.com/user-attachments/assets/005ea0ff-7e0e-44ee-85ae-fe3d123cce87" />
 
 
-Mapa de decisiones 
+-Mapa de decisiones 
 
 
 <img width="1527" height="726" alt="image" src="https://github.com/user-attachments/assets/72821e6b-ddfa-46c3-94b9-37e11a458b4c" />
+
+
+-Mapa de interpretación
+<img width="1504" height="570" alt="image" src="https://github.com/user-attachments/assets/117030b0-2889-4fa8-acd1-148154f9b730" />
+
+-Justificación del algoritmo
+
+Se eligió Flow Fields en lugar de Flocking porque:
+
+Permite un movimiento continuo y fluido
+No genera comportamiento grupal explícito, sino una sensación de corriente
+Es más adecuado para representar memoria y flujo emocional que interacción social
+
+El algoritmo funciona como una “corriente invisible” que organiza el movimiento sin imponer estructuras rígidas.
+
+-Relación audio-visual
+Amplitud -tamaño del núcleo
+Bass -variación de color e intensidad
+Tiempo -evolución del campo de flujo
+
+Esto genera una sincronía donde la visual reacciona en tiempo real a la música.
+
+
 
 
 
@@ -502,5 +525,6 @@ Mapa de decisiones
 
 
 ## Bitácora de reflexión
+
 
 
