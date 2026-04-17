@@ -517,6 +517,14 @@ Tiempo -evolución del campo de flujo
 
 Esto genera una sincronía donde la visual reacciona en tiempo real a la música.
 
+-Se utilizó IA como herramienta de apoyo para:
+
+*Depurar errores en el código
+*Implementar reactividad al audio
+*Mejorar la estructura del sistema de partículas
+
+La idea conceptual, decisiones visuales y dirección estética fueron definidas por mi que soy el autor.
+
 
 
 
@@ -525,6 +533,7 @@ Esto genera una sincronía donde la visual reacciona en tiempo real a la música
 
 
 ## Bitácora de reflexión
+
 
 
 
