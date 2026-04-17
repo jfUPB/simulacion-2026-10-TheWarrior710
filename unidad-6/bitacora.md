@@ -479,6 +479,8 @@ Elementos clave:
 -Alto contraste (negro/blanco)
 -Movimiento fluido
 -Estelas de luz
+<img width="286" height="164" alt="image" src="https://github.com/user-attachments/assets/f751d2e4-a363-41c5-b449-29639031ac60" />
+
 
 
 
@@ -594,6 +596,7 @@ capturas
 
 
 ## Bitácora de reflexión
+
 
 
 
