@@ -525,14 +525,76 @@ Esto genera una sincronía donde la visual reacciona en tiempo real a la música
 
 La idea conceptual, decisiones visuales y dirección estética fueron definidas por mi que soy el autor.
 
+-codigo fuente
+
+```js
+let useTrails = true;
+let darkMode = true;
+
+let baseRadius = 80;
+let bgHue = 0;
+
+
+let palettes = [
+  { bg: 0, particle: 200 },
+  { bg: 280, particle: 320 },
+  { bg: 50, particle: 20 },
+  { bg: 120, particle: 180 }
+];
+
+let currentPalette = 0;
 
 
 
+
+let song;
+let fft;
+let amplitude;
+
+let flowfield;
+let particles = [];
+
+let cols, rows;
+let scale = 25;
+
+let zoff = 0;
+
+let started = false;
+
+
+
+// ---------- PRELOAD ----------
+function preload() {
+  soundFormats('mp3', 'ogg');
+  song = loadSound('Alan Walker - Faded.mp3'); // ← NOMBRE DE LA CANCION
+}
+
+// ---------- SETUP ----------
+function setup() {
+  createCanvas(windowWidth, windowHeight);
+  colorMode(HSB, 360, 100, 100, 255);
+
+  fft = new p5.FFT();
+  amplitude = new p5.Amplitude();
+```
+
+capturas
+
+
+<img width="1888" height="1037" alt="Captura de pantalla 2026-04-17 002331" src="https://github.com/user-attachments/assets/92f48b42-f3fb-44b6-9b61-0aa33318eeb5" />
+
+<img width="1919" height="1079" alt="Captura de pantalla 2026-04-17 002514" src="https://github.com/user-attachments/assets/ecdd7186-551f-47ab-84ff-b02ba85f2153" />
+
+
+<img width="1919" height="1079" alt="Captura de pantalla 2026-04-17 002521" src="https://github.com/user-attachments/assets/f5856b53-1550-49c3-bb66-02e264969ca2" />
+
+<img width="1883" height="1013" alt="Captura de pantalla 2026-04-17 002256" src="https://github.com/user-attachments/assets/3ca52f8a-cf02-4de3-a590-c08b147df64c" />
 
 
 
 
 ## Bitácora de reflexión
+
 
 
 
