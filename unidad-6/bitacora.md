@@ -578,6 +578,213 @@ function setup() {
 
   fft = new p5.FFT();
   amplitude = new p5.Amplitude();
+
+  initFlowField();
+
+  // Crear partículas
+  for (let i = 0; i < 300; i++) {
+    particles.push(new Particle(width / 2, height / 2));
+  }
+
+  background(0);
+}
+
+// ---------- DRAW ----------
+function draw() {
+
+  let bg = palettes[currentPalette].bg;
+
+if (darkMode) {
+  if (useTrails) {
+    background(bg, 50, 10, 20); // oscuro con estelas
+  } else {
+    background(bg, 50, 10); // oscuro limpio
+  }
+  
+} else {
+  if (useTrails) {
+    background(0, 0, 100, 40); // blanco con estelas
+  } else {
+    background(0, 0, 100); // blanco REAL
+  }
+}
+  let amp = amplitude.getLevel();
+  let bass = fft.getEnergy("bass");
+  let pulse = map(amp, 0, 0.3, 0.8, 1.5);
+let radius = baseRadius * pulse;
+  
+
+  updateFlowField(amp);
+  
+drawCore(radius, amp);
+  
+  for (let p of particles) {
+    p.follow(flowfield);
+    p.update(amp);
+    p.edges();
+    p.show(bass);
+  }
+}
+
+// ---------- INTERACCIÓN ----------
+function mousePressed() {
+  if (!started) {
+    song.loop();
+    started = true;
+    noCursor();
+    userStartAudio();
+    fullscreen(true);
+  } else {
+    // perturbación
+    for (let p of particles) {
+      let force = p5.Vector.sub(p.pos, createVector(mouseX, mouseY));
+      force.setMag(2);
+      p.applyForce(force);
+    }
+  }
+}
+
+function keyPressed() {
+  if (key === 'R'|| key === 'r') {
+    background(0);
+  }
+  if (key === 'N'|| key === 'n') {
+  currentPalette = (currentPalette + 1) % palettes.length;
+}
+  if (key === 'O' || key === 'o') {
+  darkMode = !darkMode;
+}
+  if (key === 'T' || key === 't') {
+  useTrails = !useTrails;
+}
+}
+
+// ---------- FLOW FIELD ----------
+function initFlowField() {
+  cols = floor(width / scale);
+  rows = floor(height / scale);
+  flowfield = new Array(cols * rows);
+}
+
+function updateFlowField(amp) {
+  let yoff = 0;
+
+  for (let y = 0; y < rows; y++) {
+    let xoff = 0;
+
+    for (let x = 0; x < cols; x++) {
+      let index = x + y * cols;
+
+      let angle = noise(xoff, yoff, zoff) * TWO_PI * 2;
+
+      let v = p5.Vector.fromAngle(angle);
+      flowfield[index] = v;
+
+      xoff += 0.1;
+    }
+    yoff += 0.1;
+  }
+
+  // audio controla evolución del campo
+  zoff += map(amp, 0, 0.3, 0.001, 0.02);
+}
+
+// ---------- PARTICLE ----------
+class Particle {
+  constructor(x, y) {
+    this.pos = createVector(x, y);
+    this.vel = createVector(0, 0);
+    this.acc = createVector(0, 0);
+
+    this.maxSpeed = random(2, 4);
+    this.prevPos = this.pos.copy();
+  }
+
+  follow(vectors) {
+    let x = floor(this.pos.x / scale);
+    let y = floor(this.pos.y / scale);
+
+    let index = x + y * cols;
+    let force = vectors[index];
+
+    this.applyForce(force);
+  }
+
+  applyForce(force) {
+    this.acc.add(force);
+  }
+
+  update(amp) {
+    this.vel.add(this.acc);
+
+    // audio controla velocidad
+    let speedBoost = map(amp, 0, 0.3, 1, 4);
+    this.vel.limit(this.maxSpeed * speedBoost);
+
+    this.pos.add(this.vel);
+    this.acc.mult(0);
+  }
+
+  show(bass) {
+    // color reactivo
+    let baseHue = palettes[currentPalette].particle;
+let hue = baseHue + map(bass, 0, 255, -50, 50);
+
+// glow
+stroke(hue, 80, 100, 50);
+strokeWeight(4);
+line(this.pos.x, this.pos.y, this.prevPos.x, this.prevPos.y);
+
+    
+// línea principal
+if (darkMode) {
+  stroke(hue, 80, 100, 200); // normal (oscuro)
+} else {
+  stroke(hue, 80, 40, 200); // más oscuro para fondo blanco
+}
+strokeWeight(1.5);
+line(this.pos.x, this.pos.y, this.prevPos.x, this.prevPos.y);
+  }
+
+  edges() {
+    if (this.pos.x > width) this.pos.x = 0;
+    if (this.pos.x < 0) this.pos.x = width;
+    if (this.pos.y > height) this.pos.y = 0;
+    if (this.pos.y < 0) this.pos.y = height;
+
+    this.prevPos = this.pos.copy();
+  }
+}
+
+// ---------- RESPONSIVE ----------
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
+  initFlowField();
+  background(0);
+}
+
+
+function drawCore(radius, amp) {
+  push();
+  translate(width / 2, height / 2);
+
+  let glowSize = radius * 2;
+
+  // glow
+  noStroke();
+  fill(200, 80, 100, 30);
+  ellipse(0, 0, glowSize * 1.5);
+
+  // núcleo
+  fill(200, 80, 100);
+  ellipse(0, 0, radius * 2);
+
+  // pulso interno
+  fill(200, 40, 100);
+  ellipse(0, 0, radius);
+
+  pop();
+}
 ```
 
 capturas
@@ -596,6 +803,7 @@ capturas
 
 
 ## Bitácora de reflexión
+
 
 
 
