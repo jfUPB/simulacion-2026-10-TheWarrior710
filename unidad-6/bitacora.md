@@ -799,7 +799,7 @@ capturas
 
 <img width="1883" height="1013" alt="Captura de pantalla 2026-04-17 002256" src="https://github.com/user-attachments/assets/3ca52f8a-cf02-4de3-a590-c08b147df64c" />
 
-
+https://editor.p5js.org/TheWarrior710/sketches/EltGTs5Bc
 
 
 ## Bitácora de reflexión
