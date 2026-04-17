@@ -154,8 +154,8 @@ Qué tan fuerte puede girar o cambiar de dirección.
 Bajo - movimiento suave
 Alto - cambios bruscos
 cantidad de agentes:
-Más agentes → mayor densidad visual
-Menos agentes → más vacío y claridad
+Más agentes - mayor densidad visual
+Menos agentes - más vacío y claridad
 Modificación realizada
 
 Modificación: aumenté el maxforce.
@@ -211,17 +211,17 @@ Diseña un “campo de decisiones” que todos siguen.
 
 El comportamiento del sistema se basa en tres reglas simples:
 
--Separación (Separation):
+-Separación:
 
 Cada agente evita acercarse demasiado a los demás.
 Hace que no se amontonen ni colisionen.
 
--Alineación (Alignment):
+-Alineación :
 
 Cada agente intenta moverse en la misma dirección que sus vecinos cercanos.
 Genera movimiento grupal coherente.
 
--Cohesión (Cohesion):
+-Cohesión:
 
 Cada agente intenta acercarse al centro del grupo.
 Mantiene unido al conjunto.
@@ -803,6 +803,7 @@ capturas
 
 
 ## Bitácora de reflexión
+
 
 
 
