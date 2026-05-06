@@ -50,7 +50,7 @@ Elegí electricidad porque no solo describe algo visual, sino un comportamiento:
 
 
 
- Actividad 02: Exploración de Matter.js
+#### Actividad 02: Exploración de Matter.js
 1. Conceptos fundamentales
 
 En esta actividad aprendí los conceptos básicos de Matter.js y cómo se integran con p5.js para simular comportamiento físico.
