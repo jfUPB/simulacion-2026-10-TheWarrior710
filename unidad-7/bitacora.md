@@ -281,6 +281,31 @@ https://editor.p5js.org/TheWarrior710/sketches/QlAaMEkbQ
 
 
 
+
+4. Me interesa explorar un comportamiento físico que combine tensión, descarga y energía acumulada, tomando como base la palabra “electricidad”.
+
+La idea es que la palabra no sea estática, sino que funcione como un sistema activo. Cada letra se comportaría como un cuerpo físico que puede reaccionar a fuerzas, vibraciones o impulsos, generando una sensación de inestabilidad controlada.
+
+En particular:
+
+Algunas letras, especialmente la “i”, emitirían chispas o pequeñas descargas eléctricas, representando puntos de alta concentración de energía.
+Estas chispas no serían constantes, sino intermitentes, como si la energía se estuviera acumulando y liberando en momentos específicos.
+El sistema completo tendría una ligera vibración o movimiento, reforzando la idea de que la electricidad nunca está completamente en reposo.
+
+Además, quiero introducir un contexto más atmosférico:
+
+Aparecería una nube oscura en la parte superior, como si se estuviera cargando una tormenta.
+Desde esa nube, se generarían rayos que atraviesan la palabra, conectando el cielo con las letras.
+Estos rayos podrían activar o intensificar el comportamiento de las letras, haciendo que reaccionen con más energía en el momento del impacto.
+
+En conjunto, el comportamiento físico no solo simula movimiento, sino que construye una metáfora visual de la electricidad como algo:
+
+inestable,
+acumulativo,
+y explosivo.
+
+
+
 ## Bitácora de aplicación 
 
 
