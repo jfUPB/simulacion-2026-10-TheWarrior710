@@ -342,7 +342,6 @@ function draw() {
   ellipse(width / 2, height / 2, size);
 }
 ```
-🧠 BITÁCORA (Exp 1)
 
 Dato leído del audio:
 Estoy utilizando la amplitud, que representa el volumen general de la canción en tiempo real.
@@ -353,7 +352,122 @@ La amplitud controla el tamaño de una figura central. Cuando el volumen aumenta
 Interpretación:
 Esto genera un efecto de latido o pulso, que se siente muy conectado a la idea de energía viva o electricidad en movimiento.
 
+<img width="426" height="418" alt="image" src="https://github.com/user-attachments/assets/cad39aae-e367-4690-889d-13e7a067632b" />
 
+https://editor.p5js.org/TheWarrior710/sketches/0fW1VQglq
+
+
+
+
+EXPERIMENTO 2 — Frecuencia (bass) 
+
+
+
+
+
+
+```js
+let song;
+let fft;
+let started = false;
+
+let sliderRate;
+let sliderPan;
+
+function preload() {
+  soundFormats('mp3', 'ogg');
+  song = loadSound("this-dot-kp.mp3");
+}
+
+function setup() {
+  createCanvas(400, 400);
+  fft = new p5.FFT();
+
+  // sliders 🎛️
+  sliderRate = createSlider(0.5, 1.5, 1, 0.01);
+  sliderPan = createSlider(-1, 1, 0, 0.01);
+}
+
+function draw() {
+  background(10);
+
+  if (!started) {
+    fill(255);
+    textAlign(CENTER, CENTER);
+    text("CLICK PARA INICIAR", width / 2, height / 2);
+    return;
+  }
+
+  // aplicar sliders
+  song.rate(sliderRate.value());
+  song.pan(sliderPan.value());
+
+  let bass = fft.getEnergy("bass");
+
+  //  VISUAL BASE (para que no esté vacío)
+  fill(200, 50, 100);
+  noStroke();
+  ellipse(width / 2, height / 2, 50 + bass);
+
+  //  chispas
+  if (random(1) < bass / 255) {
+    drawSpark();
+  }
+}
+
+function mousePressed() {
+  if (!started) {
+    userStartAudio();
+    song.loop();
+    started = true;
+  }
+}
+
+function drawSpark() {
+  stroke(255, 200, 0);
+  strokeWeight(2);
+
+  let x = random(width);
+  let y = random(height / 2);
+
+  for (let i = 0; i < 5; i++) {
+    let x2 = x + random(-20, 20);
+    let y2 = y + random(10, 40);
+
+    line(x, y, x2, y2);
+```
+
+
+
+Dato leído del audio:
+Estoy utilizando la energía de las frecuencias bajas (bass), que normalmente corresponden a los golpes rítmicos de la música.
+
+Comportamiento activado:
+Cada vez que la energía del bajo supera un umbral, se generan chispas visuales que aparecen de forma repentina en pantalla.
+
+Interpretación:
+Esto crea una respuesta puntual y explosiva, que se siente como descargas eléctricas activadas por el ritmo.
+
+
+
+ ¿Qué tipo de respuesta sonora te serviría más y por qué?
+
+Te dejo esto listo para copiar:
+
+Para mi palabra “electricidad”, me interesa trabajar con una combinación de dos tipos de respuesta sonora:
+
+Respuesta continua (amplitud): para representar la energía constante, como un flujo eléctrico que nunca se detiene. Esto puede controlar elementos como el pulso, el brillo o el movimiento general del sistema.
+Respuesta puntual (bass o golpes): para representar descargas eléctricas, chispas o rayos. Este tipo de respuesta permite generar eventos visuales más dramáticos y expresivos.
+
+Considero que esta combinación es importante porque la electricidad no es solo un flujo estable, sino también algo que puede acumularse y liberarse de forma repentina.
+
+Por eso, usar ambos tipos de datos del audio me permite construir una visual más rica, donde conviven lo continuo y lo explosivo.
+
+
+
+
+
+https://editor.p5js.org/TheWarrior710/sketches/VvkJppmve
 
 ## Bitácora de aplicación 
 
