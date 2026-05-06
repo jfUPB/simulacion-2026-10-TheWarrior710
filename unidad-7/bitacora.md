@@ -156,12 +156,116 @@ function mousePressed() {
   balls.push(new Ball(mouseX, mouseY, random(20, 50)));
 }
 ```
+https://editor.p5js.org/TheWarrior710/sketches/QlAaMEkbQ
+
 
 Experimento 2: Cadena con Matter.js
 
 En este experimento utilicé Matter.js para crear una cadena de cuerpos conectados. Simular una estructura flexible tipo cable o corriente.
+```js
+const { Engine, World, Bodies, Mouse, MouseConstraint } = Matter;
+
+let engine;
+let world;
+
+let chain;
+let mouseConstraint;
+
+function setup() {
+  let canvas = createCanvas(600, 400);
+
+  engine = Engine.create();
+  world = engine.world;
+
+  // crear cadena
+  chain = new Chain(15, 150, 50);
+
+  // mouse interactivo 
+  let mouse = Mouse.create(canvas.elt);
+
+  mouseConstraint = MouseConstraint.create(engine, {
+    mouse: mouse,
+    constraint: {
+      stiffness: 0.2
+    }
+  });
+
+  World.add(world, mouseConstraint);
+}
+
+function draw() {
+  background(20);
+
+  Engine.update(engine);
+
+  chain.show();
+}
 
 
+
+class Chain {
+  constructor(num, startX, startY) {
+    this.bodies = [];
+    this.constraints = [];
+
+    //  colores halloween
+    this.colors = ["#ff7b00", "#7b2cbf"]; // naranja y morado
+
+    for (let i = 0; i < num; i++) {
+      let fixed = (i === 0);
+
+      let body = Matter.Bodies.circle(startX + i * 25, startY, 10, {
+        isStatic: fixed
+      });
+
+      this.bodies.push(body);
+      Matter.World.add(world, body);
+
+      // conectar con el anterior
+      if (i > 0) {
+        let constraint = Matter.Constraint.create({
+          bodyA: this.bodies[i - 1],
+          bodyB: body,
+          length: 25,
+          stiffness: 0.9
+        });
+
+        this.constraints.push(constraint);
+        Matter.World.add(world, constraint);
+      }
+    }
+  }
+
+  show() {
+    // dibujar conexiones
+    stroke(255);
+    strokeWeight(2);
+
+    for (let c of this.constraints) {
+      line(
+        c.bodyA.position.x,
+        c.bodyA.position.y,
+        c.bodyB.position.x,
+        c.bodyB.position.y
+      );
+    }
+
+    // dibujar bolitas 
+    noStroke();
+
+    for (let i = 0; i < this.bodies.length; i++) {
+      let b = this.bodies[i];
+
+      // alternar colores
+      let col = this.colors[i % 2];
+      fill(col);
+
+      ellipse(b.position.x, b.position.y, 20);
+    }
+  }
+}
+
+```
 
 
 
