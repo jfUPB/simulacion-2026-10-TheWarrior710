@@ -727,7 +727,178 @@ relación audio-interacción
 
  La IA fue usada como herramienta técnica, no como generador conceptual.
 
+```js
+// ---------- MATTER ----------
+let Engine = Matter.Engine;
+let World = Matter.World;
+let Bodies = Matter.Bodies;
+let Constraint = Matter.Constraint;
+let Body = Matter.Body;
 
+let engine, world;
+
+// ---------- AUDIO ----------
+let song;
+
+// ---------- PALABRA ----------
+let letters = [];
+let constraints = [];
+let word = "ELECTRICITY";
+
+let shake = 0;
+let shooting = false;
+
+// ---------- PRELOAD ----------
+function preload() {
+  soundFormats('mp3', 'ogg');
+  song = loadSound("Veiil.mp3"); // 
+}
+
+// ---------- SETUP ----------
+function setup() {
+  createCanvas(windowWidth, windowHeight);
+
+  engine = Engine.create();
+  world = engine.world;
+
+  //  quitar gravedad
+  world.gravity.y = 0;
+
+  createWord();
+}
+
+// ---------- CREAR PALABRA ----------
+function createWord() {
+  let spacing = 50;
+  let startX = width / 2 - (word.length * spacing) / 2;
+
+  for (let i = 0; i < word.length; i++) {
+
+    let fixed = (i === 0 || i === word.length - 1);
+
+    let body = Bodies.circle(startX + i * spacing, height / 2, 10, {
+      isStatic: fixed,
+      frictionAir: 0.05
+    });
+
+    letters.push(body);
+    World.add(world, body);
+
+    if (i > 0) {
+      let c = Constraint.create({
+        bodyA: letters[i - 1],
+        bodyB: body,
+        length: spacing,
+        stiffness: 0.2
+      });
+
+      constraints.push(c);
+      World.add(world, c);
+    }
+  }
+}
+
+// ---------- DRAW ----------
+function draw() {
+  background(0);
+
+  Engine.update(engine);
+
+  textSize(40);
+  textAlign(CENTER, CENTER);
+
+  for (let i = 0; i < letters.length; i++) {
+    let pos = letters[i].position;
+
+    push();
+
+    let offsetX = random(-shake, shake);
+    let offsetY = random(-shake, shake);
+
+    translate(pos.x + offsetX, pos.y + offsetY);
+
+    //  SEGUNDA "E" COMO RAYO
+    if (i === 2) {
+      drawLightningLetter();
+    } else {
+      fill(255);
+      noStroke();
+      text(word[i], 0, 0);
+    }
+
+    pop();
+  }
+
+  if (shooting) {
+    drawRays();
+  }
+
+  shake *= 0.9;
+}
+
+// ---------- LETRA RAYO ----------
+function drawLightningLetter() {
+  stroke(255, 255, 0);
+  strokeWeight(3);
+  noFill();
+
+  beginShape();
+  vertex(-10, -30);
+  vertex(10, -10);
+  vertex(-5, 0);
+  vertex(15, 30);
+  endShape();
+}
+
+// ---------- RAYOS ----------
+function drawRays() {
+  stroke(255, 255, 0);
+  strokeWeight(2);
+
+  let x = width / 2;
+  let y = height / 2;
+
+  for (let i = 0; i < 10; i++) {
+    let x2 = x + random(-50, 50);
+    let y2 = y + random(20, 80);
+
+    line(x, y, x2, y2);
+
+    x = x2;
+    y = y2;
+  }
+}
+
+// ---------- CLICK ----------
+function mousePressed() {
+
+  //  ACTIVAR AUDIO SOLO CON CLICK
+  userStartAudio();
+  song.play(); //  no loop, solo una vez
+
+  //  rayos
+  shooting = true;
+  setTimeout(() => shooting = false, 200);
+
+  //  vibración
+  shake = 15;
+
+  //  fuerza física
+  for (let b of letters) {
+    if (!b.isStatic) {
+      Body.applyForce(b, b.position, {
+        x: random(-0.05, 0.05),
+        y: random(-0.05, 0.05)
+      });
+    }
+  }
+}
+
+// ---------- RESPONSIVE ----------
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
+}
+```
  <img width="691" height="532" alt="image" src="https://github.com/user-attachments/assets/ed8ef2af-e495-4292-af4c-b6803c81ebc6" />
 
 
