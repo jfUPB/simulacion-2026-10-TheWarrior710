@@ -554,7 +554,7 @@ https://editor.p5js.org/TheWarrior710/sketches/hrT7kiiTn
 
 ### Actividad 5
 
-🎯 1. Palabra con intención semántica
+ 1. Palabra con intención semántica
 
 La palabra elegida es:
 
@@ -562,11 +562,11 @@ ELECTRICITY
 
 Elegí esta palabra porque permite trabajar conceptos como:
 
-energía
-vibración
-descarga
-tensión
-inestabilidad
+-energía
+-vibración
+-descarga
+-tensión
+-inestabilidad
 
 Además, tiene elementos visuales fuertes (como la letra “E”) que se pueden reinterpretar como rayos.
 
@@ -574,9 +574,9 @@ Además, tiene elementos visuales fuertes (como la letra “E”) que se pueden 
 
 La palabra no se presenta como texto estático, sino como un sistema visual donde:
 
-Las letras están conectadas → representan flujo eléctrico
-La segunda “E” se transforma en un rayo → refuerza el concepto directamente
-Las letras vibran → transmiten inestabilidad energética
+Las letras están conectadas  representan flujo eléctrico
+La segunda “E” se transforma en un rayo  refuerza el concepto directamente
+Las letras vibran transmiten inestabilidad energética
 
 Esto mantiene la legibilidad, pero introduce una capa simbólica:
 
@@ -588,13 +588,13 @@ Se utilizó Matter.js para construir el comportamiento:
 
 Cada letra = un cuerpo físico (Body)
 Las letras están conectadas con Constraints
-→ simulando una cadena conductora
+simulando una cadena conductora
 
 Decisiones clave:
 
-Sin gravedad → la electricidad no cae, fluye
-Primera y última letra fijas → mantienen estructura (circuito cerrado)
-Fuerzas aleatorias al interactuar → simulan descargas
+Sin gravedad  la electricidad no cae, fluye
+Primera y última letra fijas  mantienen estructura (circuito cerrado)
+Fuerzas aleatorias al interactuar simulan descargas
 
 Resultado:
 
@@ -616,7 +616,7 @@ Esto crea una relación clara:
 
 No es una reacción continua, sino puntual, como una descarga real.
 
-🖥 5. Pantalla completa
+ 5. Pantalla completa
 
 La pieza utiliza:
 
@@ -648,7 +648,7 @@ Esto refuerza la experiencia como obra, no como interfaz.
 La pieza funciona como un instrumento visual:
 
 Mouse
-Click → activa descarga eléctrica
+Click  activa descarga eléctrica
 Genera:
 vibración
 rayos
@@ -690,22 +690,18 @@ Boceto final
 palabra conectada
 “E” transformada en rayo
 sistema vibra + descarga
+
  10. Mapa de decisiones
-Elemento	Decisión	Intención
-palabra	ELECTRICITY	concepto energético
-constraints	flexibles	tensión eléctrica
-sin gravedad	flotación	no comportamiento físico real
-vibración	fuerzas aleatorias	inestabilidad
-“E” rayo	forma zigzag	símbolo directo
-audio click	evento puntual	descarga eléctrica
-rayos visuales	líneas irregulares	energía visible
-🎼 11. Mapa de interpretación
+
+
+
+ 11. Mapa de interpretación
 
 Cómo se ejecuta la pieza:
 
-Click repetido → ritmo de descargas
-Click lento → energía contenida
-Click rápido → sobrecarga eléctrica
+Click repetido  ritmo de descargas
+Click lento  energía contenida
+Click rápido  sobrecarga eléctrica
 
 Esto permite interpretar la pieza en vivo como:
 
