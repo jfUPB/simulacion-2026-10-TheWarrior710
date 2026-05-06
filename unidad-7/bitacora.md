@@ -156,7 +156,11 @@ function mousePressed() {
   balls.push(new Ball(mouseX, mouseY, random(20, 50)));
 }
 ```
-https://editor.p5js.org/TheWarrior710/sketches/QlAaMEkbQ
+<img width="504" height="403" alt="Captura de pantalla 2026-05-05 235102" src="https://github.com/user-attachments/assets/fe95ca95-9814-4d7a-80e8-486d86d4fd97" />
+
+https://editor.p5js.org/TheWarrior710/sketches/uXSC9U-HM
+
+
 
 
 Experimento 2: Cadena con Matter.js
@@ -270,13 +274,10 @@ class Chain {
 
 
 
+https://editor.p5js.org/TheWarrior710/sketches/QlAaMEkbQ
 
 
-
-<img width="504" height="403" alt="Captura de pantalla 2026-05-05 235102" src="https://github.com/user-attachments/assets/fe95ca95-9814-4d7a-80e8-486d86d4fd97" />
-
-https://editor.p5js.org/TheWarrior710/sketches/uXSC9U-HM
-
+<img width="361" height="377" alt="Captura de pantalla 2026-05-06 000257" src="https://github.com/user-attachments/assets/56f02fb8-25fa-4fc4-b3fb-21d20f008867" />
 
 
 
