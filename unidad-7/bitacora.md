@@ -3,7 +3,7 @@
 ## Bitácora de proceso de aprendizaje
 
 
-##### Actividad 1
+#### Actividad 1
 
 1. Análisis de ejemplos
 
