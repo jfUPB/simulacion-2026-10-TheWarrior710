@@ -5,7 +5,7 @@
 
 #### Actividad 1
 
-1. - Análisis de ejemplos
+1.  Análisis de ejemplos
 
 Analicé varios ejemplos del proyecto Word as Image de Ji Lee y seleccioné los siguientes:
 
