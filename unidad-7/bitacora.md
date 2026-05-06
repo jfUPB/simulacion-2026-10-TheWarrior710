@@ -71,6 +71,111 @@ Son conexiones entre cuerpos. Funcionan como cuerdas o resortes que mantienen un
 Permite interactuar con los objetos usando el mouse, como si los arrastraras dentro del mundo físico.
 
 
+2. Experimentos realizado
+
+Experimento 1: Colisiones de partículas
+
+```js
+class Ball {
+  constructor(x, y, r) {
+    this.pos = createVector(x, y);
+    this.vel = p5.Vector.random2D().mult(random(2, 4));
+    this.acc = createVector(0, gravity);
+
+    this.r = r;
+    this.mass = r * r;
+  }
+
+  update() {
+    this.vel.add(this.acc);
+    this.pos.add(this.vel);
+    this.bounds();
+  }
+
+  bounds() {
+    if (this.pos.y + this.r > height) {
+      this.pos.y = height - this.r;
+      this.vel.y *= -restitution;
+    }
+
+    if (this.pos.x + this.r > width || this.pos.x - this.r < 0) {
+      this.vel.x *= -restitution;
+    }
+  }
+
+  collide(other) {
+    let dist = p5.Vector.dist(this.pos, other.pos);
+    let minDist = this.r + other.r;
+
+    if (dist < minDist) {
+      let force = p5.Vector.sub(this.pos, other.pos).normalize();
+      this.vel.add(force);
+      other.vel.sub(force);
+    }
+  }
+
+  show() {
+    fill(100, 150, 255);
+    noStroke();
+    ellipse(this.pos.x, this.pos.y, this.r * 2);
+  }
+}
+```
+
+```js
+let gravity = 0.3;
+let restitution = 0.6;
+let balls = [];
+
+function setup() {
+  createCanvas(500, 400);
+
+  for (let i = 0; i < 5; i++) {
+    balls.push(new Ball(random(width), random(-200, 0), random(20, 50)));
+  }
+}
+
+function draw() {
+  background(240);
+
+  // colisiones
+  for (let i = 0; i < balls.length; i++) {
+    for (let j = i + 1; j < balls.length; j++) {
+      balls[i].collide(balls[j]);
+    }
+  }
+
+  // update y dibujo
+  for (let b of balls) {
+    b.update();
+    b.show();
+  }
+}
+
+function mousePressed() {
+  balls.push(new Ball(mouseX, mouseY, random(20, 50)));
+}
+```
+
+Experimento 2: Cadena con Matter.js
+
+En este experimento utilicé Matter.js para crear una cadena de cuerpos conectados. Simular una estructura flexible tipo cable o corriente.
+
+
+
+
+
+
+
+
+
+<img width="504" height="403" alt="Captura de pantalla 2026-05-05 235102" src="https://github.com/user-attachments/assets/fe95ca95-9814-4d7a-80e8-486d86d4fd97" />
+
+https://editor.p5js.org/TheWarrior710/sketches/uXSC9U-HM
+
+
+
+
 ## Bitácora de aplicación 
 
 
