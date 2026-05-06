@@ -676,9 +676,10 @@ movimiento vibratorio
  9. Bocetos (descripción)
 Boceto 1
 
-Palabra alineada horizontalmente
- conectada como cadena
- comportamiento estable
+Palabra alineada horizontalmente ,conectada como cadena, comportamiento estable
+
+<img width="768" height="493" alt="image" src="https://github.com/user-attachments/assets/b93d367b-a1d8-4c0a-a278-1cc1c5e55826" />
+
 
 Boceto 2
 
@@ -686,26 +687,26 @@ Interacción:
  click genera vibración
  rayos salen del centro
 
+ <img width="623" height="414" alt="image" src="https://github.com/user-attachments/assets/4d284fbe-ff6a-4238-b196-ea16cf931b48" />
+
+
 Boceto final
 palabra conectada
 “E” transformada en rayo
 sistema vibra + descarga
 
+<img width="729" height="469" alt="image" src="https://github.com/user-attachments/assets/2e75ae08-303b-4f60-be93-a8171d472e22" />
+
+
  10. Mapa de decisiones
 
+<img width="1257" height="609" alt="image" src="https://github.com/user-attachments/assets/a56ec5d9-6615-4fa0-a9ae-6e1584c6c19e" />
 
 
  11. Mapa de interpretación
 
-Cómo se ejecuta la pieza:
+<img width="1555" height="480" alt="image" src="https://github.com/user-attachments/assets/94d7aec0-5723-450a-8079-7066732fb4a5" />
 
-Click repetido  ritmo de descargas
-Click lento  energía contenida
-Click rápido  sobrecarga eléctrica
-
-Esto permite interpretar la pieza en vivo como:
-
- un instrumento de energía
 
  12. Uso de IA
 
@@ -726,4 +727,15 @@ relación audio-interacción
 
  La IA fue usada como herramienta técnica, no como generador conceptual.
 
+
+ <img width="691" height="532" alt="image" src="https://github.com/user-attachments/assets/ed8ef2af-e495-4292-af4c-b6803c81ebc6" />
+
+
+ 
+ https://editor.p5js.org/TheWarrior710/sketches/1qdsjY2tM
+
 ## Bitácora de reflexión
+
+
+
+
