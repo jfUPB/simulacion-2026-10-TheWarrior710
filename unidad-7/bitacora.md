@@ -5,7 +5,7 @@
 
 #### Actividad 1
 
-1. Análisis de ejemplos
+1. - Análisis de ejemplos
 
 Analicé varios ejemplos del proyecto Word as Image de Ji Lee y seleccioné los siguientes:
 
@@ -17,6 +17,39 @@ La palabra está manipulada de forma que una de las letras se convierte en un gl
 3. Eat Una de las letras parece “morder” a otra o desaparecer parcialmente. Se representa el acto de comer directamente en la palabra.
 
 4. Explode Las letras están separadas o fragmentadas como si hubieran estallado. La forma visual transmite energía y ruptura.
+
+2. -¿Cómo la manipulación tipográfica refuerza el significado?
+
+En estos ejemplos, la tipografía deja de ser solo texto y se convierte en imagen.
+
+Se usan deformaciones mínimas pero precisas para no perder legibilidad.
+La forma de las letras se adapta al concepto de la palabra.
+Se integra acción (caer, explotar, flotar) dentro de la estructura tipográfica.
+
+Esto hace que el significado no solo se lea, sino que también se vea y se sienta, generando una comprensión más inmediata y visual.
+
+
+3. Propuestas propias
+
+
+Propongo las siguientes palabras:
+
+1. “Electricidad”
+Las letras podrían estar conectadas por líneas tipo corriente, con pequeñas descargas o chispas entre ellas. Algunas partes de la palabra podrían verse interrumpidas o “vibrando”, como si la energía fuera inestable.
+
+2. “Eco”
+La palabra se repetiría varias veces con menor opacidad y tamaño, simulando un rebote visual.
+
+3. “Caos”
+Las letras estarían desordenadas, rotadas o superpuestas, rompiendo la estructura lineal de la palabra.
+
+4. Elección y justificación
+
+Elegí electricidad porque no solo describe algo visual, sino un comportamiento: flujo, energía y variación constante. Me interesa porque representa energía, movimiento y transformación. Visualmente permite trabajar con efectos como líneas de corriente, chispas, vibración o interrupciones en la forma de las letras.
+
+
+
+
 
 ## Bitácora de aplicación 
 
