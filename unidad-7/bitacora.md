@@ -305,6 +305,55 @@ acumulativo,
 y explosivo.
 
 
+### Actividad 3
+
+
+
+🧪 EXPERIMENTO 1 — Amplitud → Núcleo que late 
+
+ Similar a lo que hice la vez pasada  
+ 
+```sketch.js
+
+
+let song;
+let amplitude;
+
+function preload() {
+  song = loadSound("chuck.mp3");
+}
+
+function setup() {
+  createCanvas(400, 400);
+  amplitude = new p5.Amplitude();
+  song.loop();
+}
+
+function draw() {
+  background(0);
+
+  let level = amplitude.getLevel();
+
+  // tamaño según volumen
+  let size = map(level, 0, 0.3, 50, 250);
+
+  fill(200, 100, 100);
+  noStroke();
+  ellipse(width / 2, height / 2, size);
+}
+```
+🧠 BITÁCORA (Exp 1)
+
+Dato leído del audio:
+Estoy utilizando la amplitud, que representa el volumen general de la canción en tiempo real.
+
+Comportamiento activado:
+La amplitud controla el tamaño de una figura central. Cuando el volumen aumenta, la forma crece; cuando baja, se contrae.
+
+Interpretación:
+Esto genera un efecto de latido o pulso, que se siente muy conectado a la idea de energía viva o electricidad en movimiento.
+
+
 
 ## Bitácora de aplicación 
 
