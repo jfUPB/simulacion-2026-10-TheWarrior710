@@ -50,6 +50,22 @@ Elegí electricidad porque no solo describe algo visual, sino un comportamiento:
 
 
 
+ Actividad 02: Exploración de Matter.js
+1. Conceptos fundamentales
+
+En esta actividad aprendí los conceptos básicos de Matter.js y cómo se integran con p5.js para simular comportamiento físico.
+
+-Engine
+Es el motor de física. Se encarga de calcular todo lo que pasa en el sistema: gravedad, colisiones, movimiento, etc. Es como el “cerebro” que actualiza todo en cada frame.
+-World
+Es el espacio donde existen todos los objetos. Ahí se agregan los cuerpos físicos para que interactúen entre sí.
+-Bodies
+Son los objetos físicos, como círculos o rectángulos. Tienen propiedades como masa, posición, velocidad y pueden chocar entre ellos.
+-Constraint
+Son conexiones entre cuerpos. Funcionan como cuerdas o resortes que mantienen una relación entre dos objetos.
+-MouseConstraint
+Permite interactuar con los objetos usando el mouse, como si los arrastraras dentro del mundo físico.
+
 
 ## Bitácora de aplicación 
 
