@@ -469,7 +469,265 @@ Por eso, usar ambos tipos de datos del audio me permite construir una visual má
 
 https://editor.p5js.org/TheWarrior710/sketches/VvkJppmve
 
+
+
+### Actividad 4
+
+1. Prueba inicial
+
+La prueba consiste en una visual interactiva donde la palabra “ELECTRICITY” está construida como un sistema físico usando Matter.js.
+Cada letra funciona como un cuerpo conectado mediante restricciones, lo que genera un comportamiento elástico.
+
+Al interactuar con el mouse:
+
+La palabra vibra (simulando electricidad)
+Se generan rayos visuales
+Se activa un sonido
+La segunda letra “E” se transforma en un rayo
+2. ¿Qué parte de la palabra construiste?
+
+Trabajé con la palabra completa:
+
+“ELECTRICITY”
+
+pero con una intervención semántica específica:
+
+La segunda “E” fue modificada visualmente para representarse como un rayo
+Las demás letras se mantienen legibles para conservar la lectura
+
+Esto permite que la palabra siga siendo reconocible, pero con una carga visual más fuerte en el concepto de electricidad.
+
+3. ¿Qué propiedad física manipulaste?
+
+Usé Matter.js para simular física con:
+
+Bodies (cuerpos): cada letra es un cuerpo circular
+Constraints: conectan las letras como si fueran una cadena flexible
+FrictionAir: controla la resistencia del movimiento
+isStatic: la primera y última letra están fijas para mantener estructura
+
+Además:
+
+Eliminé la gravedad (world.gravity.y = 0)
+→ para que la palabra no caiga y se mantenga flotando
+Apliqué fuerzas con Body.applyForce()
+→ para generar vibración al hacer click
+
+Esto crea un comportamiento de tensión eléctrica contenida, no de caída.
+
+4. ¿Qué aspecto del audio afecta qué comportamiento?
+
+El audio se activa con interacción (click), pero en esta prueba:
+
+El sonido no controla parámetros continuos
+Funciona como evento detonante
+
+Relación actual:
+
+Click → reproduce sonido
+Click → activa vibración física
+Click → genera rayos
+
+Es decir:
+
+ El audio funciona como disparo energético, no como control continuo
+
+5. Evaluación (qué funcionó y qué no)
+Lo que funcionó
+La vibración transmite muy bien la idea de electricidad
+La letra “E” en forma de rayo refuerza el significado
+El uso de constraints crea una sensación orgánica interesante
+La interacción con click se siente clara y directa
+Los rayos visuales ayudan a reforzar la narrativa
+
+
+https://editor.p5js.org/TheWarrior710/sketches/hrT7kiiTn
+
+
+<img width="763" height="442" alt="image" src="https://github.com/user-attachments/assets/d2e6d735-4370-44a1-aad7-612203999ef6" />
+
+
+
+
 ## Bitácora de aplicación 
 
+
+### Actividad 5
+
+🎯 1. Palabra con intención semántica
+
+La palabra elegida es:
+
+ELECTRICITY
+
+Elegí esta palabra porque permite trabajar conceptos como:
+
+energía
+vibración
+descarga
+tensión
+inestabilidad
+
+Además, tiene elementos visuales fuertes (como la letra “E”) que se pueden reinterpretar como rayos.
+
+ 2. Tipografía semántica
+
+La palabra no se presenta como texto estático, sino como un sistema visual donde:
+
+Las letras están conectadas → representan flujo eléctrico
+La segunda “E” se transforma en un rayo → refuerza el concepto directamente
+Las letras vibran → transmiten inestabilidad energética
+
+Esto mantiene la legibilidad, pero introduce una capa simbólica:
+
+ la palabra no solo se lee, se siente como electricidad
+
+3. Comportamiento físico con sentido
+
+Se utilizó Matter.js para construir el comportamiento:
+
+Cada letra = un cuerpo físico (Body)
+Las letras están conectadas con Constraints
+→ simulando una cadena conductora
+
+Decisiones clave:
+
+Sin gravedad → la electricidad no cae, fluye
+Primera y última letra fijas → mantienen estructura (circuito cerrado)
+Fuerzas aleatorias al interactuar → simulan descargas
+
+Resultado:
+
+ La palabra se comporta como un sistema eléctrico inestable, no como objetos físicos normales.
+
+ 4. Respuesta al audio con sentido semántico
+
+El audio no está usado como fondo, sino como detonador:
+
+El sonido se activa con click → representa una descarga eléctrica
+Cada activación genera:
+vibración en las letras
+aparición de rayos
+alteración del sistema físico
+
+Esto crea una relación clara:
+
+ audio = energía → activa electricidad
+
+No es una reacción continua, sino puntual, como una descarga real.
+
+🖥 5. Pantalla completa
+
+La pieza utiliza:
+
+createCanvas(windowWidth, windowHeight)
+
+Esto permite que la obra:
+
+ocupe toda la pantalla
+funcione como experiencia inmersiva
+
+
+6. Sin dashboards ni instrucciones
+
+No hay:
+
+sliders
+botones
+texto en pantalla
+
+La interacción es implícita:
+
+el usuario descubre que el sistema responde al click
+
+Esto refuerza la experiencia como obra, no como interfaz.
+
+
+ 7. Interacción performativa
+
+La pieza funciona como un instrumento visual:
+
+Mouse
+Click → activa descarga eléctrica
+Genera:
+vibración
+rayos
+sonido
+
+Esto permite “tocar” la pieza en vivo:
+
+puedes controlar ritmo e intensidad de las descargas
+
+ 8. Moodboard / referencias
+
+Referencias conceptuales:
+
+Rayos eléctricos (naturaleza)
+Estética glitch / energía digital
+Visuales tipo NCS (electrónica)
+Líneas de energía y circuitos
+
+Características visuales:
+
+colores oscuros + acentos amarillos
+líneas irregulares (rayos)
+movimiento vibratorio
+
+ 9. Bocetos (descripción)
+Boceto 1
+
+Palabra alineada horizontalmente
+ conectada como cadena
+ comportamiento estable
+
+Boceto 2
+
+Interacción:
+ click genera vibración
+ rayos salen del centro
+
+Boceto final
+palabra conectada
+“E” transformada en rayo
+sistema vibra + descarga
+ 10. Mapa de decisiones
+Elemento	Decisión	Intención
+palabra	ELECTRICITY	concepto energético
+constraints	flexibles	tensión eléctrica
+sin gravedad	flotación	no comportamiento físico real
+vibración	fuerzas aleatorias	inestabilidad
+“E” rayo	forma zigzag	símbolo directo
+audio click	evento puntual	descarga eléctrica
+rayos visuales	líneas irregulares	energía visible
+🎼 11. Mapa de interpretación
+
+Cómo se ejecuta la pieza:
+
+Click repetido → ritmo de descargas
+Click lento → energía contenida
+Click rápido → sobrecarga eléctrica
+
+Esto permite interpretar la pieza en vivo como:
+
+ un instrumento de energía
+
+ 12. Uso de IA
+
+Uso de IA en el proceso:
+
+Apoyo en:
+estructura de código
+integración de p5.js + Matter.js
+solución de errores
+
+Decisiones propias:
+
+elección de la palabra
+concepto de electricidad
+comportamiento vibratorio
+uso del rayo en la “E”
+relación audio-interacción
+
+ La IA fue usada como herramienta técnica, no como generador conceptual.
 
 ## Bitácora de reflexión
