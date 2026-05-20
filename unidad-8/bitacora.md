@@ -214,6 +214,9 @@ La IA fue utilizada como apoyo para investigar referencias visuales, estructurar
 
 11. Documentación técnica
 Archivo de Blender.
+
+https://drive.google.com/drive/folders/1cs9h8cBgsDK2cTTWomic-C3mf9NDZOVN?usp=sharing
+
 Configuración de animaciones.
 Sistema procedural.
 Materiales emisivos.
@@ -246,5 +249,7 @@ Registro del sistema procedural.
 
 Video del loop animado.
 
+
+https://syncsketch.com/sketch/FVMHtdt3ulpE/
 
 
