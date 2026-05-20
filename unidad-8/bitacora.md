@@ -253,3 +253,6 @@ Video del loop animado.
 https://syncsketch.com/sketch/FVMHtdt3ulpE/
 
 
+
+## Bitácora de reflexion
+
