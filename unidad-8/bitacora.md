@@ -219,9 +219,32 @@ Sistema procedural.
 Materiales emisivos.
 Paths y trayectorias.
 Render final.
-12. Registro visual
+
+
+13. Registro visual
 Capturas del viewport.
+
+<img width="1877" height="1001" alt="image" src="https://github.com/user-attachments/assets/61b77e52-4c13-437c-a65b-7ffe22035a63" />
+
 Render final.
+
+<img width="1877" height="1001" alt="image" src="https://github.com/user-attachments/assets/ee1c6e00-4b79-401a-8496-dd2f14ebc481" />
+
+
+
 Registro del sistema procedural.
+
+<img width="1186" height="880" alt="image" src="https://github.com/user-attachments/assets/9f5d22d6-bf75-41d0-bce6-876f8d517605" />
+
+<img width="876" height="611" alt="image" src="https://github.com/user-attachments/assets/f9846e90-95c4-4fb2-bf0b-4d8a8cdf2237" />
+
+<img width="816" height="250" alt="image" src="https://github.com/user-attachments/assets/e7c0d835-bbd8-4555-ab5e-d40ceac6dfdf" />
+<img width="710" height="375" alt="image" src="https://github.com/user-attachments/assets/4dced72f-2328-45a5-917c-41b80093b959" />
+
+
+
+
 Video del loop animado.
+
+
 
