@@ -146,3 +146,74 @@ Los sistemas proceduralmente complejos pueden ser difíciles de optimizar.
 
 Aprendí que los principios vistos en p5.js pueden trasladarse a otros entornos aunque cambie la herramienta. También comprendí que el proceduralismo no depende únicamente del código, sino de la lógica de sistemas, trayectorias y comportamiento dinámico.
 
+
+## Bitácora de aplicación
+
+
+ACTIVIDAD 05 — Diseño e implementación
+1. Herramienta elegida
+
+Blender con Geometry Nodes.
+
+2. Sistema transferido
+
+Sistemas de partículas, motion systems y trayectorias procedurales.
+
+3. Contexto profesional
+
+Visual audiovisual experimental para portafolio profesional orientado al entretenimiento digital y motion graphics.
+
+4. Concepto visual
+
+La pieza representa un recorrido espacial cinematográfico donde un cohete genera rastros de energía alrededor de Saturno, explorando visualmente el movimiento procedural y los sistemas dinámicos inspirados en partículas digitales.
+
+5. Referencias
+Motion graphics espaciales.
+Visuales sci-fi cinematográficos.
+Sistemas procedurales abstractos.
+Referentes de Geometry Nodes y motion design.
+6. Bocetos
+
+Los bocetos se enfocaron en:
+
+composición orbital,
+dirección del movimiento,
+ubicación de cámara,
+comportamiento de las estelas,
+y disposición de los anillos de Saturno.
+7. Explicación de transferencia
+
+El sistema fue transferido desde la lógica de partículas y movimiento procedural trabajada en p5.js hacia Blender mediante trayectorias animadas, trails dinámicos y sistemas de animación procedural. El comportamiento continuo del cohete y las estelas simula el funcionamiento de partículas en movimiento, mientras que los anillos de Saturno incorporan oscilación y escalado dinámico inspirados en sistemas motion.
+
+8. Mapa de decisiones
+Decisión	Razón
+Blender	Interés en visualización 3D
+Geometry Nodes	Proceduralismo visual
+Escenario espacial	Estética cinematográfica
+Trails dinámicos	Simulación de partículas
+Saturno animado	Movimiento procedural complementario
+9. Mapa de presentación
+
+La pieza será presentada mediante:
+
+Render final en pantalla completa.
+Reproducción del loop animado.
+Demostración breve del sistema procedural dentro de Blender.
+Explicación de la transferencia conceptual desde p5.js.
+10. Evidencia del uso de IA
+
+La IA fue utilizada como apoyo para investigar referencias visuales, estructurar conceptos de transferencia y resolver dudas técnicas relacionadas con Blender y Geometry Nodes. Las decisiones visuales, composición y desarrollo final de la pieza fueron realizadas personalmente.
+
+11. Documentación técnica
+Archivo de Blender.
+Configuración de animaciones.
+Sistema procedural.
+Materiales emisivos.
+Paths y trayectorias.
+Render final.
+12. Registro visual
+Capturas del viewport.
+Render final.
+Registro del sistema procedural.
+Video del loop animado.
+
