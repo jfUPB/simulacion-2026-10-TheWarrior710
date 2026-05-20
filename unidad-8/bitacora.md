@@ -172,7 +172,10 @@ Motion graphics espaciales.
 Visuales sci-fi cinematográficos.
 Sistemas procedurales abstractos.
 Referentes de Geometry Nodes y motion design.
-6. Bocetos
+
+<img width="640" height="421" alt="image" src="https://github.com/user-attachments/assets/6c18775c-2dfd-4a7f-b1d9-701855dbe09c" />
+
+7. Bocetos
 
 Los bocetos se enfocaron en:
 
@@ -181,18 +184,20 @@ dirección del movimiento,
 ubicación de cámara,
 comportamiento de las estelas,
 y disposición de los anillos de Saturno.
+
+<img width="920" height="575" alt="image" src="https://github.com/user-attachments/assets/9265af75-17ff-4c1e-bef7-61d7cfd4089c" />
+
+
 7. Explicación de transferencia
 
 El sistema fue transferido desde la lógica de partículas y movimiento procedural trabajada en p5.js hacia Blender mediante trayectorias animadas, trails dinámicos y sistemas de animación procedural. El comportamiento continuo del cohete y las estelas simula el funcionamiento de partículas en movimiento, mientras que los anillos de Saturno incorporan oscilación y escalado dinámico inspirados en sistemas motion.
 
 8. Mapa de decisiones
-Decisión	Razón
-Blender	Interés en visualización 3D
-Geometry Nodes	Proceduralismo visual
-Escenario espacial	Estética cinematográfica
-Trails dinámicos	Simulación de partículas
-Saturno animado	Movimiento procedural complementario
-9. Mapa de presentación
+9. 
+<img width="1386" height="440" alt="image" src="https://github.com/user-attachments/assets/b9005985-5c10-4b1a-970a-adb6fdeff082" />
+
+
+10. Mapa de presentación
 
 La pieza será presentada mediante:
 
@@ -200,6 +205,9 @@ Render final en pantalla completa.
 Reproducción del loop animado.
 Demostración breve del sistema procedural dentro de Blender.
 Explicación de la transferencia conceptual desde p5.js.
+
+<img width="1355" height="587" alt="image" src="https://github.com/user-attachments/assets/4ac10117-85bf-496a-8ea2-66be88098bbb" />
+
 10. Evidencia del uso de IA
 
 La IA fue utilizada como apoyo para investigar referencias visuales, estructurar conceptos de transferencia y resolver dudas técnicas relacionadas con Blender y Geometry Nodes. Las decisiones visuales, composición y desarrollo final de la pieza fueron realizadas personalmente.
